@@ -1,6 +1,9 @@
-<%= form_for(@seller.b_relationships.build) do |f| %>
+<%= form_for(@seller.relationships.build) do |f| %>
   <div>
     <%= hidden_field_tag :seller_id, @seller.id %>
+    <%= hidden_field_tag :status,  "follow" %>  <!-- フォロー時にrelationshipが作成される -->
+    <%= hidden_field_tag :author_kind, "buyer" %>  <!--follower_kind(フォローする側の企業属性（buyer、seller））を初期値として設定 -->
   </div>
-  <%= f.submit "フォローする", class: "btn btn-success btn-block" %>
+  <%= f.submit "フォローする", class: "btn btn-success btn-block",
+      data: { confirm: "売り手企業にはフォロワー（貴社）の企業情報が開示されます。続けますか？"} %>
 <% end %>

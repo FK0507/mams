@@ -11,18 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160523042245) do
-
-  create_table "b_relationships", force: :cascade do |t|
-    t.integer  "buyer_id"
-    t.integer  "seller_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "b_relationships", ["buyer_id"], name: "index_b_relationships_on_buyer_id"
-  add_index "b_relationships", ["seller_id", "buyer_id"], name: "index_b_relationships_on_seller_id_and_buyer_id", unique: true
-  add_index "b_relationships", ["seller_id"], name: "index_b_relationships_on_seller_id"
+ActiveRecord::Schema.define(version: 20160531052106) do
 
   create_table "buyer_conditions", force: :cascade do |t|
     t.string   "b_condit",   null: false
@@ -102,6 +91,10 @@ ActiveRecord::Schema.define(version: 20160523042245) do
     t.datetime "updated_at",  null: false
   end
 
+  add_index "disclosures", ["buyer_id", "seller_id"], name: "index_disclosures_on_buyer_id_and_seller_id", unique: true
+  add_index "disclosures", ["buyer_id"], name: "index_disclosures_on_buyer_id"
+  add_index "disclosures", ["seller_id"], name: "index_disclosures_on_seller_id"
+
   create_table "industries", force: :cascade do |t|
     t.string   "ind_a",      null: false
     t.string   "ind_b",      null: false
@@ -111,16 +104,17 @@ ActiveRecord::Schema.define(version: 20160523042245) do
     t.integer  "updated_by"
   end
 
-  create_table "s_relationships", force: :cascade do |t|
+  create_table "relationships", force: :cascade do |t|
     t.integer  "buyer_id"
     t.integer  "seller_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "status"
+    t.string   "author_kind"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
-  add_index "s_relationships", ["buyer_id"], name: "index_s_relationships_on_buyer_id"
-  add_index "s_relationships", ["seller_id", "buyer_id"], name: "index_s_relationships_on_seller_id_and_buyer_id", unique: true
-  add_index "s_relationships", ["seller_id"], name: "index_s_relationships_on_seller_id"
+  add_index "relationships", ["buyer_id"], name: "index_relationships_on_buyer_id"
+  add_index "relationships", ["seller_id"], name: "index_relationships_on_seller_id"
 
   create_table "seller_conditions", force: :cascade do |t|
     t.string   "s_condit",   null: false
@@ -398,6 +392,16 @@ ActiveRecord::Schema.define(version: 20160523042245) do
 
   add_index "sellers", ["industry_id"], name: "index_sellers_on_industry_id"
   add_index "sellers", ["seller_condition_id"], name: "index_sellers_on_seller_condition_id"
+
+  create_table "sessions", force: :cascade do |t|
+    t.string   "session_id", null: false
+    t.text     "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sessions", ["session_id"], name: "index_sessions_on_session_id", unique: true
+  add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at"
 
   create_table "users", force: :cascade do |t|
     t.string   "fname"

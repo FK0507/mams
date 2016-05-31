@@ -26,5 +26,15 @@ module ApplicationHelper
 
     raw(html)
   end
+  
+  def current_company
+    if current_user.kind == "buyer" then
+      @current_company = current_user.buyers[0] #ログインユーザーに紐づくbuyer
+      @opponent_company = @current_company.sellers #ログインユーザーのbuyerに紐づくsellerの配列
+    elsif current_user.kind == "seller" then
+      @current_company = current_user.sellers[0] #ログインユーザーに紐づくseller
+      @opponent_company = @current_company.buyers #ログインユーザーのsellerに紐づくbuyerの配列
+    end 
+  end
 
 end

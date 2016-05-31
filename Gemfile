@@ -91,6 +91,8 @@ group :development do
 # end
   
   gem 'seed-fu'
+  # ActiveRecordStore
+  gem 'activerecord-session_store'
   
 end
 

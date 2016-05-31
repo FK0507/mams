@@ -1,5 +1,6 @@
   <% flash.each do |message_type, message| %>
     <div class="alert alert-<%= message_type %>">
+      <% next if message_type == "timedout" %>  <!-- deviseのtimeout機能により"true"が表示される不具合の処理 -->
       <%= message %>
     </div>
   <% end %>

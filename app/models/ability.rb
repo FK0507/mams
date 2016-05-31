@@ -7,7 +7,7 @@ class Ability
   # default parmission
     cannot :manage, :all
     can [:new, :create, :edit, :update], User
-    can :manage, Disclosure
+    can :manage, Relationship
     can :read , Industry
 
     if user.kind == "sys"
@@ -43,15 +43,12 @@ class Ability
       can :manage , Buyer, created_by: user.id
       can :read , Seller
       can :manage, User
-      can :manage , :invitation
       if user.role == "member"
-        can :manage, Buyer , created_by: user.invited_by_id
-        cannot [:new, :create], Buyer , created_by: user.invited_by_id
-#        cannot :manage, :invitation
+        can [:read, :update, :destroy], Buyer , created_by: user.invited_by_id
+        cannot :invite, User
       elsif user.role == "supporter"
-        can :manage, Buyer , created_by: user.invited_by_id
-        cannot [:new, :create], Buyer , created_by: user.invited_by_id
- #       cannot :manage, :invitation
+        can [:read, :update, :destroy], Buyer , created_by: user.invited_by_id
+        cannot :invite, User
       end
     end
 

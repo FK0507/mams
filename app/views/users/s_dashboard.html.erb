@@ -51,7 +51,7 @@
         <% else %>
           <p>企業No  ：<%= @user.sellers[0].id %></p>
           <p>企業名  ：<%= @user.sellers[0].cname %></p>
-          <p>希望条件：<%= Industry.where(id: @user.sellers[0].industry_id).pluck(:ind_b)[0] %></p>
+          <p>希望条件：<%= Industry.where("id = ?", @user.sellers[0].industry_id).pluck(:ind_b)[0] %></p>
           <br>
           <div class="form-inline">
             <p>新規登録</p>

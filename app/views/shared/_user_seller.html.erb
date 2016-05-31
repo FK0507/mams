@@ -11,7 +11,7 @@
         <td class="col-md-4">所在地</td><td class="col-md-8"><%= @seller.pref %><%= @seller.city %></td>
       </tr>
       <tr>
-        <td class="col-md-4">業種</td><td class="col-md-8"><%= Industry.where(id: @seller.industry_id).pluck(:ind_b)[0] %></td>
+        <td class="col-md-4">業種</td><td class="col-md-8"><%= Industry.where("id = ?", @seller.industry_id).pluck(:ind_b)[0] %></td>
       </tr>
       <tr>
         <td class="col-md-4">主な取扱い商品・サービス</td><td class="col-md-8"><%= @seller.goods %></td>
@@ -26,7 +26,7 @@
         <td class="col-md-4">アピールポイント</td><td class="col-md-8"><%= @seller.point %></td>
       </tr>
       <tr>
-        <td class="col-md-4">希望条件</td><td class="col-md-8"><%= SellerCondition.where(id: @seller.seller_condition_id).pluck(:s_condit)[0] %></td>
+        <td class="col-md-4">希望条件</td><td class="col-md-8"><%= SellerCondition.where("id = ?", @seller.seller_condition_id).pluck(:s_condit)[0] %></td>
       </tr>
   　</table>    
 　</div>

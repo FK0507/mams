@@ -12,7 +12,7 @@
             <tr>
               <td><%= follower.id %></td>
               <td><%= follower.pref %></td>
-              <td><%= Industry.where(id: follower.industry_id).pluck(:ind_b)[0] %></td>
+              <td><%= Industry.where("id = ?", follower.industry_id).pluck(:ind_b)[0] %></td>
               <td><%= link_to '詳細', buyer_path(follower) %></td>
             </tr>
           <% end %>

@@ -1,6 +1,7 @@
-<%= form_for(@seller.disclosures.find_by(seller_id: @seller.id),
-             html: { method: :delete }) do |f| %>
-
-  <%= f.submit "情報開示を解消する", 
-      data: { disable_with: "更新中..."}, class: "btn btn-primary btn-block" %>
+<%= form_for(@relationships) do |f| %>
+  <div>
+    <%= f.hidden_field :seller_id, :value => @seller.id %>
+    <%= f.hidden_field :status, :value => "follow" %>
+  </div>
+  <%= f.submit "情報開示を解消する", class: "btn btn-success btn-block", data: { disable_with: "更新中..."} %>
 <% end %>

@@ -1,0 +1,8 @@
+<%= form_for(@relationships) do |f| %>
+  <div>
+    <%= f.hidden_field :seller_id, :value => @seller.id %>
+    <%= f.hidden_field :status, :value => "follow" %>
+  </div>
+  <%= f.submit "申請を取り消す", class: "btn btn-success btn-block",
+      data: { disable_with: "更新中...", confirm: "情報開示リクエストを取り消しますか？"} %>
+<% end %>

@@ -1,5 +1,5 @@
 <div> 
-   <% if @buyer.s_relationships.exists?(seller_id: @seller.id) %>
+   <% if @buyer.relationships.exists?(seller_id: @seller.id, author_kind: "seller") %>  <!-- relationshipテーブルにstatusが存在するカラムは、follow済み -->
     <%= render 'unfollow' %>
    <% else %>
     <%= render 'follow' %>

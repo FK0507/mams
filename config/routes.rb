@@ -45,11 +45,8 @@ Rails.application.routes.draw do
       get :following
     end
   end
-#  resources :sessions, only: [:new, :create, :destroy]
-  resources :s_relationships, only: [:create, :destroy]
-  resources :b_relationships, only: [:create, :destroy]
-  resources :disclosures, only: [:index, :create, :edit, :update, :destroy]
 
+  resources :relationships, only: [:index, :create, :edit, :update, :destroy]
 
   root to: 'static_pages#home' #root to　はroutes.rbの末尾に記載する。
 

@@ -6,11 +6,8 @@ class Buyer < ActiveRecord::Base
   has_many :buyer_users, dependent: :destroy
   has_many :users, through: :buyer_users
 
-  has_many :s_relationships, dependent: :destroy
-  has_many :sellers, through: :s_relationships
+  has_many :relationships, dependent: :destroy
+  has_many :sellers, through: :relationships
   
-  has_many :disclosures, dependent: :destroy
-  has_many :sellers, through: :disclosures
-
   records_with_operator_on :create, :update
 end

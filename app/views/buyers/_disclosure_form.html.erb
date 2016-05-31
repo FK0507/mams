@@ -1,9 +1,15 @@
 <div> 
-   <!-- buyer１社とログインユーザー企業（この場合はseller）に紐づくdisclosureが存在した場合の処理 -->
-   <% if @buyer.disclosures.exists?(seller_id: @seller.id) %>
+   <% @relationships = @buyer.relationships.find_by(seller_id: @seller.id, author_kind: "seller") || Relationship.new %>
+   <!-- buyer１社とログインユーザー企業（この場合はseller）に紐づくrelationshipsが承諾済みの場合の処理 -->
+   <% if @relationships.status == "accepted" %>
      <%= render 'undisclosure' %>
 
-   <!-- 存在しなかった場合の処理 -->
+   <!-- buyer１社とログインユーザー企業（この場合はseller）に紐づくrelationshipsが承認待ちの場合の処理 -->
+   <% elsif @relationships.status == "pending" %>
+     <%= render 'cancel' %>
+
+   <!-- その他の場合の処理 -->
+   <% elsif @relationships.status == nil %>
    <% else %>
      <%= render 'disclosure' %>
    <% end %>

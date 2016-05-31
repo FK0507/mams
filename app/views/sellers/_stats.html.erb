@@ -1,12 +1,10 @@
 <div>
-    <a href="<%= followers_seller_path(@seller) %>">
-      フォローされている数：
+    <%= link_to "フォローされている数：" , followers_seller_path(@seller) %>
       <strong>
       <%  @followers = @seller.buyers %>
       <%= @followers.count %>
       </strong>
       社
-    </a>
 </div>
 <div>
   <table class="table">

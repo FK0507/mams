@@ -1,5 +1,6 @@
-<%= form_for(@buyer.s_relationships.find_by(buyer_id: @buyer.id),
+<%= form_for(@buyer.relationships.find_by(buyer_id: @buyer.id, author_kind: "seller"),
              html: { method: :delete }) do |f| %>
 
-  <%= f.submit "フォローやめる", class: "btn btn-primary btn-block" %>
+  <%= f.submit "フォローをやめる", class: "btn btn-primary btn-block",
+      data: { disable_with: "送信中...", confirm: "フォローをやめると情報開示状態も解消されます。続けますか？"} %>
 <% end %>

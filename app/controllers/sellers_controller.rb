@@ -14,7 +14,7 @@ class SellersController < ApplicationController
   end
 
   def new
-    if Seller.joins(:users).where(seller_users: {user_id: current_user.id}).empty?
+    if current_user.sellers.empty?
       @seller = Seller.new
     else
       flash[:success] = "あなたはすでに企業情報を登録済です。"
@@ -88,7 +88,7 @@ class SellersController < ApplicationController
   def followers
     @title = "Followers"
     @seller = Seller.find(params[:id])
-    @followers = @seller.s_relationships.all
+    @followers = @seller.relationships.find(follower_kind: "buyer")
   end
   
 private
