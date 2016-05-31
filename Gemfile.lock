@@ -1,7 +1,6 @@
 PATH
   remote: ./vendor/double_submit_protection
   specs:
-    double_submit_protection (0.0.1)
 
 GEM
   remote: https://rubygems.org/
