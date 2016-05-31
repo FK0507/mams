@@ -1,0 +1,55 @@
+<% provide(:title, '売希望企業-概要') %>
+<%= render 'shared/flash_message' %>
+<div class = "container">
+  <div class="row">
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-8">
+      <br>
+      <h4>【売希望企業】No.<%= @seller.id %>の概要</h4>
+      <div class="row">
+        <div class="col-md-6 company-show-window">
+          <div class="row">
+            <h5>企業の概要</h5>
+            <table class="table">
+              <tr>
+                <th class="col-md-4">項目</th><th class="col-md-8">内容</th>
+              </tr>
+              <tr>
+                <td class="col-md-4">No.</td><td class="col-md-8"><%= @seller.id %></td>
+              </tr>
+              <tr>
+                <td class="col-md-4">所在地</td><td class="col-md-8"><%= @seller.pref %><%= @seller.city %></td>
+              </tr>
+              <tr>
+                <td class="col-md-4">業種</td><td class="col-md-8"><%= Industry.where(id: @seller.industry_id).pluck(:ind_b)[0] %></td>
+              </tr>
+              <tr>
+                <td class="col-md-4">主な取扱い商品・サービス</td><td class="col-md-8"><%= @seller.goods %></td>
+              </tr>
+              <tr>
+                <td class="col-md-4">役員数</td><td class="col-md-8"><%= @seller.dir %></td>
+              </tr>
+              <tr>
+                <td class="col-md-4">従業員数</td><td class="col-md-8"><%= @seller.reg %></td>
+              </tr>
+              <tr>
+                <td class="col-md-4">Ｍ＆Ａアドバイザー</td><td class="col-md-8"><%= @seller.adv %> <%= @seller.mainbk_branch %><%= @seller.mainbk_bkind %></td>
+              </tr>
+          　</table>    
+          </div>
+          <%= link_to '詳細情報', show_detail_seller_path(@seller.id), class: "btn btn-primary" %>
+        </div>
+        <div class="col-md-6 company-show-window">
+          <h5>フォロー状況</h5>
+          <% if current_user.kind == "buyer" then  %>
+            <%= render 'follow_form' %>
+          <% end %> 
+            <%= render 'stats' %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2">
+    </div>
+  </div>
+</div>

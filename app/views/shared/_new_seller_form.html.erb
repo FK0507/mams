@@ -1,0 +1,115 @@
+<%= form_for(@seller) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+        <br>
+        <%= f.label :pref, "都道府県" %>
+        <%= f.text_field :pref, class: 'form-control' %>
+        <br>
+        <%= f.label :city, "市町村" %>
+        <%= f.text_field :city, class: 'form-control' %>
+        <br>
+        <%= f.label :adr, "番地・ビル名" %>
+        <%= f.text_field :adr, class: 'form-control' %>
+        <br>
+        <%= f.label :president, "代表者" %>
+        <%= f.text_field :president, class: 'form-control' %>
+        <br>
+        <%= f.label :affil1, "関係会社1" %>
+        <%= f.text_field :affil1, class: 'form-control' %>
+        <br>
+        <%= f.label :affil2, "関係会社2" %>
+        <%= f.text_field :affil2, class: 'form-control' %>
+        <br>
+        <%= f.label :affil3, "関係会社3" %>
+        <%= f.text_field :affil3, class: 'form-control' %>
+        <br>
+        <%= f.label :affil_about, "関係会社の概要" %>
+        <%= f.text_area :affil_about, class: 'form-control' %>
+        <br>
+        <%= f.label :re_name1, "所有不動産1 名称" %>
+        <%= f.text_field :re_name1, class: 'form-control' %>
+        <br>
+        <%= f.label :re_area1, "所有不動産1 面積（㎡）" %>
+        <%= f.text_field :re_area1, class: 'form-control' %>
+        <br>
+        <%= f.label :re_use1, "所有不動産1 用途" %>
+        <%= f.text_field :re_use1, class: 'form-control' %>
+        <br>
+        <%= f.label :re_name2, "所有不動産2 名称" %>
+        <%= f.text_field :re_name2, class: 'form-control' %>
+        <br>
+        <%= f.label :re_area2, "所有不動産2 面積（㎡）" %>
+        <%= f.text_field :re_area2, class: 'form-control' %>
+        <br>
+        <%= f.label :re_use2, "所有不動産2 用途" %>
+        <%= f.text_field :re_use1, class: 'form-control' %>
+        <br>
+        <%= f.label :re_name3, "所有不動産3 名称" %>
+        <%= f.text_field :re_name3, class: 'form-control' %>
+        <br>
+        <%= f.label :re_area3, "所有不動産3 面積（㎡）" %>
+        <%= f.text_field :re_area3, class: 'form-control' %>
+        <br>
+        <%= f.label :re_use3, "所有不動産3 用途" %>
+        <%= f.text_field :re_use3, class: 'form-control' %>
+        <br>
+        <%= f.label :sh1, "株主1" %>
+        <%= f.text_field :sh1, class: 'form-control' %>
+        <br>
+        <%= f.label :sh2, "株主2" %>
+        <%= f.text_field :sh2, class: 'form-control' %>
+        <br>
+        <%= f.label :sh3, "株主3" %>
+        <%= f.text_field :sh3, class: 'form-control' %>
+        <br>
+        <%= f.label :sh4, "株主4" %>
+        <%= f.text_field :sh4, class: 'form-control' %>
+        <br>
+        <%= f.label :sh5, "株主5" %>
+        <%= f.text_field :sh5, class: 'form-control' %>
+        <br>
+        <%= f.label :sh_about, "株主の概要" %>
+        <%= f.text_area :sh_about, class: 'form-control' %>
+        <br>
+        <%= f.label :busi1_about, "事業1の概要" %>
+        <%= f.text_area :busi1_about, class: 'form-control' %>
+        <br>
+        <%= f.label :busi1_sales, "事業1の年間売上高" %>
+        <%= f.text_field :busi1_sales, class: 'form-control' %>
+        <br>
+        <%= f.label :busi1_stro, "事業1の強み" %>
+        <%= f.text_area :busi1_stro, class: 'form-control' %>
+        <br>
+        <%= f.label :busi1_weak, "事業1の弱み" %>
+        <%= f.text_area :busi1_weak, class: 'form-control' %>
+        <br>
+        <%= f.label :busi2_about, "事業2の概要" %>
+        <%= f.text_area :busi2_about, class: 'form-control' %>
+        <br>
+        <%= f.label :busi2_sales, "事業2の年間売上高" %>
+        <%= f.text_field :busi2_sales, class: 'form-control' %>
+        <br>
+        <%= f.label :busi2_stro, "事業2の強み" %>
+        <%= f.text_area :busi2_stro, class: 'form-control' %>
+        <br>
+        <%= f.label :busi2_weak, "事業2の弱み" %>
+        <%= f.text_area :busi2_weak, class: 'form-control' %>        
+        <br>
+        <%= f.label :busi3_about, "事業3の概要" %>
+        <%= f.text_area :busi3_about, class: 'form-control' %>
+        <br>
+        <%= f.label :busi3_sales, "事業3の年間売上高" %>
+        <%= f.text_field :busi3_sales, class: 'form-control' %>
+        <br>
+        <%= f.label :busi3_stro, "事業3の強み" %>
+        <%= f.text_area :busi3_stro, class: 'form-control' %>
+        <br>
+        <%= f.label :busi3_weak, "事業3の弱み" %>
+        <%= f.text_area :busi3_weak, class: 'form-control' %>        
+        <br>
+        <%= f.label :d_point, "アピールポイント" %>
+        <%= f.text_area :d_point, class: 'form-control' %>
+        <br>
+  </div>
+  <%= f.submit "登録", class: "btn btn-primary" %>
+<% end %>

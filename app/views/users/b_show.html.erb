@@ -1,0 +1,33 @@
+<% provide(:title, '買希望企業-プロフィール') %>
+<div class="row">
+  <div class="col-md-3">
+  </div>
+  <div class="col-md-6">
+    <br>
+    <br>
+    <h3>ユーザー情報</h3>
+    <hr>
+    <h3>買収希望</h3>
+    <h4>ユーザー：<%= @user.fname %><%= @user.gname %></h4>    
+    <h4>メールアドレス：<%= @user.email %></h4>
+　　<br>  
+　　<%= link_to "ユーザプロフィール編集", edit_user_registration_path(@user.id), class: "btn btn-success" %>
+    <%= link_to "ユーザプロフィール削除", {:controller => "users/registrations", :action => "destroy"}, method: :delete, data: {confirm: '本当に削除しますか？'}, class: "btn btn-success" %>
+    <hr>
+    <h3>買収希望企業</h3>
+    <% if @user.buyers.empty? %>
+      <h4>まだ登録されていません。</h4>
+　　　<%= link_to "買企業登録", new_buyer_path, class: "btn btn-success" %>
+    <% else %>
+      <h3>企業No：<%= @user.buyers[0].id %></h3>
+      <h3>企業名：<%= @user.buyers[0].cname %></h3>
+      <br>
+      <% @buyer = @user.buyers[0] %>
+　　　<%= link_to "買企業情報-編集", edit_buyer_path(@buyer.id), class: "btn btn-success" %>
+　　　<%= link_to "買企業情報-削除", @buyer, method: :delete, data: {confirm: '本当に削除しますか？'}, class: "btn btn-success" %>
+    <% end %>
+    <hr>
+  <div class="col-md-3">
+  </div>
+</div>
+

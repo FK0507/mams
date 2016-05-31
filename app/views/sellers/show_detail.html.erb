@@ -1,0 +1,423 @@
+<% provide(:title, '売希望企業-概要') %>
+<div class = "container">
+  <div class="row">
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-10">
+      <% @user = @seller.users[0] %>
+      <%= render 'user_info' %>
+      <div id="navbar">
+        <ul class="nav nav-tabs">
+          <li class="active"><a class="scr" href="#content1" data-box=".output-window">事業内容</a></li>
+          <li><a class="scr" href="#content2" data-box=".output-window">関係会社</a></li>
+          <li><a class="scr" href="#content3" data-box=".output-window">保有資産</a></li>
+          <li><a class="scr" href="#content4" data-box=".output-window">財務</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-1">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-10">
+      <div data-spy="scroll" data-target="#navbar" class="output-window">      
+        <div class="field">
+          <section id="content1">
+            <br>
+            <h4>事業の状況</h4>
+            <br>
+              <h5>事業の概要</h5>
+              <div><%= @seller.busi_about %></div>
+            <br>
+            <hr class="input-hr">
+            <h4>事業名</h4>
+              <p><%= @seller.busi_name1 %></p>
+            <br>
+            <h5>事業の概要</h5>
+              <p><%= @seller.busi_about1 %></p>
+            <br>
+            <h5>主な商品・サービス</h5>
+              <p><%= @seller.busi_goods1 %></p>
+            <br>
+            <h5>年間売上高</h5>
+              <p><%= @seller.busi_sales1 %>  <%= @seller.busi_unit %></p>
+            <br>
+            <h5>事業上の強みと弱み</h5>
+  　　　　　　<div class="form-inline">
+      　　　　　　<h5>強み</h5><p><%= @seller.busi_stro1 %></p>
+              </div>
+  　　　　　　<div class="form-inline">
+                <h5>弱み</h5><p><%= @seller.busi_weak1 %></p>
+              </div>
+              <br>
+            <hr class="input-hr">
+            <h4>事業名</h4>
+              <h5><%= @seller.busi_name2 %></h5>
+            <br>
+            <h5>事業の概要</h5>
+              <p><%= @seller.busi_about2 %></p>
+            <br>
+            <h5>主な商品・サービス</h5>
+              <p><%= @seller.busi_goods2 %></p>
+            <br>
+            <h5>年間売上高</h5>
+              <p><%= @seller.busi_sales2 %>  <%= @seller.busi_unit %></p>
+            <br>
+            <h5>事業上の強みと弱み</h5>
+  　　　　　　<div class="form-inline">
+  　　　　　　  <h5>強み</h5><p><%= @seller.busi_stro2 %></p>
+              </div>
+  　　　　　　<div class="form-inline">
+                <h5>弱み</h5><p><%= @seller.busi_weak2 %></p>
+              </div>
+            <hr class="input-hr">
+            <h4>事業名</h4>
+              <p><%= @seller.busi_name3 %></p>
+            <br>
+            <h5>事業の概要</h5>
+              <p><%= @seller.busi_about3 %></p>
+            <br>
+            <h5>主な商品・サービス</h5>
+              <p><%= @seller.busi_goods3 %></p>
+            <br>
+            <h5>年間売上高</h5>
+              <p><%= @seller.busi_sales3 %>  <%= @seller.busi_unit %></p>
+            <br>
+            <h5>事業上の強みと弱み</h5>
+  　　　　　　<div class="form-inline">
+  　　　　　　  <h5>強み</h5><p><%= @seller.busi_stro3 %></p>
+              </div>
+  　　　　　　<div class="form-inline">
+                <h5>弱み</h5><p><%= @seller.busi_weak3 %></p>
+              </div>
+        　</section>
+        <hr class="input-hr-sec">
+          <section id="content2">
+            <br>
+            <h4>関係会社の状況</h4>
+            <br>
+            <h4>関係会社の概要</h4>
+              <p><%= @seller.aff_about %></p>
+            <br>
+            <hr class="input-hr">
+            <h4>関係会社1</h4>
+              <p><%= @seller.aff_name1 %></p>
+            <br>
+  　        <h4>主要株主</h4>
+  　　　　　　<div class="row">
+    　           <div class="col-md-1">
+      　         </div>
+      　         <div class="col-md-10">
+                  <table class="table">
+                    <tr>
+                      <th class="col-md-4">株主</th><th class="col-md-8">持株比率</th>
+                    </tr>
+                    <tr>
+                      <td class="col-md-4">第1順位</td><td class="col-md-8"><%= @seller.aff_sh1_per1 %></td>
+                    </tr>
+                    <tr>
+                      <td class="col-md-4">第2順位</td><td class="col-md-8"><%= @seller.aff_sh2_per1 %></td>
+                    </tr>
+                    <tr>
+                      <td class="col-md-4">第3順位</td><td class="col-md-8"><%= @seller.aff_sh3_per1 %></td>
+                    </tr>
+                  </table>
+                </div>
+    　           <div class="col-md-1">
+      　         </div>
+      　       </div> 
+            <br>
+            <hr class="input-hr">
+            <h4>関係会社2</h4>
+              <p><%= @seller.aff_name2 %></p>
+            <br>
+            <h4>主要株主</h4>
+              <div class="row">
+    　           <div class="col-md-1">
+      　         </div>
+      　         <div class="col-md-10">
+                  <table class="table">
+                    <tr>
+                      <th class="col-md-4">株主</th><th class="col-md-8">持株比率</th>
+                    </tr>
+                    <tr>
+                      <td class="col-md-4">第1順位</td><td class="col-md-8"><%= @seller.aff_sh1_per2 %></td>
+                    </tr>
+                    <tr>
+                      <td class="col-md-4">第2順位</td><td class="col-md-8"><%= @seller.aff_sh2_per2 %></td>
+                    </tr>
+                    <tr>
+                      <td class="col-md-4">第3順位</td><td class="col-md-8"><%= @seller.aff_sh3_per2 %></td>
+                    </tr>
+                  </table>
+                </div>
+              <div class="col-md-1">
+              </div>
+            </div>
+            <br>
+            <hr class="input-hr">
+            <h4>関係会社3</h4>
+              <p><%= @seller.aff_name3 %></p>
+            <br>
+            <h4>主要株主</h4>
+              <div class="row">
+    　           <div class="col-md-1">
+      　         </div>
+      　         <div class="col-md-10">
+                <table class="table">
+                  <tr>
+                    <th class="col-md-4">株主</th><th class="col-md-8">持株比率</th>
+                  </tr>
+                  <tr>
+                    <td class="col-md-4">第1順位</td><td class="col-md-8"><%= @seller.aff_sh1_per3 %></td>
+                  </tr>
+                  <tr>
+                    <td class="col-md-4">第2順位</td><td class="col-md-8"><%= @seller.aff_sh2_per3 %></td>
+                  </tr>
+                  <tr>
+                    <td class="col-md-4">第3順位</td><td class="col-md-8"><%= @seller.aff_sh3_per3 %></td>
+                  </tr>
+                </table>
+                </div>
+    　           <div class="col-md-1">
+      　         </div>
+      　       </div>
+        　　<br>
+    　     </section>        
+        <hr class="input-hr-sec">
+          <section id="content3">
+            <br>
+            <h4>保有資産の状況</h4>
+            <br>
+            <h4>主要設備</h4>
+            <br>
+            <h5>設備名1</h5>
+              <p><%= @seller.eq_name1 %>(設備の種類：<%= @seller.eq_kind1 %> 取得年：<%= @seller.eq_year1 %>)</p>
+              <br>
+            <h5>設備の特徴</h5>
+              <p><%= @seller.eq_point1 %></p>
+              <br>
+              <hr class="input-hr">
+            <h5>設備名2</h5>
+              <p><%= @seller.eq_name2 %>(設備の種類：<%= @seller.eq_kind2 %> 取得年：<%= @seller.eq_year2 %>)</p>
+              <br>
+            <h5>設備の特徴</h5>
+              <p><%= @seller.eq_point2 %></p>
+              <br>
+              <hr class="input-hr">
+            <h5>設備名3</h5>
+              <p><%= @seller.eq_name3 %>(設備の種類：<%= @seller.eq_kind3 %> 取得年：<%= @seller.eq_year3 %>)</p>
+              <br>
+            <h5>設備の特徴</h5>
+              <p><%= @seller.eq_point3 %></p>
+              <br>
+              <hr class="input-hr">
+              <br>
+            <h4>主要不動産</h4>
+            <br>
+            <h5>不動産1</h5>
+              <p><%= @seller.re_name1 %>(不動産の種類：<%= @seller.re_kind1 %> 面積:<%= @seller.re_area1 %><%= @seller.re_a_unit1 %>)</p>
+              <br>
+              <h5>用途</h5>
+              <p><%= @seller.re_use1 %></p>
+              <br>
+              <hr class="input-hr">
+              <br>
+            <h5>不動産2</h5>
+              <p><%= @seller.re_name2 %>(不動産の種類：<%= @seller.re_kind2 %> 面積:<%= @seller.re_area2 %><%= @seller.re_a_unit2 %>)</p>
+              <br>
+              <h5>用途</h5>
+              <p><%= @seller.re_use2 %></p>
+              <br>
+              <hr class="input-hr">
+              <br>
+            <h5>不動産3</h5>
+              <p><%= @seller.re_name3 %>(不動産の種類：<%= @seller.re_kind3 %> 面積:<%= @seller.re_area3 %><%= @seller.re_a_unit3 %>)</p>
+              <br>
+              <h5>用途</h5>
+              <p><%= @seller.re_use3 %></p>
+              <br>
+              <hr class="input-hr">
+              <br>
+            <h4>所有する主な金融商品</h4>
+              <br>
+              <h5>所有する金融商品の概要</h5>
+              <p><%= @seller.fi_about %></p>
+              <br>
+              <hr class="input-hr">
+            <h5>金融商品1</h5>
+              <p><%= @seller.fi_name1 %>(金融商品の種類：<%= @seller.fi_kind1 %>)</p>
+              <h5>金融商品の時価</h5>
+              <p><%= @seller.fi_val1 %><%= @seller.fi_unit1 %></p>
+  　          <br>
+              <hr class="input-hr">
+            <h5>金融商品2</h5>
+              <p><%= @seller.fi_name2 %>(金融商品の種類：<%= @seller.fi_kind2 %>)</p>
+              <h5>金融商品の時価</h5>
+              <p><%= @seller.fi_val2 %><%= @seller.fi_unit2 %></p>
+  　          <br>
+              <hr class="input-hr">
+            <h5>金融商品3</h5>
+              <p><%= @seller.fi_name3 %>(金融商品の種類：<%= @seller.fi_kind3 %>)</p>
+              <h5>金融商品の時価</h5>
+              <p><%= @seller.fi_val3 %><%= @seller.fi_unit3 %></p>
+  　          <br>
+    　     </section>        
+        <hr class="input-hr-sec">
+          <section id="content4">
+            <br>
+            <h4>財務の状況</h4>
+            <br>
+            <h4>業績の推移</h4>
+            <table class="table">
+              <tr>
+                <th class="col-md-3">勘定科目</th>
+                <th class="col-md-3" style="text-align:center">
+                  前々々期<br>
+                  <%= @seller.ppp_fy_y %>年<%= @seller.ppp_fy_m %>月期 <br>
+                </th>
+                <th class="col-md-3" style="text-align:center">
+                  前々期<br>
+                  <%= @seller.pp_fy_y %>年<%= @seller.pp_fy_m %>月期 <br>
+                </th>
+                <th class="col-md-3" style="text-align:center">
+                  前期<br>
+                  <%= @seller.p_fy_y %>年<%= @seller.p_fy_m %>月期 <br>
+                </th>
+              </tr>
+              <tr>
+                <td class="col-md-3">売上高</td>
+                <td class="col-md-3"><%= number_to_currency(@seller.ppp_sales, unit: "", precision: 0, format: '%n%u') %></td>
+                <td class="col-md-3"><%= number_to_currency(@seller.pp_sales, unit: "", precision: 0, format: '%n%u') %></td>
+                <td class="col-md-3"><%= number_to_currency(@seller.p_sales, unit: "", precision: 0, format: '%n%u') %></td>
+              </tr>
+              <tr>
+                <td class="col-md-3">売上原価</td>
+                <td class="col-md-3"><%= number_to_currency(@seller.ppp_cogs, unit: "", precision: 0, format: '%n%u') %></td>
+                <td class="col-md-3"><%= number_to_currency(@seller.pp_cogs, unit: "", precision: 0, format: '%n%u') %></td>
+                <td class="col-md-3"><%= number_to_currency(@seller.p_cogs, unit: "", precision: 0, format: '%n%u') %></td>
+              </tr>
+              <tr>
+                <td class="col-md-3">売上総利益</td>
+                <td class="col-md-3"><%= number_to_currency(@seller.ppp_gp, unit: "", precision: 0, format: '%n%u') %></td>
+                <td class="col-md-3"><%= number_to_currency(@seller.pp_gp, unit: "", precision: 0, format: '%n%u') %></td>
+                <td class="col-md-3"><%= number_to_currency(@seller.p_gp, unit: "", precision: 0, format: '%n%u') %></td>
+              </tr>
+              <tr>
+                <td class="col-md-3">販管費</td>
+                <td class="col-md-3"><%= number_to_currency(@seller.ppp_sga, unit: "", precision: 0, format: '%n%u') %></td>
+                <td class="col-md-3"><%= number_to_currency(@seller.pp_sga, unit: "", precision: 0, format: '%n%u') %></td>
+                <td class="col-md-3"><%= number_to_currency(@seller.p_sga, unit: "", precision: 0, format: '%n%u') %></td>
+              </tr>
+              <tr>
+                <td class="col-md-3">営業利益</td>
+                <td class="col-md-3"><%= number_to_currency(@seller.ppp_opin, unit: "", precision: 0, format: '%n%u') %></td>
+                <td class="col-md-3"><%= number_to_currency(@seller.pp_opin, unit: "", precision: 0, format: '%n%u') %></td>
+                <td class="col-md-3"><%= number_to_currency(@seller.p_opin, unit: "", precision: 0, format: '%n%u') %></td>
+              </tr>
+              <tr>
+                <td class="col-md-3">経常利益</td>
+                <td class="col-md-3"><%= number_to_currency(@seller.ppp_orin, unit: "", precision: 0, format: '%n%u') %></td>
+                <td class="col-md-3"><%= number_to_currency(@seller.pp_orin, unit: "", precision: 0, format: '%n%u') %></td>
+                <td class="col-md-3"><%= number_to_currency(@seller.p_orin, unit: "", precision: 0, format: '%n%u') %></td>
+              </tr>
+              <tr>
+                <td class="col-md-3">当期純利益</td>
+                <td class="col-md-3"><%= number_to_currency(@seller.ppp_nein, unit: "", precision: 0, format: '%n%u') %></td>
+                <td class="col-md-3"><%= number_to_currency(@seller.pp_nein, unit: "", precision: 0, format: '%n%u') %></td>
+                <td class="col-md-3"><%= number_to_currency(@seller.p_nein, unit: "", precision: 0, format: '%n%u') %></td>
+              </tr>
+            </table>
+            <br>
+            <h4>得意先別取引額（前期）</h4>
+            <table class="table">
+              <tr>
+                <th class="col-md-4">得意先名</th><th class="col-md-3">取引金額</th>
+              </tr>
+              <tr>
+                <td class="col-md-4"><%= @seller.sal_name1 %></td>
+                <td class="col-md-3"><%= number_to_currency(@seller.sal_val1, unit: "", precision: 0, format: '%n%u') %></td>
+              </tr>
+              <tr>
+                <td class="col-md-4"><%= @seller.sal_name2 %></td>
+                <td class="col-md-3"><%= number_to_currency(@seller.sal_val2, unit: "", precision: 0, format: '%n%u') %></td>
+              </tr>
+              <tr>
+                <td class="col-md-4"><%= @seller.sal_name3 %></td>
+                <td class="col-md-3"><%= number_to_currency(@seller.sal_val3, unit: "", precision: 0, format: '%n%u') %></td>
+              </tr>
+            </table>
+            <br> 
+            <h4>仕入先別取引額（前期）</h4>
+            <table class="table">
+              <tr>
+                <th class="col-md-4">仕入先名</th><th class="col-md-3">取引金額</th>
+              </tr>
+              <tr>
+                <td class="col-md-4"><%= @seller.pur_name1 %></td>
+                <td class="col-md-3"><%= number_to_currency(@seller.pur_val1, unit: "", precision: 0, format: '%n%u') %></td>
+              </tr>
+              <tr>
+                <td class="col-md-4"><%= @seller.pur_name2 %></td>
+                <td class="col-md-3"><%= number_to_currency(@seller.pur_val2, unit: "", precision: 0, format: '%n%u') %></td>
+              </tr>
+              <tr>
+                <td class="col-md-4"><%= @seller.pur_name3 %></td>
+                <td class="col-md-3"><%= number_to_currency(@seller.pur_val3, unit: "", precision: 0, format: '%n%u') %></td>
+              </tr>
+            </table>
+            <br> 
+            <h4>外注先別取引額（前期）</h4>
+            <table class="table">
+              <tr>
+                <th class="col-md-4">外注先名</th><th class="col-md-3">取引金額</th>
+              </tr>
+              <tr>
+                <td class="col-md-4"><%= @seller.os_name1 %></td>
+                <td class="col-md-3"><%= number_to_currency(@seller.os_val1, unit: "", precision: 0, format: '%n%u') %></td>
+              </tr>
+              <tr>
+                <td class="col-md-4"><%= @seller.os_name2 %></td>
+                <td class="col-md-3"><%= number_to_currency(@seller.os_val2, unit: "", precision: 0, format: '%n%u') %></td>
+              </tr>
+              <tr>
+                <td class="col-md-4"><%= @seller.os_name3 %></td>
+                <td class="col-md-3"><%= number_to_currency(@seller.os_val3, unit: "", precision: 0, format: '%n%u') %></td>
+              </tr>
+            </table>
+            <br> 
+            <h4>貸借対照表の概要(前期）</h4>
+            <table class="table">
+              <tr>
+                <th class="col-md-4">項目</th><th class="col-md-3">金額</th>
+              </tr>
+              <tr>
+                <td class="col-md-4">流動資産</td>
+                <td class="col-md-3"><%= number_to_currency(@seller.p_ca, unit: "", precision: 0, format: '%n%u') %></td>
+              </tr>
+              <tr>
+                <td class="col-md-4">固定資産</td>
+                <td class="col-md-3"><%= number_to_currency(@seller.p_nca, unit: "", precision: 0, format: '%n%u') %></td>
+              </tr>
+              <tr>
+                <td class="col-md-4">流動負債</td>
+                <td class="col-md-3"><%= number_to_currency(@seller.p_cl, unit: "", precision: 0, format: '%n%u') %></td>
+              </tr>
+              <tr>
+                <td class="col-md-4">固定負債</td>
+                <td class="col-md-3"><%= number_to_currency(@seller.p_ncl, unit: "", precision: 0, format: '%n%u') %></td>
+              </tr>
+              <tr>
+                <td class="col-md-4">純資産</td>
+                <td class="col-md-3"><%= number_to_currency(@seller.p_na, unit: "", precision: 0, format: '%n%u') %></td>
+              </tr>
+            </table>
+          </section>
+        </div>
+      </div>
+      <div class="col-md-1">
+      </div>
+    </div>
+</div>

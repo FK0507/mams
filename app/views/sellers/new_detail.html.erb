@@ -1,0 +1,791 @@
+<div class="row">
+  <div class="col-md-1">
+  </div>
+  <div class="col-md-6">
+    <br>
+    <div id="SSpy">
+      <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><a class="scr" href="#content1" data-box=".input-window">事業内容</a></li>
+        <li role="presentation"><a class="scr" href="#content2" data-box=".input-window">関係会社</a></li>
+        <li role="presentation"><a class="scr" href="#content3" data-box=".input-window">保有資産</a></li>
+        <li role="presentation"><a class="scr" href="#content4" data-box=".input-window">財務</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-5">
+    <br>
+    <h5 style="text-align:center;">譲渡希望-<%= @user.fname %><%= @user.gname %>さんの企業情報</h5>    
+  </div>
+</div>
+<div class="row">
+<%= form_for @seller, url: confirm_detail_seller_path(@seller.id), html: {method: "patch"} do |f| %>
+  <div class="col-md-1">
+  </div>
+  <div class="col-md-6 window">
+    <div class="input-window" data-spy="scroll" data-target="#SSpy">      
+        <%= render 'shared/error_messages', object: f.object %>
+      <div class="field">
+        <section id="content1">
+          <br>
+          <h3>事業の状況</h3>
+          <br>
+          <%= f.label :busi_about, "事業の概要"%>
+          <%= f.text_field :busi_about, class: 'form-control' %>
+          <br>
+          <div class="form-inline">
+          <%= f.label :busi_unit, "金額単位" %>
+            <label><%= f.radio_button :busi_unit, '千円' %>千円</label>
+            <label><%= f.radio_button :busi_unit, '百万円' %>百万円</label>
+          </div>
+          <br>
+          <hr class="input-hr">
+            <%= f.label :busi_name1, "事業名"%>
+            <%= f.text_field :busi_about1, class: 'form-control' %>
+          <br>
+          <div class="row">
+  　        <div class="col-md-1">
+  　        </div>
+  　        <div class="col-md-10">
+              <%= f.label :busi_about1, "概要"%>
+              <%= f.text_area :busi_about1, class: 'form-control' %>
+  　          <br>
+              <div class="row">
+       　        <div class="col-md-8">
+       　          <%= f.label :busi_goods1, "主な商品・サービス" %>
+                  <%= f.text_area :busi_goods1, class: 'form-control' %>
+       　        </div>
+       　        <div class="col-md-4">
+       　          <%= f.label :busi_sales1, "年間売上高" %>
+                  <%= f.text_field :busi_sales1, class: 'form-control' %>
+      　         </div>
+    　         </div>
+    　         <br>
+  　          <%= f.label :busi_stro1, "事業の強み" %>
+              <%= f.text_area :busi_stro1, class: 'form-control' %>
+  　          <br>
+  　          <%= f.label :busi_weak1, "事業の弱み" %>
+              <%= f.text_area :busi_weak1, class: 'form-control' %>
+              <br>    
+            </div>
+            <div class="col-md-1">
+  　        </div>
+  　      </div>
+         <hr class="input-hr">
+            <%= f.label :busi_name2, "事業名"%>
+            <%= f.text_field :busi_about2, class: 'form-control' %>
+          <br>
+          <div class="row">
+  　        <div class="col-md-1">
+  　        </div>
+  　        <div class="col-md-10">
+              <%= f.label :busi_about2, "概要"%>
+              <%= f.text_area :busi_about2, class: 'form-control' %>
+  　          <br>
+              <div class="row">
+       　        <div class="col-md-8">
+       　          <%= f.label :busi_goods2, "主な商品・サービス" %>
+                  <%= f.text_area :busi_goods2, class: 'form-control' %>
+       　        </div>
+       　        <div class="col-md-4">
+       　          <%= f.label :busi_sales2, "年間売上高" %>
+                  <%= f.text_field :busi_sales2, class: 'form-control' %>
+      　         </div>
+    　         </div>
+      　         <br>
+    　          <%= f.label :busi_stro2, "事業の強み" %>
+                <%= f.text_area :busi_stro2, class: 'form-control' %>
+    　          <br>
+    　          <%= f.label :busi_weak2, "事業の弱み" %>
+                <%= f.text_area :busi_weak2, class: 'form-control' %>
+                <br>    
+    　       </div>
+            <div class="col-md-1">
+            </div>
+          </div>
+          <hr class="input-hr">
+            <%= f.label :busi_name3, "事業名"%>
+            <%= f.text_field :busi_about3, class: 'form-control' %>
+          <br>
+          <div class="row">
+  　        <div class="col-md-1">
+  　        </div>
+  　        <div class="col-md-10">
+              <%= f.label :busi_about3, "概要"%>
+              <%= f.text_area :busi_about3, class: 'form-control' %>
+  　          <br>
+              <div class="row">
+       　        <div class="col-md-8">
+       　          <%= f.label :busi_goods3, "主な商品・サービス" %>
+                  <%= f.text_area :busi_goods3, class: 'form-control' %>
+       　        </div>
+       　        <div class="col-md-4">
+       　          <%= f.label :busi_sales3, "年間売上高" %>
+                  <%= f.text_field :busi_sales3, class: 'form-control' %>
+      　         </div>
+    　         </div>
+    　         <br>
+  　          <%= f.label :busi_stro3, "事業の強み" %>
+              <%= f.text_area :busi_stro3, class: 'form-control' %>
+  　          <br>
+  　          <%= f.label :busi_weak3, "事業の弱み" %>
+              <%= f.text_area :busi_weak3, class: 'form-control' %>
+              <br>    
+            </div>
+            <div class="col-md-1">
+  　         </div>
+          </div>
+        </section>
+      <hr class="input-hr-sec">
+        <section id="content2">
+          <br>
+          <h3>関係会社の状況</h3>
+          <br>
+          <%= f.label :aff_about, "関係会社の状況"%>
+          <%= f.text_area :aff_about, class: 'form-control' %>
+          <br>
+          <hr class="input-hr">
+            <%= f.label :aff_name1, "関係会社名"%>
+            <%= f.text_field :aff_name1, class: 'form-control' %>
+          <br>
+          <p>主要株主</p>
+          <div class="row">
+　          <div class="col-md-1">
+  　         </div>
+  　         <div class="col-md-10">
+              <div class="form-inline">
+                <%= f.label :aff_sh1_name1, "株主名" %>
+                <%= f.text_field :aff_sh1_name1, class: 'form-control' %>
+                <%= f.label :aff_sh1_per1, "持株比率" %>
+                <%= f.text_field :aff_sh1_per1, class: 'form-control' %>
+  　           </div>
+              <div class="form-inline">
+                <%= f.label :aff_sh2_name1, "株主名" %>
+                <%= f.text_field :aff_sh2_name1, class: 'form-control' %>
+                <%= f.label :aff_sh2_per1, "持株比率" %>
+                <%= f.text_field :aff_sh2_per1, class: 'form-control' %>
+  　           </div>
+              <div class="form-inline">
+                <%= f.label :aff_sh3_name1, "株主名" %>
+                <%= f.text_field :aff_sh3_name1, class: 'form-control' %>
+                <%= f.label :aff_sh3_per1, "持株比率" %>
+                <%= f.text_field :aff_sh3_per1, class: 'form-control' %>
+  　           </div>
+            </div>
+  　         <div class="col-md-1">
+  　         </div>
+          </div>
+          <%= f.label :aff_busi1, "事業内容"%>
+          <%= f.text_area :aff_busi1, class: 'form-control' %>
+  　       <br>
+          <hr class="input-hr">
+            <%= f.label :aff_name2, "関係会社名"%>
+            <%= f.text_field :aff_name2, class: 'form-control' %>
+          <br>
+          <p>主要株主</p>
+          <div class="row">
+　          <div class="col-md-1">
+  　         </div>
+  　         <div class="col-md-10">
+              <div class="form-inline">
+                <%= f.label :aff_sh1_name2, "株主名" %>
+                <%= f.text_field :aff_sh1_name2, class: 'form-control' %>
+                <%= f.label :aff_sh1_per2, "持株比率" %>
+                <%= f.text_field :aff_sh1_per2, class: 'form-control' %>
+  　           </div>
+              <div class="form-inline">
+                <%= f.label :aff_sh2_name2, "株主名" %>
+                <%= f.text_field :aff_sh2_name2, class: 'form-control' %>
+                <%= f.label :aff_sh2_per2, "持株比率" %>
+                <%= f.text_field :aff_sh2_per2, class: 'form-control' %>
+  　           </div>
+              <div class="form-inline">
+                <%= f.label :aff_sh3_name2, "株主名" %>
+                <%= f.text_field :aff_sh3_name2, class: 'form-control' %>
+                <%= f.label :aff_sh3_per2, "持株比率" %>
+                <%= f.text_field :aff_sh3_per2, class: 'form-control' %>
+  　           </div>
+            </div>
+  　         <div class="col-md-1">
+  　         </div>
+          </div>
+          <%= f.label :aff_busi2, "事業内容"%>
+          <%= f.text_area :aff_busi2, class: 'form-control' %>
+  　       <br>
+  　       <hr class="input-hr">
+            <%= f.label :aff_name3, "関係会社名"%>
+            <%= f.text_field :aff_name3, class: 'form-control' %>
+          <br>
+            <%= f.label "主要株主" %>
+          <div class="row">
+　          <div class="col-md-1">
+  　         </div>
+  　         <div class="col-md-10">
+              <div class="form-inline">
+                <%= f.label :aff_sh1_name3, "株主名" %>
+                <%= f.text_field :aff_sh1_name3, class: 'form-control' %>
+                <%= f.label :aff_sh1_per3, "持株比率" %>
+                <%= f.text_field :aff_sh1_per3, class: 'form-control' %>
+  　           </div>
+              <div class="form-inline">
+                <%= f.label :aff_sh2_name3, "株主名" %>
+                <%= f.text_field :aff_sh2_name3, class: 'form-control' %>
+                <%= f.label :aff_sh2_per3, "持株比率" %>
+                <%= f.text_field :aff_sh2_per3, class: 'form-control' %>
+  　           </div>
+              <div class="form-inline">
+                <%= f.label :aff_sh3_name3, "株主名" %>
+                <%= f.text_field :aff_sh3_name3, class: 'form-control' %>
+                <%= f.label :aff_sh3_per3, "持株比率" %>
+                <%= f.text_field :aff_sh3_per3, class: 'form-control' %>
+  　           </div>
+            </div>
+  　         <div class="col-md-1">
+  　         </div>
+          </div>
+          <%= f.label :aff_busi3, "事業内容" %>
+          <%= f.text_area :aff_busi3, class: 'form-control' %>
+  　       <br>
+  　     </section>        
+      <hr class="input-hr-sec">
+        <section id="content3">
+          <br>
+          <h3>保有資産の状況</h3>
+          <br>
+          <h3>主要設備</h3>
+            <%= f.label :eq_name1, "設備名" %>
+            <%= f.text_field :eq_name1, class: 'form-control' %>
+            <div class="form-inline">
+              <%= f.label :eq_kind1, "設備の種類" %>
+              <label><%= f.radio_button :eq_kind1, '設備' %>設備</label>
+              <label><%= f.radio_button :eq_kind1, '機械装置' %>機械装置</label>
+              <label><%= f.radio_button :eq_kind1, '車輛' %>車輛</label>
+              <label><%= f.radio_button :eq_kind1, '備品' %>備品</label>
+              <label><%= f.radio_button :eq_kind1, 'その他' %>その他</label>
+            </div>
+            <br>
+            <%= f.label :eq_year1, "取得年" %>
+            <%= f.text_field :eq_year1, class: 'form-control' %>
+            <br>
+            <%= f.label :eq_point1, "特徴" %>
+            <%= f.text_area :eq_point1, class: 'form-control' %>
+            <hr class="input-hr">
+            <%= f.label :eq_name2, "設備名" %>
+            <%= f.text_field :eq_name2, class: 'form-control' %>
+            <div class="form-inline">
+              <%= f.label :eq_kind2, "設備の種類" %>
+              <label><%= f.radio_button :eq_kind2, '設備' %>設備</label>
+              <label><%= f.radio_button :eq_kind2, '機械装置' %>機械装置</label>
+              <label><%= f.radio_button :eq_kind2, '車輛' %>車輛</label>
+              <label><%= f.radio_button :eq_kind2, '備品' %>備品</label>
+              <label><%= f.radio_button :eq_kind2, 'その他' %>その他</label>
+            </div>
+            <br>
+            <%= f.label :eq_year2, "取得年" %>
+            <%= f.text_field :eq_year2, class: 'form-control' %>
+            <br>
+            <%= f.label :eq_point2, "特徴" %>
+            <%= f.text_area :eq_point2, class: 'form-control' %>
+            <hr class="input-hr">
+            <%= f.label :eq_name3, "設備名" %>
+            <%= f.text_field :eq_name3, class: 'form-control' %>
+            <div class="form-inline">
+              <%= f.label :eq_kind3, "設備の種類" %>              
+              <label><%= f.radio_button :eq_kind2, '設備' %>設備</label>
+              <label><%= f.radio_button :eq_kind3, '機械装置' %>機械装置</label>
+              <label><%= f.radio_button :eq_kind3, '車輛' %>車輛</label>
+              <label><%= f.radio_button :eq_kind3, '備品' %>備品</label>
+              <label><%= f.radio_button :eq_kind3, 'その他' %>その他</label>
+            </div>
+            <br>
+            <%= f.label :eq_year3, "取得年" %>
+            <%= f.text_field :eq_year3, class: 'form-control' %>
+            <br>
+            <%= f.label :eq_point3, "特徴" %>
+            <%= f.text_area :eq_point3, class: 'form-control' %>
+            <hr class="input-hr">
+          <h3>主要不動産</h3>
+            <%= f.label :re_name1, "不動産名" %>
+            <%= f.text_field :re_name1, class: 'form-control' %>
+            <div class="form-inline">
+              <%= f.label :re_kind1, "設備の種類" %>
+              <label><%= f.radio_button :re_kind1, '土地' %>土地</label>
+              <label><%= f.radio_button :re_kind1, '建物' %>建物</label>
+              <label><%= f.radio_button :re_kind1, 'その他' %>その他</label>
+            </div>
+            <br>
+            <div class="form-inline">
+              <%= f.label :re_area1, "面積" %>
+              <%= f.text_field :re_area1, class: 'form-control' %>
+              <label><%= f.radio_button :re_a_unit1, '㎡' %>㎡</label>
+              <label><%= f.radio_button :re_a_unit1, '坪' %>坪</label>
+            </div>
+            <br>
+            <%= f.label :re_use1, "用途" %>
+            <%= f.text_field :re_use1, class: 'form-control' %>
+            <hr class="input-hr">
+            <%= f.label :re_name2, "不動産名" %>
+            <%= f.text_field :re_name2, class: 'form-control' %>
+            <br>
+            <div class="form-inline">
+              <%= f.label :re_area2, "面積" %>
+              <%= f.text_field :re_area2, class: 'form-control' %>
+              <label><%= f.radio_button :re_a_unit2, '㎡' %>㎡</label>
+              <label><%= f.radio_button :re_a_unit2, '坪' %>坪</label>
+            </div>
+            <br>
+            <%= f.label :re_use2, "用途" %>
+            <%= f.text_field :re_use2, class: 'form-control' %>
+            <hr class="input-hr">
+            <%= f.label :re_name3, "不動産名" %>
+            <%= f.text_field :re_name3, class: 'form-control' %>
+            <br>
+            <div class="form-inline">
+              <%= f.label :re_area3, "面積" %>
+              <%= f.text_field :re_area3, class: 'form-control' %>
+              <label><%= f.radio_button :re_a_unit3, '㎡' %>㎡</label>
+              <label><%= f.radio_button :re_a_unit3, '坪' %>坪</label>
+            </div>
+            <br>
+            <%= f.label :re_use3, "用途" %>
+            <%= f.text_field :re_use3, class: 'form-control' %>
+            <hr class="input-hr">
+
+          <h3>所有する主な金融商品</h3>
+            <%= f.label :fi_about, "所有する金融商品の概要" %>
+            <%= f.text_area :fi_about, class: 'form-control' %>
+            <hr class="input-hr">      
+            <%= f.label :fi_name1, "金融商品名" %>
+            <%= f.text_field :fi_name1, class: 'form-control' %>
+            <div class="form-inline">
+              <%= f.label :fi_kind1, "金融商品の種類" %>
+              <label><%= f.radio_button :fi_kind1, '上場株式' %>上場株式</label>
+              <label><%= f.radio_button :fi_kind1, '投資信託' %>投資信託</label>
+              <label><%= f.radio_button :fi_kind1, '保険積立金' %>保険積立金</label>
+              <label><%= f.radio_button :fi_kind1, '定期預金' %>定期預金</label>
+              <label><%= f.radio_button :fi_kind1, 'その他' %>その他</label>
+            </div>
+　          <br>
+            <div class="form-inline">
+              <%= f.label :fi_val1, "時価" %>
+              <%= f.text_field :fi_val1, class: 'form-control' %>
+              <label><%= f.radio_button :fi_unit1, '千円' %>千円</label>
+              <label><%= f.radio_button :fi_unit1, '百万円' %>百万円</label>
+            </div>
+            <hr class="input-hr">
+            <%= f.label :fi_name2, "金融商品名" %>
+            <%= f.text_field :fi_name2, class: 'form-control' %>
+            <div class="form-inline">
+              <%= f.label :fi_kind2, "金融商品の種類" %>
+              <label><%= f.radio_button :fi_kind2, '上場株式' %>上場株式</label>
+              <label><%= f.radio_button :fi_kind2, '投資信託' %>投資信託</label>
+              <label><%= f.radio_button :fi_kind2, '保険積立金' %>保険積立金</label>
+              <label><%= f.radio_button :fi_kind2, '定期預金' %>定期預金</label>
+              <label><%= f.radio_button :fi_kind2, 'その他' %>その他</label>
+            </div>
+　          <br>
+            <div class="form-inline">
+              <%= f.label :fi_val2, "時価" %>
+              <%= f.text_field :fi_val2, class: 'form-control' %>
+              <label><%= f.radio_button :fi_unit2, '千円' %>千円</label>
+              <label><%= f.radio_button :fi_unit2, '百万円' %>百万円</label>
+            </div>
+            <hr class="input-hr">
+            <%= f.label :fi_name3, "金融商品名" %>
+            <%= f.text_field :fi_name3, class: 'form-control' %>
+            <div class="form-inline">
+              <%= f.label :fi_kind3, "金融商品の種類" %>
+              <label><%= f.radio_button :fi_kind3, '上場株式' %>上場株式</label>
+              <label><%= f.radio_button :fi_kind3, '投資信託' %>投資信託</label>
+              <label><%= f.radio_button :fi_kind3, '保険積立金' %>保険積立金</label>
+              <label><%= f.radio_button :fi_kind3, '定期預金' %>定期預金</label>
+              <label><%= f.radio_button :fi_kind3, 'その他' %>その他</label>
+            </div>
+　          <br>
+            <div class="form-inline">
+              <%= f.label :fi_val3, "時価" %>
+              <%= f.text_field :fi_val3, class: 'form-control' %>
+              <label><%= f.radio_button :fi_unit3, '千円' %>千円</label>
+              <label><%= f.radio_button :fi_unit3, '百万円' %>百万円</label>
+            </div>
+  　     </section>        
+      <hr class="input-hr-sec">
+        <section id="content4">
+          <br>
+          <h3>財務の状況</h3>
+          <br>
+          <h3>業績の推移</h3>
+          <label><%= f.radio_button :unit, '円' %>円</label>
+          <label><%= f.radio_button :unit, '千円' %>千円</label>
+          <label><%= f.radio_button :unit, '百万円' %>百万円</label>
+          <table class="table table-hover">
+            <tr>
+              <th class="col-md-3">勘定科目</th>
+              <th class="col-md-3" style="text-align:center">前々々期</th>
+              <th class="col-md-3" style="text-align:center">前々期</th>
+              <th class="col-md-3" style="text-align:center">前期</th>
+            </tr>
+            <tr>
+              <th class="col-md-3" style="text-align:center">会計年度を入力</th>
+              <th class="col-md-3" style="text-align:center">
+                <%= f.select :ppp_fy_y, ['2013','2014','2015','2016','2017','2018','2019'], class: 'form-control' %>年
+                <%= f.select :ppp_fy_m, ['1','2','3','4','5','6','7','8','9','10','11','12'], class: 'form-control' %>月期
+              </th>
+              <th class="col-md-3" style="text-align:center">
+                <%= f.select :pp_fy_y, ['2013','2014','2015','2016','2017','2018','2019'], class: 'form-control' %>年
+                <%= f.select :pp_fy_m, ['1','2','3','4','5','6','7','8','9','10','11','12'], class: 'form-control' %>月期
+              </th>
+            　<th class="col-md-3" style="text-align:center">
+                <%= f.select :p_fy_y, ['2013','2014','2015','2016','2017','2018','2019'], class: 'form-control' %>年
+                <%= f.select :p_fy_m, ['1','2','3','4','5','6','7','8','9','10','11','12'], class: 'form-control' %>月期
+              </th>
+            </tr>
+            <tr>
+              <td class="col-md-3">
+                  売上高
+              </td>
+              <td class="col-md-3">
+                  <%= f.text_field :ppp_sales, data: {autonumeric: { mDec: 0, aPad: false }}, class: 'yen form-control numeric' %>
+              </td>
+              <td class="col-md-3">
+                  <%= f.text_field :pp_sales, data: {autonumeric: { mDec: 0, aPad: false }}, class: 'yen form-control numeric' %>
+              </td>
+              <td class="col-md-3">
+                  <%= f.text_field :p_sales, data: {autonumeric: { mDec: 0, aPad: false }}, class: 'yen form-control numeric' %>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-md-3">
+                  売上原価
+              </td>
+              <td class="col-md-3">
+                  <%= f.text_field :ppp_cogs, data: {autonumeric: { mDec: 0, aPad: false }}, class: 'yen form-control numeric' %>
+              </td>
+              <td class="col-md-3">
+                  <%= f.text_field :pp_cogs, data: {autonumeric: { mDec: 0, aPad: false }}, class: 'yen form-control numeric' %>
+              </td>
+              <td class="col-md-3">
+                  <%= f.text_field :p_cogs, data: {autonumeric: { mDec: 0, aPad: false }}, class: 'yen form-control numeric' %>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-md-3">
+                  売上総利益
+              </td>
+              <td class="col-md-3">
+                  <%= f.text_field :ppp_gp, data: {autonumeric: { mDec: 0, aPad: false }}, class: 'yen form-control numeric' %>
+              </td>
+              <td class="col-md-3">
+                  <%= f.text_field :pp_gp, data: {autonumeric: { mDec: 0, aPad: false }}, class: 'yen form-control numeric' %>
+              </td>
+              <td class="col-md-3">
+                  <%= f.text_field :p_gp, data: {autonumeric: { mDec: 0, aPad: false }}, class: 'yen form-control numeric' %>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-md-3">
+                  販管費
+              </td>
+              <td class="col-md-3">
+                  <%= f.text_field :ppp_sga, data: {autonumeric: { mDec: 0, aPad: false }}, class: 'yen form-control numeric' %>
+              </td>
+              <td class="col-md-3">
+                  <%= f.text_field :pp_sga, data: {autonumeric: { mDec: 0, aPad: false }}, class: 'yen form-control numeric' %>
+              </td>
+              <td class="col-md-3">
+                  <%= f.text_field :p_sga, data: {autonumeric: { mDec: 0, aPad: false }}, class: 'yen form-control numeric' %>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-md-3">
+                  営業利益
+              </td>
+              <td class="col-md-3">
+                  <%= f.text_field :ppp_opin, data: {autonumeric: { mDec: 0, aPad: false }}, class: 'yen form-control numeric' %>
+              </td>
+              <td class="col-md-3">
+                  <%= f.text_field :pp_opin, data: {autonumeric: { mDec: 0, aPad: false }}, class: 'yen form-control numeric' %>
+              </td>
+              <td class="col-md-3">
+                  <%= f.text_field :p_opin, data: {autonumeric: { mDec: 0, aPad: false }}, class: 'yen form-control numeric' %>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-md-3">
+                  経常利益
+              </td>
+              <td class="col-md-3">
+                  <%= f.text_field :ppp_orin, data: {autonumeric: { mDec: 0, aPad: false }}, class: 'yen form-control numeric' %>
+              </td>
+              <td class="col-md-3">
+                  <%= f.text_field :pp_orin, data: {autonumeric: { mDec: 0, aPad: false }}, class: 'yen form-control numeric' %>
+              </td>
+              <td class="col-md-3">
+                  <%= f.text_field :p_orin, data: {autonumeric: { mDec: 0, aPad: false }}, class: 'yen form-control numeric' %>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-md-3">
+                  当期純利益
+              </td>
+              <td class="col-md-3">
+                  <%= f.text_field :ppp_nein, data: {autonumeric: { mDec: 0, aPad: false }}, class: 'yen form-control numeric' %>
+              </td>
+              <td class="col-md-3">
+                  <%= f.text_field :pp_nein, data: {autonumeric: { mDec: 0, aPad: false }}, class: 'yen form-control numeric' %>
+              </td>
+              <td class="col-md-3">
+                  <%= f.text_field :p_nein, data: {autonumeric: { mDec: 0, aPad: false }}, class: 'yen form-control numeric' %>
+              </td>
+            </tr>
+          </table>
+          <br>
+          <h3>得意先別取引額（前期）</h3>
+          <table class="table table-hover">
+            <tr>
+              <th class="col-md-4">得意先名</th>
+              <th class="col-md-3">取引金額</th>
+            </tr>
+            <tr>
+              <td class="col-md-4">
+                <%= f.text_field :sal_name1, class: 'form-control' %>
+              </td>
+              <td class="col-md-3">
+                <%= f.text_field :sal_val1, data: {autonumeric: { mDec: 0, aPad: false }}, class: 'yen form-control numeric' %>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-md-4">
+                <%= f.text_field :sal_name2, class: 'form-control' %>
+              </td>
+              <td class="col-md-3">
+                <%= f.text_field :sal_val2, data: {autonumeric: { mDec: 0, aPad: false }}, class: 'yen form-control numeric' %>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-md-4">
+                <%= f.text_field :sal_name3, class: 'form-control' %>
+              </td>
+              <td class="col-md-3">
+                <%= f.text_field :sal_val3, data: {autonumeric: { mDec: 0, aPad: false }}, class: 'yen form-control numeric' %>
+              </td>
+            </tr>
+          </table>
+          <br> 
+          <h3>仕入先別取引額（前期）</h3>
+          <table class="table table-hover">
+            <tr>
+              <th class="col-md-4">仕入先名</th>
+              <th class="col-md-3">取引金額</th>
+            </tr>
+            <tr>
+              <td class="col-md-4">
+                <%= f.text_field :pur_name1, class: 'form-control' %>
+                </td>
+              <td class="col-md-3">
+                <%= f.text_field :pur_val1, data: {autonumeric: { mDec: 0, aPad: false }}, class: 'yen form-control numeric' %>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-md-4">
+                <%= f.text_field :pur_name2, class: 'form-control' %>
+              </td>
+              <td class="col-md-3">
+                <%= f.text_field :pur_val2, data: {autonumeric: { mDec: 0, aPad: false }}, class: 'yen form-control numeric' %>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-md-4">
+                <%= f.text_field :pur_name3, class: 'form-control' %>
+              </td>
+              <td class="col-md-3">
+                <%= f.text_field :pur_val3, data: {autonumeric: { mDec: 0, aPad: false }}, class: 'yen form-control numeric' %>
+              </td>
+            </tr>
+          </table>
+          <br> 
+          <h3>外注先別取引額（前期）</h3>
+          <table class="table table-hover">
+            <tr>
+              <th class="col-md-4">外注先名</th>
+              <th class="col-md-3">取引金額</th>
+            </tr>
+            <tr>
+              <td class="col-md-4">
+                <%= f.text_field :os_name1, class: 'form-control' %>
+              </td>
+              <td class="col-md-3">
+                <%= f.text_field :os_val1, data: {autonumeric: { mDec: 0, aPad: false }}, class: 'yen form-control numeric' %>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-md-4">
+                <%= f.text_field :os_name2, class: 'form-control' %>
+              </td>
+              <td class="col-md-3">
+                <%= f.text_field :os_val2, data: {autonumeric: { mDec: 0, aPad: false }}, class: 'yen form-control numeric' %>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-md-4">
+                <%= f.text_field :os_name3, class: 'form-control' %>
+              </td>
+              <td class="col-md-3">
+                <%= f.text_field :os_val3, data: {autonumeric: { mDec: 0, aPad: false }}, class: 'yen form-control numeric' %>
+              </td>
+            </tr>
+          </table>
+          <br> 
+          <h3>貸借対照表の概要(前期）</h3>
+            <div class="form-inline">
+              <%= f.label :p_ca, "流動資産" %>
+              <%= f.text_field :p_ca, data: {autonumeric: { mDec: 0, aPad: false }}, class: 'yen form-control numeric' %>
+            </div>
+            <div class="form-inline">
+              <%= f.label :p_nca, "固定資産" %>
+              <%= f.text_field :p_nca, data: {autonumeric: { mDec: 0, aPad: false }}, class: 'yen form-control numeric' %>
+            </div>
+            <div class="form-inline">
+              <%= f.label :p_cl, "流動負債" %>
+              <%= f.text_field :p_cl, data: {autonumeric: { mDec: 0, aPad: false }}, class: 'yen form-control numeric' %>
+            </div>
+            <div class="form-inline">
+              <%= f.label :p_ncl, "固定負債" %>
+              <%= f.text_field :p_ncl, data: {autonumeric: { mDec: 0, aPad: false }}, class: 'yen form-control numeric' %>
+            </div>
+            <div class="form-inline">
+              <%= f.label :p_na, "純資産　" %>
+              <%= f.text_field :p_na, data: {autonumeric: { mDec: 0, aPad: false }}, class: 'yen form-control numeric' %>
+            </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-5">
+    <div class="msg-div">
+      <div class="msg-lg">
+        <p>もっと詳しい情報を開示して、今までよりもアピールしましょう！</p>
+      </div>
+        <br>
+      <div class="msg-sm">
+        <p>
+          お手もとに過去の3年分の決算書や販売データを用意してください。
+          <br>
+          よくわからない点は経理担当者や顧問税理士さんに聞きながら書いてみてください。
+        </p>
+      </div>
+      <br>
+    </div>
+  </div>  
+  <%= f.submit "入力内容の確認", class: "btn btn-success btn-lg" %>
+  <% end %>  
+</div>
+
+<script>
+$(function() {
+  var $win = $('.input-window'),waku,
+      pos1,pos2,pos3,pos4,pos5,pos6,
+      tate1,tate2,tate3,tate4,tate5,tate6;
+      
+  $win.on("scroll",function() {
+
+      waku = $(".window").offset().top;
+      pos1 = $("#content1").offset().top-10;
+      pos2 = $("#content2").offset().top-10;
+      pos3 = $("#content3").offset().top-10;
+      pos4 = $("#content4").offset().top-10;
+      pos5 = $("#content5").offset().top-10;
+      pos6 = $("#content6").offset().top-10;
+      tate1 = $("#content1").height()-10;
+      tate2 = $("#content2").height()-10;
+      tate3 = $("#content3").height()-10;
+      tate4 = $("#content4").height()-10;
+      tate5 = $("#content5").height()-10;
+      tate6 = $("#content6").height()-10;
+
+var con = true;
+      switch(con){
+        case waku > pos1 && waku < pos1 + tate1 :
+          $("div.msg-lg").html("<p>まず、はじめにあなたが<%= @seller.cname %>を経営してきた想いを教えてください。</p>");
+          $("div.msg-sm").html("<p>会社を立ち上げた時、会社を先代から引き継いだ時、大きな仕事を成し遂げた時、苦しかった時・・・。<br><br>いろいろな出来事を乗り越えてきたなかで抱いてきたさまざまな想いを教えてください。</p>");
+          break;
+        case waku > pos2 && waku < pos2 + tate2 :
+          $("div.msg-lg").html("<p>あなたが自信をもって提供している商品やサービスを教えてください。</p>");
+          $("div.msg-sm").html("<p>これまで、素晴らしい商品やサービスで顧客を満足させてきた<%= @seller.cname %>。<br><br>あなたが提供してきた商品やサービス、技術の魅力を詳しく教えてください。</p>");
+          break;
+        case waku > pos3 && waku < pos3 + tate3 :
+          $("div.msg-lg").html("<p><%= @seller.cname %>の大切な顧客のことを教えてください。</p>");
+          $("div.msg-sm").html("<p>あなたにとってとても大切な顧客がどのような相手なのか、なぜその顧客が<%= @seller.cname %>を選び続けたのか。<br><br>そこに<%= @seller.cname %>の強みの源が眠っています。</p>");
+          break;
+        case waku > pos4 && waku < pos4 + tate4 :
+          $("div.msg-lg").html("<p><%= @seller.cname %>のビジネスの仕組みを教えてください。</p>");
+          $("div.msg-sm").html("<p>ビジネスはヒト、モノ、カネの経営資源だけでは成り立ちません。<br><br>経営資源を活かすための技術、販売・営業、開発などのノウハウがどれだけあるかに大きく左右されます。<br><br><%= @seller.cname %>が持っているノウハウを洗い出しましょう。</p>");
+          break;
+        case waku > pos5 && waku < pos5 + tate5 :
+          $("div.msg-lg").html("<p>ビジネスの根幹である人材について教えてください。</p>");
+          $("div.msg-sm").html("<p><%= @seller.cname %>をこれまで引っ張ってきた優秀な社員たち。<br><br>今後も中心となって活躍してくれる主要メンバーの長所や特徴を思い出しながら、アピールポイントに変えていきましょう。</p>");
+          break;
+        case waku > pos6 && waku < pos6 + tate6 :
+          $("div.msg-lg").html("<p>最後に、これからの<%= @seller.cname %>のことを教えてください。</p>");
+          $("div.msg-sm").html("<p>ここまで普段ならあまり考えないようなことまで<%= @seller.cname %>のことを振り返ってきました。<br><br>現状を踏まえて、これから<%= @seller.cname %>が進んでいくべき方向を書いてみてください。</p>");
+          break;
+        default :
+          $("aside").text("");
+      }
+  });
+});
+</script>
+
+    <script>
+    //スムーズスクロール
+    $(document).ready(function(){
+      $("a.scr").click(function(){
+        var hash = this.hash;
+        var position = $(hash).offset().top;
+    
+      //data-box属性がない場合は通常のスムーズスクロール
+      if(!$(this).data("box")){
+          $('html, body').animate({scrollTop:position},800,'swing',function(){
+            window.location.hash=hash;
+          });
+      
+      //data-box属性がある場合はdata-box内をスムーズスクロール
+      }else{
+    			var $box = $($(this).data("box"));
+    			var $target = $($(this).attr("href"));
+    			var dist = $target.position().top - $box.position().top;
+    			$box.stop().animate({scrollTop: $box.scrollTop() + dist},1200,'swing',function(){
+    			  window.location.hash=hash;
+    			});
+        }
+    		return false;
+      });
+    });
+    </script>
+
+    <script>
+      $(function(){
+        $("dd").css("display","none");
+        $("dl dt").click(function(){
+          if($("+dd",this).css("display")=="none"){
+              $("dd").slideUp("slow");
+              $("+dd",this).slideDown("slow");
+          }else{
+            $("dd").slideUp("slow");
+          }
+        }).mouseover(function(){
+          $(this).addClass("over");
+        }).mouseout(function(){
+          $(this).removeClass("over");
+        });
+      });
+    </script>
+
+    <script>
+    //数値入力
+    $(document).ready(function(){
+       $(".yen").autoNumeric("init",{
+         mDec: 0, 
+         aPad: false,
+        });
+    });
+    </script>

@@ -1,0 +1,24 @@
+<div>
+    <a href="<%= followers_seller_path(@seller) %>">
+      フォローされている数：
+      <strong>
+      <%  @followers = @seller.buyers %>
+      <%= @followers.count %>
+      </strong>
+      社
+    </a>
+</div>
+<div>
+  <table class="table">
+    <tr>
+      <th>ユーザNo.</th><th>企業名</th><th>所在地</th>
+    </tr>
+    <% @followers.each do |follower| %>
+    <tr>
+      <td><%= follower.id %></td>
+      <td><%= follower.cname %></td>
+      <td><%= follower.pref %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>

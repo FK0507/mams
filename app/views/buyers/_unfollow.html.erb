@@ -1,0 +1,5 @@
+<%= form_for(@buyer.s_relationships.find_by(buyer_id: @buyer.id),
+             html: { method: :delete }) do |f| %>
+
+  <%= f.submit "フォローやめる", class: "btn btn-primary btn-block" %>
+<% end %>

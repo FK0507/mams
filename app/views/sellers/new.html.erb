@@ -1,0 +1,24 @@
+<%= render 'shared/flash_message' %>
+<% if user_signed_in? %>
+  <div class="row">
+    <div class="col-md-3 seller_form_bg">
+    </div>  
+    <div class="col-md-6">
+      <br>
+      <section class="user_info">
+        <%= render 'user_info' %>
+      </section>
+      <section class="seller_form">
+        <%= render 'seller_form' %>
+      </section>
+    </div>
+    <div class="col-md-3 seller_form_bg">
+    </div>  
+  </div>
+<% else %>
+  <div class="center jumbotron">
+    <h2>Ｍ＆Ａマッチングシステムへようこそ！</h2>
+
+    <%= link_to "新規会員登録はこちら", root_path, class: "btn btn-lg btn-primary" %>
+  </div>
+<% end %>

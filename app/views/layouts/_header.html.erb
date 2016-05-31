@@ -1,0 +1,57 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <p style="color: #fff;padding: 8px;font-size:20px" class="nav navbar-nav navbar-left">Ｍ＆Ａマッチングシステム</p>
+  <p style="color: #e5e5e5;padding-top:18px;font-size:10px" class="nav navbar-nav navbar-left">新しいＭ＆Ａプラットフォームでニーズとニーズをマッチング</p>
+  <nav>
+    <ul class="nav navbar-nav navbar-right">
+      <li><%= link_to "トップページ", root_path %></li>
+      <li><%= link_to "買い手リスト", buyers_path %></li>
+      <li><%= link_to "売り手リスト", sellers_path %></li>
+      <% if user_signed_in? %>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown">
+            ユーザー情報 <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <% if current_user.kind == "seller" then  %>
+              <li class="divider"></li>
+                <% if current_user.role == "admin" %>
+                  <li><%= link_to "売企業情報-基本登録", new_seller_path %></li>
+                <% end %>
+          　 　   <li><%= link_to "売希望条件登録", new_seller_condition_path %></li>
+          　　    <li><%= link_to "売希望条件リスト", seller_conditions_path %></li>
+　              <li><%= link_to "売り手ユーザー管理画面", s_dashboard_user_path(current_user.id) %></li>
+                <% if can? :new , :invitation %>
+               　　 <li><%= link_to "自社グループへのユーザーの招待", new_user_invitation_path %></li>
+                <% end %>
+            <% elsif current_user.kind == "buyer" then  %>
+              <li class="divider"></li>
+                <% if current_user.role == "admin" %>
+                  <li><%= link_to "買企業情報-登録", new_buyer_path %></li>
+                <% end %>
+                <li><%= link_to "買希望条件登録", new_buyer_condition_path %></li>
+                <li><%= link_to "買希望条件リスト", buyer_conditions_path %></li>
+                <li><%= link_to "買い手ユーザープロフィール", b_show_user_path(current_user.id) %></li>
+                <% if can? :new , :invitation %>
+                  <li><%= link_to "自社グループへのユーザーの招待", new_user_invitation_path %></li>
+                <% end %>
+            <% elsif current_user.kind == "sys" then %>
+              <li class="divider"></li>
+                <li><%= link_to "業種登録", new_industry_path %></li>
+                <li><%= link_to "業種リスト", industries_path %></li>
+　              <li><%= link_to "売り手ユーザーリスト", s_index_users_path %></li>
+                <li><%= link_to "買い手ユーザーリスト", b_index_users_path %></li>
+                <li><%= link_to "システムユーザーリスト", sys_index_users_path %></li>
+                <li><%= link_to "システムユーザー登録", sys_new_users_path %></li>
+            <% end %>
+            <li class="divider"></li>
+            <li>
+              <%= link_to "ログアウト", destroy_user_session_path, method: "delete" %>
+            </li>
+          </ul>
+        </li>
+      <% else %>
+        <li><%= link_to "ログイン", new_user_session_path %></li>
+      <% end %>
+    </ul>
+  </nav>
+</header>

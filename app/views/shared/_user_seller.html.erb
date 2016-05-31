@@ -1,0 +1,38 @@
+<h3><%= @seller.cname %>の概要</h3>
+  <div class="row">
+    <table class="table">
+      <tr>
+        <th class="col-md-4">項目</th><th class="col-md-8">内容</th>
+        </tr>
+      <tr>
+        <td class="col-md-4">No.</td><td class="col-md-8"><%= @seller.id %></td>
+      </tr>
+      <tr>
+        <td class="col-md-4">所在地</td><td class="col-md-8"><%= @seller.pref %><%= @seller.city %></td>
+      </tr>
+      <tr>
+        <td class="col-md-4">業種</td><td class="col-md-8"><%= Industry.where(id: @seller.industry_id).pluck(:ind_b)[0] %></td>
+      </tr>
+      <tr>
+        <td class="col-md-4">主な取扱い商品・サービス</td><td class="col-md-8"><%= @seller.goods %></td>
+      </tr>
+      <tr>
+        <td class="col-md-4">役員数</td><td class="col-md-8"><%= @seller.dir %></td>
+      </tr>
+      <tr>
+        <td class="col-md-4">従業員数（パート込）</td><td class="col-md-8"><%= @seller.reg + @seller.par %></td>
+      </tr>
+      <tr>
+        <td class="col-md-4">アピールポイント</td><td class="col-md-8"><%= @seller.point %></td>
+      </tr>
+      <tr>
+        <td class="col-md-4">希望条件</td><td class="col-md-8"><%= SellerCondition.where(id: @seller.seller_condition_id).pluck(:s_condit)[0] %></td>
+      </tr>
+  　</table>    
+　</div>
+    <div style="text-align: center">
+      <p style="display:inline;"><%= link_to '編集する', edit_seller_path(@seller.id), class: "btn btn-primary" %></p>
+      <p style="display:inline;"><%= link_to '削除する', @seller, method: :delete , data: { confirm: '本当に削除しますか？' }, class: "btn btn-primary" %></p>
+      <p style="display:inline;"><%= link_to '詳細登録', new_detail_seller_path(@seller.id), class: "btn btn-primary" %></p>
+      <p style="display:inline;"><%= link_to '詳細確認', show_basis_seller_path(@seller.id), class: "btn btn-primary" %></p>
+    </div>

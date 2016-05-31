@@ -1,0 +1,700 @@
+<div class="row">
+  <div class="col-md-1">
+  </div>
+  <div class="col-md-6">
+    <br>
+    <div id="SSpy">
+      <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><a class="scr" href="#content1" data-box=".input-window">経営者の想い</a></li>
+        <li role="presentation"><a class="scr" href="#content2" data-box=".input-window">商品・サービス・技術</a></li>
+        <li role="presentation"><a class="scr" href="#content3" data-box=".input-window">顧客</a></li>
+        <li role="presentation"><a class="scr" href="#content4" data-box=".input-window">ビジネスの仕組み</a></li>
+        <li role="presentation"><a class="scr" href="#content5" data-box=".input-window">人材</a></li>
+        <li role="presentation"><a class="scr" href="#content6" data-box=".input-window">事業計画</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-5">
+    <br>
+    <h4 style="text-align:center;">譲渡希望-<%= @user.fname %><%= @user.gname %>さんの企業情報</h4>    
+  </div>
+</div>
+<div class="row">
+  <%= form_for @seller, url: confirm_summary_seller_path(@seller.id), html: {method: "patch"} do |f| %>
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-6 window">
+      <div class="input-window" data-spy="scroll" data-target="#SSpy">      
+          <%= render 'shared/error_messages', object: f.object %>
+          <section id="content1">
+            <div class="question" id="question1">
+              <h5>質問1</h5>
+              <h4>あなたの会社の事業内容を教えてください。</h4>
+              <%= f.text_area :phil_p,
+                 size: "18x5",
+                 placeholder: "（例）当社は、特殊金属部品の設計・加工を行うメーカーです。微細な金属部品の製作や難加工材の加工を得意としており、顧客は大手メーカーが中心であり、加工だけでなく設計段階から様々な提案を行っています。" ,
+                 class: 'form-control' %>
+              <br>
+              <div class="btn-group">
+                <a class="scr btn btn-primary btn-sm" href="#question2" data-box=".input-window">次の質問へ</a>
+              </div>
+              <!-- ヘルプウインド -->
+              <%= render 'sellers/help/question1' %>
+            </div>
+            <hr class="input-hr-sec">
+            <div class="question" id="question2">
+              <h5>質問2</h5>
+              <h4>あなたがこれまで会社経営をしてきた中で、大切にしてきたことや、守ってきたことを教えてください。</h4>
+              <%= f.text_area :phil_f,
+                 size: "18x5",
+                 placeholder: "（例）当社は、先代社長から事業を引き継いで20年になりますが、「世の中に新しい価値を提供し続ける」という先代からの経営理念を掲げて経営してきました。大切にしてきたのは、顧客との信頼関係であり、常に新しい提案をし続けることで、大手メーカー数社との取引関係を育てることができました。" ,
+                 class: 'form-control' %>
+              <br>
+              <div class="btn-group">
+                <a class="scr btn btn-primary btn-sm" href="#question1" data-box=".input-window">前の質問へ</a>
+                <a class="scr btn btn-primary btn-sm" href="#question3" data-box=".input-window">次の質問へ</a>
+              </div>
+              <!-- ヘルプウインド -->
+              <%= render 'sellers/help/question2' %>
+            </div>
+            <hr class="input-hr-sec">
+            <div class="question" id="question3">
+              <h5>質問3</h5>
+              <h4>会社または事業の譲渡を検討している理由を教えてください。</h4>
+              <%= f.text_area :reason,
+                  size: "18x5",
+                  placeholder: "（例）3年後に引退を考えていますが、社内には顧客から信頼を得ている技術力を持ったベテラン・中堅社員は多くいるものの、経営に関心のある者はおらず、また身内にも経営を任せられる者がいないことから、譲渡を検討しています。" ,
+                  class: 'form-control' %>
+              <br>
+              <div class="btn-group">
+                <a class="scr btn btn-primary btn-sm" href="#question2" data-box=".input-window">前の質問へ</a>
+                <a class="scr btn btn-primary btn-sm" href="#question4" data-box=".input-window">次の質問へ</a>
+              </div>
+            <!-- ヘルプウインド -->
+              <%= render 'sellers/help/question3' %>
+            </div>
+            <hr class="input-hr-sec">
+            <div class="question" id="question4">
+              <h5>質問4</h5>
+              <h4>引き継いでくれる会社に伝えたいことがあれば教えてください。</h4>
+              <%= f.text_area :req,
+                  size: "18x5",
+                  placeholder: "（例）譲渡後はできるだけ現状の従業員の雇用を確保して頂けるとありがたいです。" ,
+                  class: 'form-control' %>
+              <br>
+              <div class="btn-group">
+                <a class="scr btn btn-primary btn-sm" href="#question3" data-box=".input-window">前の質問へ</a>
+                <a class="scr btn btn-primary btn-sm" href="#question5" data-box=".input-window">次の質問へ</a>
+              </div>
+            <!-- ヘルプウインド -->
+             <%= render 'sellers/help/question4' %>
+            </div>
+          </section>
+          <hr class="input-hr-sec">
+          <section id="content2">
+            <div class="question" id="question5">
+              <h5>質問5</h5>
+              <h4>今、あなたの会社が力をいれている商品・サービス・技術とその特徴を教えてください。</h4>
+              <%= f.text_area :goods_kinds,
+                  size: "18x5",
+                  placeholder: "（例）当社が取り扱っている商品の中で今一番力をいれているものは、○○です。この商品は当社が長年にわたり蓄積してきた技術を生かすことで他社よりもxxという点で優れた商品になり、大手顧客からも納期、品質ともに満足して頂いています。" ,
+                  class: 'form-control' %>
+              <br>
+              <div class="btn-group">
+                <a class="scr btn btn-primary btn-sm" href="#question4" data-box=".input-window">前の質問へ</a>
+                <a class="scr btn btn-primary btn-sm" href="#question6" data-box=".input-window">次の質問へ</a>
+              </div>
+            <!-- ヘルプウインド -->
+              <%= render 'sellers/help/question5' %>
+            </div>
+            <hr class="input-hr-sec">
+            <div class="question" id="question6">
+              <h5>質問6</h5>
+              <h4>あなたの会社の商品・サービス・技術のうち、ライバル会社と比べて負けていないものを教えてください。</h4>
+              <%= f.text_area :goods_stro,
+                  size: "18x5",
+                  placeholder: "（例）当社は過去からの取引実績からxx社、○○社など大手の販売ルートを多数持っています。これは仕入ルートを確保し納期対応をきっちりしてきたことで得られた信頼によって実現しているものです。" ,
+                  class: 'form-control' %>
+              <br>
+              <div class="btn-group">
+                <a class="scr btn btn-primary btn-sm" href="#question5" data-box=".input-window">前の質問へ</a>
+                <a class="scr btn btn-primary btn-sm" href="#question7" data-box=".input-window">次の質問へ</a>
+              </div>
+            <!-- ヘルプウインド -->
+              <%= render 'sellers/help/question6' %>
+            </div>
+            <hr class="input-hr-sec">
+            <div class="question" id="question7">
+              <h5>質問7</h5>
+              <h4>あなたの会社の商品・サービス・技術について、課題と感じているものを教えてください。</h4>
+              <%= f.text_area :goods_weak,
+                  size: "18x5",
+                  placeholder: "（例）当社の主力製品である○○は納期面、品質面で顧客に満足して頂いていますが、開発人員が不足しており○○に続く新製品の開発が十分にできていないなど、製品開発力に課題を感じています。" ,                  
+                  class: 'form-control' %>
+              <br>
+              <div class="btn-group">
+                <a class="scr btn btn-primary btn-sm" href="#question6" data-box=".input-window">前の質問へ</a>
+                <a class="scr btn btn-primary btn-sm" href="#question8" data-box=".input-window">次の質問へ</a>
+              </div>
+            <!-- ヘルプウインド -->
+              <%= render 'sellers/help/question7' %>
+            </div>
+          </section>
+        <hr class="input-hr-sec">  
+          <section id="content3">
+            <div class="question" id="question8">
+              <h5>質問8</h5>
+              <h4>あなたの会社が過去一年間において取引をした顧客数（概数）を教えてください。</h4>
+              <div class="form-inline">
+                <%= f.text_field :cust_num, 
+                    placeholder: "顧客数を入力してください",
+                    class: 'form-control' %>
+                <label><%= f.radio_button :cust_unit, '社' %> 社 </label>
+                <label><%= f.radio_button :cust_unit, '人' %> 人 </label>
+                <label><%= f.radio_button :cust_unit, '社または人' %> 社または人 </label>
+                <label><%= f.radio_button :cust_unit, '件' %> 件 </label>
+              </div>
+              <br>
+              <div class="btn-group">
+                <a class="scr btn btn-primary btn-sm" href="#question7" data-box=".input-window">前の質問へ</a>
+                <a class="scr btn btn-primary btn-sm" href="#question9" data-box=".input-window">次の質問へ</a>
+              </div>
+            <!-- ヘルプウインド -->
+              <%= render 'sellers/help/question8' %>
+            </div>
+            <hr class="input-hr-sec">
+            <div class="question" id="question9">
+              <h5>質問9</h5>
+              <h4>あなたの会社の現時点における大切な顧客の上位3社を教えてください。また、それぞれの年間取引金額、大切だと考える理由を教えてください。</h4>
+              <br>
+              <h5>もし、あなたの会社の大切な顧客が個人顧客である場合には、管理している個人顧客層ごと（エリア、年齢層、グループなど）に教えてください。</h5>
+              <br>
+              <div class="btn-group">
+                <a class="scr btn btn-primary btn-sm" href="#question8" data-box=".input-window">前の質問へ</a>
+                <a class="scr btn btn-success btn-sm" href="#question9-1" data-box=".input-window">まずは、1社目の顧客を登録</a>
+                <a class="scr btn btn-primary btn-sm" href="#question10" data-box=".input-window">次の質問へ</a>
+              </div>
+            <!-- ヘルプウインド -->
+              <%= render 'sellers/help/question9' %>
+            </div>
+            <hr class="input-hr">
+            <div class="question" id="question9-1">
+              <h5>顧客1</h5>
+              <div class="form-inline">
+                <h5>顧客名 <%= f.text_field :cust_imp_name1, class: 'form-control' %></h5>
+              </div>
+              <div class="form-inline">
+                <h5>年間取引金額（概算額） <%= f.text_field :cust_imp_vol1, class: 'form-control' %>
+                   <label> <%= f.radio_button :cust_imp_unit1, '百万円' %> 百万円</label><label> <%= f.radio_button :cust_imp_unit1, '千円' %>千円</label>
+　              </h5>
+　            </div>
+                    <h5>大切な顧客と考える理由を教えてください。</h5> 
+              <%= f.text_area :cust_imp_reas1, size: "18x3", class: 'form-control' %>
+              <br>
+              <div class="btn-group">
+  　             <a class="scr btn btn-success btn-sm" href="#question9" data-box=".input-window">質問9にもどる</a>
+                <a class="scr btn btn-success btn-sm" href="#question9-2" data-box=".input-window">2社目の顧客に進む</a>
+      　　      </div>
+             <!-- ヘルプウインド -->
+              <%= render 'sellers/help/question9' %>
+            </div>
+            <hr class="input-hr">
+            <div class="question" id="question9-2">
+              <h5>顧客2</h5>
+              <div class="form-inline">
+                <h5>顧客名 <%= f.text_field :cust_imp_name2, class: 'form-control' %></h5>
+              </div>
+              <div class="form-inline">
+                <h5>年間取引金額（概算額） <%= f.text_field :cust_imp_vol2, class: 'form-control' %>
+                   <label> <%= f.radio_button :cust_imp_unit2, '百万円' %> 百万円</label><label> <%= f.radio_button :cust_imp_unit2, '千円' %>千円</label>
+　              </h5>
+　            </div>
+              <h5>大切な顧客と考える理由を教えてください。</h5> 
+              <%= f.text_area :cust_imp_reas2, size: "18x3", class: 'form-control' %>
+              <br>
+              <div class="btn-group">
+                <a class="scr btn btn-success btn-sm" href="#question9-1" data-box=".input-window">1社目の顧客にもどる</a>
+                <a class="scr btn btn-success btn-sm" href="#question9-3" data-box=".input-window">3社目の顧客に進む</a>
+  　　        　</div>
+              <!-- ヘルプウインド -->
+              <%= render 'sellers/help/question9' %>
+      　  　</div>
+            <hr class="input-hr">
+            <div class="question" id="question9-3">
+              <h5>顧客3</h5>
+              <div class="form-inline">
+                <h5>顧客名 <%= f.text_field :cust_imp_name3, class: 'form-control' %></h5>
+              </div>
+              <div class="form-inline">
+                <h5>年間取引金額（概算額） <%= f.text_field :cust_imp_vol3, class: 'form-control' %>
+                   <label> <%= f.radio_button :cust_imp_unit3, '百万円' %> 百万円</label><label> <%= f.radio_button :cust_imp_unit3, '千円' %>千円</label>
+　              </h5>
+　            </div>
+              <h5>大切な顧客と考える理由を教えてください。</h5> 
+              <%= f.text_area :cust_imp_reas3, size: "18x3", class: 'form-control' %>
+              <br>
+              <div class="btn-group">
+                <a class="scr btn btn-primary btn-sm" href="#question9" data-box=".input-window">質問にもどる</a>
+                <a class="scr btn btn-success btn-sm" href="#question9-1" data-box=".input-window">1社目の顧客にもどる</a>
+                <a class="scr btn btn-success btn-sm" href="#question9-2" data-box=".input-window">2社目の顧客にもどる</a>
+                <a class="scr btn btn-primary btn-sm" href="#question10" data-box=".input-window">次の質問へ</a>
+              </div>
+              <!-- ヘルプウインド -->
+              <%= render 'sellers/help/question9' %>
+
+      　   　</div>
+            <hr class="input-hr-sec">
+            <div class="question" id="question10">
+              <h5>質問10</h5>
+              <h4>大切な顧客からあなたの会社が取引先として選ばれている理由を教えてください。</h4>
+              <%= f.text_area :cust_reas,
+                  size: "18x5",
+                  placeholder: "（例）当社が○○社から長年にわたり一定規模の取引を継続できているのは、納期管理を徹底することで決められた期日に確実に納品することと、求められる品質を確保するために、専任の品質管理担当者による品質チェックを継続してきたことが評価されていると考えています。",
+                  class: 'form-control' %>
+              <br>
+              <div class="btn-group">
+                <a class="scr btn btn-primary btn-sm" href="#question9" data-box=".input-window">前の質問へ</a>
+                <a class="scr btn btn-primary btn-sm" href="#question11" data-box=".input-window">次の質問へ</a>
+              </div>
+              <!-- ヘルプウインド -->
+              <%= render 'sellers/help/question10' %>
+            </div>
+            <hr class="input-hr-sec">
+            <div class="question" id="question11">
+              <h5>質問11</h5>
+              <h4>顧客との信頼関係構築のために日々行っていることを教えてください。</h4>
+              <%= f.text_area :cust_rela,
+                  size: "18x5",
+                  placeholder: "（例）当社では、定期的に顧客の声をアンケートやヒアリングで集めながら、この声を分析し、商品ラインナップに活かすようにしています。",
+                  class: 'form-control' %>
+              <br>
+              <div class="btn-group">
+                <a class="scr btn btn-primary btn-sm" href="#question10" data-box=".input-window">前の質問へ</a>
+                <a class="scr btn btn-primary btn-sm" href="#question12" data-box=".input-window">次の質問へ</a>
+              </div>
+              <!-- ヘルプウインド -->
+              <%= render 'sellers/help/question11' %>
+            </div>
+          </section>
+          <hr class="input-hr-sec">  
+          <section id="content4">
+            <div class="question" id="question12">
+              <h5>質問12</h5>
+              <h4>あなたの会社のビジネスの仕組みを教えてください。</h4>
+              <br>
+              <h5>まずは、他社と比べて強みを持っているポイントを選んでください。</h5>
+              <br>
+              <div class="btn-group">
+                <a class="scr btn btn-primary btn-sm" href="#question11" data-box=".input-window">前の質問へ</a>
+                <a class="scr btn btn-success btn-sm" href="#question12-1" data-box=".input-window">販売に強い</a>
+                <a class="scr btn btn-success btn-sm" href="#question12-2" data-box=".input-window">技術に強い</a>
+                <a class="scr btn btn-success btn-sm" href="#question12-3" data-box=".input-window">開発に強い</a>
+                <a class="scr btn btn-success btn-sm" href="#question12-4" data-box=".input-window">調達に強い</a>
+                <a class="scr btn btn-primary btn-sm" href="#question13" data-box=".input-window">次の質問へ</a>
+              </div>
+              <br>
+              <br>
+              <!-- ヘルプウインド -->
+              <%= render 'sellers/help/question12' %>
+　          </div>
+            <hr class="input-hr">
+            <div class="question" id="question12-1">
+              <h5>販売・営業手法におけるポイントを3つ教えてください。</h5>
+              <p>ポイント1 <%= f.text_area :knowhow_sales_1, size: "18x2", class: 'form-control' %></p>
+              <p>ポイント2 <%= f.text_area :knowhow_sales_2, size: "18x2", class: 'form-control' %></p>
+              <p>ポイント3 <%= f.text_area :knowhow_sales_3, size: "18x2", class: 'form-control' %></p>
+　　          <div class="btn-group">
+                <a class="scr btn btn-success btn-sm" href="#question12-2" data-box=".input-window">技術に強い</a>
+                <a class="scr btn btn-success btn-sm" href="#question12-3" data-box=".input-window">開発に強い</a>
+                <a class="scr btn btn-success btn-sm" href="#question12-4" data-box=".input-window">調達に強い</a>
+                <a class="scr btn btn-primary btn-sm" href="#question12" data-box=".input-window">質問に戻る</a>
+            　</div>
+              <!-- ヘルプウインド -->
+              <%= render 'sellers/help/question12_1' %>
+            </div>
+            <hr class="input-hr">
+            <div class="question" id="question12-2">
+              <h5>技術力におけるポイントを3つ教えてください。</h5>
+              <p>ポイント1 <%= f.text_area :knowhow_tech_1, size: "18x2", class: 'form-control' %></p>
+              <p>ポイント2 <%= f.text_area :knowhow_tech_2, size: "18x2", class: 'form-control' %></p>
+              <p>ポイント3 <%= f.text_area :knowhow_tech_3, size: "18x2", class: 'form-control' %></p>
+　　          <div class="btn-group">
+                <a class="scr btn btn-success btn-sm" href="#question12-1" data-box=".input-window">営業に強い</a>
+                <a class="scr btn btn-success btn-sm" href="#question12-3" data-box=".input-window">開発に強い</a>
+                <a class="scr btn btn-success btn-sm" href="#question12-4" data-box=".input-window">調達に強い</a>
+                <a class="scr btn btn-primary btn-sm" href="#question12" data-box=".input-window">質問に戻る</a>
+              </div>
+              <!-- ヘルプウインド -->
+              <%= render 'sellers/help/question12_2' %>
+            </div>
+            <hr class="input-hr">
+            <div class="question" id="question12-3">
+              <h5>商品やサービスの開発におけるポイントを3つ教えてください。</h5>
+              <p>ポイント1 <%= f.text_area :knowhow_dev_1, size: "18x2", class: 'form-control' %></p>
+              <p>ポイント2 <%= f.text_area :knowhow_dev_2, size: "18x2", class: 'form-control' %></p>
+              <p>ポイント3 <%= f.text_area :knowhow_dev_3, size: "18x2", class: 'form-control' %></p>
+　　          <div class="btn-group">
+                <a class="scr btn btn-success btn-sm" href="#question12-1" data-box=".input-window">販売に強い</a>
+                <a class="scr btn btn-success btn-sm" href="#question12-2" data-box=".input-window">技術に強い</a>
+                <a class="scr btn btn-success btn-sm" href="#question12-4" data-box=".input-window">調達に強い</a>
+                <a class="scr btn btn-primary btn-sm" href="#question12" data-box=".input-window">質問に戻る</a>
+              </div>
+              <!-- ヘルプウインド -->
+              <%= render 'sellers/help/question12_3' %>
+            </div>
+            <hr class="input-hr">
+            <div class="question" id="question12-4">
+              <h5>商品や原材料の調達におけるポイントを3つ教えてください。</h5>
+              <p>ポイント1 <%= f.text_area :knowhow_sup_1, size: "18x2", class: 'form-control' %></p>
+              <p>ポイント2 <%= f.text_area :knowhow_sup_2, size: "18x2", class: 'form-control' %></p>
+              <p>ポイント3 <%= f.text_area :knowhow_sup_3, size: "18x2", class: 'form-control' %></p>
+　　          <div class="btn-group">
+                <a class="scr btn btn-primary btn-sm" href="#question12" data-box=".input-window">質問にもどる</a>
+                <a class="scr btn btn-success btn-sm" href="#question12-1" data-box=".input-window">販売に強い</a>
+                <a class="scr btn btn-success btn-sm" href="#question12-2" data-box=".input-window">技術に強い</a>
+                <a class="scr btn btn-success btn-sm" href="#question12-3" data-box=".input-window">開発に強い</a>
+                <a class="scr btn btn-primary btn-sm" href="#question13" data-box=".input-window">次の質問へ</a>
+              </div>
+              <!-- ヘルプウインド -->
+              <%= render 'sellers/help/question12_4' %>
+            </div>
+            <hr class="input-hr-sec">  
+            <div class="question" id="question13">
+              <h5>質問13</h5>
+              <h4>上記のポイントを今後10年間にわたって継続・発展させるにあたって、対応しないといけないことを教えてください。</h4>
+              <%= f.text_area :knowhow_prob,
+                  size: "18x5",
+                  placeholder: "（例）当社はこれまで社長が中心となって新規顧客開拓を行ってきましたが、今後も安定して売上を拡大し続けていくためには、従業員に社長が持っている顧客開拓ルートやノウハウを移していく必要があると考えています。",
+                  class: 'form-control' %>
+              <br>
+              <div class="btn-group">
+                <a class="scr btn btn-primary btn-sm" href="#question12" data-box=".input-window">前の質問へ</a>
+                <a class="scr btn btn-primary btn-sm" href="#question14" data-box=".input-window">次の質問へ</a>
+              </div>
+              <!-- ヘルプウインド -->
+              <%= render 'sellers/help/question13' %>
+            </div>
+            <hr class="input-hr-sec">  
+            <div class="question" id="question14">
+              <h5>質問14</h5>
+              <h4>事業をしていくうえで欠かせない契約（取引基本契約、販売代理店契約、フランチャイズ契約など）や業務委託（外注契約、仕入契約など）があれば教えてください。</h4>
+              <br>
+              <div class="btn-group">
+                <a class="scr btn btn-primary btn-sm" href="#question13" data-box=".input-window">前の質問へ</a>
+                <a class="scr btn btn-success btn-sm" href="#question14-1" data-box=".input-window">一つ目の契約へ</a>
+                <a class="scr btn btn-primary btn-sm" href="#question15" data-box=".input-window">次の質問へ</a>
+              </div>
+              <!-- ヘルプウインド -->
+              <%= render 'sellers/help/question14' %>
+            </div>
+            <hr class="input-hr">
+            <div class="question" id="question14-1">
+              <h5>契約1</h5>
+                <div class="form-inline">
+                  <h5>契約の名称 <%= f.text_field :knowhow_cont_kinds1, class: 'form-control' %></h5>
+                </div>
+                <br>
+              <h5>契約の特徴やビジネス上のメリットを教えてください。</h5>
+              <%= f.text_area :knowhow_cont_con1, size: "18x3", class: 'form-control' %>
+　　    　　  <br>
+              <div class="btn-group">
+                <a class="scr btn btn-primary btn-sm" href="#question14" data-box=".input-window">質問にもどる</a>
+　              <a class="scr btn btn-success btn-sm" href="#question14-2" data-box=".input-window">2つ目の契約に進む</a>
+              </div>
+              <!-- ヘルプウインド -->
+              <%= render 'sellers/help/question14' %>
+            </div>
+            <hr class="input-hr">
+            <div class="question" id="question14-2">
+              <h5>契約2</h5>
+                <div class="form-inline">
+                  <h5>契約の名称 <%= f.text_field :knowhow_cont_kinds2, class: 'form-control' %></h5>
+                </div>
+                <br>
+              <h5>契約の特徴やビジネス上のメリットを教えてください。</h5>
+              <%= f.text_area :knowhow_cont_con2, size: "18x3", class: 'form-control' %>
+　　    　　  <br>
+              <div class="btn-group">
+                <a class="scr btn btn-success btn-sm" href="#question14-1" data-box=".input-window">1つ目の契約にもどる</a>
+　              <a class="scr btn btn-success btn-sm" href="#question14-3" data-box=".input-window">3つ目の契約に進む</a>
+              </div>
+              <!-- ヘルプウインド -->
+              <%= render 'sellers/help/question14' %>
+            </div>
+            <hr class="input-hr">
+            <div class="question" id="question14-3">
+              <h5>契約3</h5>
+                <div class="form-inline">
+                  <h5>契約の名称 <%= f.text_field :knowhow_cont_kinds3, class: 'form-control' %></h5>
+                </div>
+                <br>
+              <h5>契約の特徴やビジネス上のメリットを教えてください。</h5>
+              <%= f.text_area :knowhow_cont_con3, size: "18x3", class: 'form-control' %>
+　　    　　  <br>
+              <div class="btn-group">
+　              <a class="scr btn btn-primary btn-sm" href="#question14" data-box=".input-window">質問にもどる</a>
+                <a class="scr btn btn-success btn-sm" href="#question14-1" data-box=".input-window">1つ目の契約にもどる</a>
+                <a class="scr btn btn-success btn-sm" href="#question14-2" data-box=".input-window">2つ目の契約にもどる</a>
+　              <a class="scr btn btn-primary btn-sm" href="#question15" data-box=".input-window">次の質問へ</a>
+              </div>
+              <!-- ヘルプウインド -->
+              <%= render 'sellers/help/question14' %>
+            </div>
+          </section>
+          <hr class="input-hr-sec">  
+          <section id="content5">
+            <div class="question" id="question15">
+              <h5>質問15</h5>
+              <h4>あなたの会社のキーパーソンについて、役職、得意な分野、その理由を教えてください。</h4>
+              <br>
+              <div class="btn-group">
+                <a class="scr btn btn-primary btn-sm" href="#question14" data-box=".input-window">前の質問へ</a>
+            　　  <a class="scr btn btn-success btn-sm" href="#question15-1" data-box=".input-window">一人目のキーパーソンへ</a>
+                <a class="scr btn btn-primary btn-sm" href="#question16" data-box=".input-window">次の質問へ</a>
+              </div>
+              <!-- ヘルプウインド -->
+              <%= render 'sellers/help/question15' %>
+            </div>
+            <hr class="input-hr">
+            <div class="question" id="question15-1">
+              <h5>キーパーソン1</h5>
+              <div class="form-inline">
+                <h5>役職（氏名は不要）<%= f.text_field :hr_key_posi1, class: 'form-control' %></h5>
+                <h5>得意分野&nbsp; <%= f.text_field :hr_key_field1, class: 'form-control' %></h5>
+              </div>
+              <h5>キーパーソンである理由を教えてください。</h5>
+              <%= f.text_area :hr_key_reas1, size: "18x3", class: 'form-control' %>
+              <br>
+              <div class="btn-group">
+                <a class="scr btn btn-primary btn-sm" href="#question15" data-box=".input-window">質問にもどる</a>
+                <a class="scr btn btn-success btn-sm" href="#question15-2" data-box=".input-window">もう一人追加する</a>
+              </div>
+              <!-- ヘルプウインド -->
+              <%= render 'sellers/help/question15' %>
+            </div>
+            <hr class="input-hr">
+            <div class="question" id="question15-2">
+              <h5>キーパーソン2</h5>
+              <div class="form-inline">
+                <h5>役職（氏名は不要）<%= f.text_field :hr_key_posi2, class: 'form-control' %></h5>
+                <h5>得意分野&nbsp; <%= f.text_field :hr_key_field2, class: 'form-control' %></h5>
+              </div>
+              <h5>キーパーソンである理由を教えてください。</h5>
+              <%= f.text_area :hr_key_reas2, size: "18x3", class: 'form-control' %>
+              <br>
+              <div class="btn-group">
+                <a class="scr btn btn-success btn-sm" href="#question15-1" data-box=".input-window">一人目にもどる</a>
+                <a class="scr btn btn-success btn-sm" href="#question15-3" data-box=".input-window">もう一人追加する</a>
+              </div>
+              <!-- ヘルプウインド -->
+              <%= render 'sellers/help/question15' %>
+            </div>
+            <hr class="input-hr">
+            <div class="question" id="question15-3">
+              <h5>キーパーソン3</h5>
+              <div class="form-inline">
+                <h5>役職（氏名は不要）<%= f.text_field :hr_key_posi3, class: 'form-control' %></h5>
+                <h5>得意分野&nbsp; <%= f.text_field :hr_key_field3, class: 'form-control' %></h5>
+              </div>
+              <h5>キーパーソンである理由を教えてください。</h5>
+              <%= f.text_area :hr_key_reas3, size: "18x3", class: 'form-control' %>
+              <br>
+              <div class="btn-group">
+                <a class="scr btn btn-primary btn-sm" href="#question15" data-box=".input-window">質問にもどる</a>
+                <a class="scr btn btn-success btn-sm" href="#question15-1" data-box=".input-window">一人目にもどる</a>
+                <a class="scr btn btn-success btn-sm" href="#question15-2" data-box=".input-window">二人目にもどる</a>
+                <a class="scr btn btn-primary btn-sm" href="#question16" data-box=".input-window">次の質問へ</a>
+              </div>
+              <!-- ヘルプウインド -->
+              <%= render 'sellers/help/question15' %>
+            </div>
+            <hr class="input-hr-sec">  
+            <div class="question" id="question16">
+              <h5>質問16</h5>
+              <h4>あなたの会社で今はいないけど、今後必要としている人材像を教えてください。</h4>
+              <%= f.text_area :hr_hope,
+                  size: "18x5",
+                  placeholder: "（例）当社は現在は食品業界向けの製造装置部品を製造していますが、今後の市場動向や事業の成長余地を検討した結果、医薬品業界向けの製造装置用部品を展開していきたいと考えています。そのためには、医薬品の業界や規制、求められる品質などをもとに開発を進める必要があるため、医薬品製造装置の技術をもった開発人員を必要としています。",
+                  class: 'form-control' %>
+              <br>
+              <div class="btn-group">
+                <a class="scr btn btn-primary btn-sm" href="#question15" data-box=".input-window">前の質問へ</a>
+                <a class="scr btn btn-primary btn-sm" href="#question17" data-box=".input-window">次の質問へ</a>
+              </div>
+              <!-- ヘルプウインド -->
+              <%= render 'sellers/help/question16' %>
+            </div>
+            <hr class="input-hr-sec">  
+            <div class="question" id="question17">
+              <h5>質問17</h5>
+              <h4>あなたの会社で実施している役員・従業員のモチベーションを高める取り組みを教えてください。</h4>
+              <%= f.text_area :hr_moti,
+                  size: "18x5",
+                  placeholder: "（例）当社では、毎月の業績を従業員に開示して従業員に経営への参加意識を持たせています。また、従業員の評価を業績と連動させ、利益に応じた賞与支給と昇給・昇格をルール化することで、業績に対するモチベーションを高める仕組みとしています。",
+                  class: 'form-control' %>
+              <br>
+              <div class="btn-group">
+                <a class="scr btn btn-primary btn-sm" href="#question16" data-box=".input-window">前の質問へ</a>
+                <a class="scr btn btn-primary btn-sm" href="#question18" data-box=".input-window">次の質問へ</a>
+              </div>
+              <!-- ヘルプウインド -->
+              <%= render 'sellers/help/question16' %>
+            </div>
+          </section>
+          <hr class="input-hr-sec">  
+          <section id="content6">
+            <div class="question" id="question18">
+              <h5>質問18</h5>
+              <h4>あなたの会社の5年後のあるべき将来像を教えてください。</h4>
+              <%= f.text_area :proj_vision,
+              　　size: "18x10",
+              　　placeholder: "（例）当社では、毎月の業績を従業員に開示して従業員に経営への参加意識を持たせています。また、従業員の評価を業績と連動させ、利益に応じた賞与支給と昇給・昇格をルール化することで、業績に対するモチベーションを高める仕組みとしています。",
+              　　class: 'form-control' %>
+              <br>
+              <div class="btn-group">
+                <a class="scr btn btn-primary btn-sm" href="#question17" data-box=".input-window">前の質問へ</a>
+                <a class="scr btn btn-primary btn-sm" href="#question19" data-box=".input-window">次の質問へ</a>
+              </div>
+            </div>
+            <hr class="input-hr-sec">  
+            <div class="question" id="question19">
+              <h5>質問19</h5>
+              <h4>あるべき将来像を達成するためにやらなければならないことを3つ教えてください。</h4>
+              <%= f.text_area :proj_todo, size: "18x10", class: 'form-control' %>
+              <br><br><br><br><br>
+              <div class="btn-group">
+                <a class="scr btn btn-primary btn-sm" href="#question18" data-box=".input-window">前の質問へ</a>
+                <a class="scr btn btn-primary btn-sm" href="#question20" data-box=".input-window">次の質問へ</a>
+              </div>
+            </div>
+            <hr class="input-hr-sec">  
+            <div class="question" id="question20">
+              <h5>質問20</h5>
+              <h4>あるべき将来像を達成するために克服すべき課題を3つ教えてください。</h4>
+              <%= f.text_area :proj_prob, size: "18x10", class: 'form-control' %>
+              <br><br><br><br><br><br>
+              <div class="btn-group">
+                <a class="scr btn btn-primary btn-sm" href="#question19" data-box=".input-window">前の質問へ</a>
+              </div>
+            </div>
+          </section>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <div class="msg-div">
+        <div class="msg-lg">
+          <p>20の質問に答えて、<%= @seller.cname %>の魅力を伝えましょう！</p>
+        </div>
+          <br>
+        <div class="msg-sm">
+          <p>
+            質問に答えながら、これまでの経営の振り返りをしてみてください。
+            <br>
+            きっといくつもの新しい発見がありますよ。
+          </p>
+        </div>
+  <%= f.submit "入力内容の確認", class: "btn btn-success btn-lg" %>
+      </div>
+    </div>  
+  <% end %>  
+</div>
+
+<script>
+$(function() {
+  var $win = $('.input-window'),waku,
+      pos1,pos2,pos3,pos4,pos5,pos6,
+      tate1,tate2,tate3,tate4,tate5,tate6;
+      
+  $win.on("scroll",function() {
+
+      waku = $(".window").offset().top;
+      pos1 = $("#content1").offset().top-10;
+      pos2 = $("#content2").offset().top-10;
+      pos3 = $("#content3").offset().top-10;
+      pos4 = $("#content4").offset().top-10;
+      pos5 = $("#content5").offset().top-10;
+      pos6 = $("#content6").offset().top-10;
+      tate1 = $("#content1").height()-10;
+      tate2 = $("#content2").height()-10;
+      tate3 = $("#content3").height()-10;
+      tate4 = $("#content4").height()-10;
+      tate5 = $("#content5").height()-10;
+      tate6 = $("#content6").height()-10;
+
+var con = true;
+      switch(con){
+        case waku > pos1 && waku < pos1 + tate1 :
+          $("div.msg-lg").html("<p>まず、はじめにあなたが<%= @seller.cname %>を経営してきた想いを教えてください。</p>");
+          $("div.msg-sm").html("<p>会社を立ち上げた時、会社を先代から引き継いだ時、大きな仕事を成し遂げた時、苦しかった時・・・。<br><br>いろいろな出来事を乗り越えてきたなかで抱いてきたさまざまな想いを教えてください。</p>");
+          break;
+        case waku > pos2 && waku < pos2 + tate2 :
+          $("div.msg-lg").html("<p>あなたが自信をもって提供している商品やサービスを教えてください。</p>");
+          $("div.msg-sm").html("<p>これまで、素晴らしい商品やサービスで顧客を満足させてきた<%= @seller.cname %>。<br><br>あなたが提供してきた商品やサービス、技術の魅力を詳しく教えてください。</p>");
+          break;
+        case waku > pos3 && waku < pos3 + tate3 :
+          $("div.msg-lg").html("<p><%= @seller.cname %>の大切な顧客のことを教えてください。</p>");
+          $("div.msg-sm").html("<p>あなたにとってとても大切な顧客がどのような相手なのか、なぜその顧客が<%= @seller.cname %>を選び続けたのか。<br><br>そこに<%= @seller.cname %>の強みの源が眠っています。</p>");
+          break;
+        case waku > pos4 && waku < pos4 + tate4 :
+          $("div.msg-lg").html("<p><%= @seller.cname %>のビジネスの仕組みを教えてください。</p>");
+          $("div.msg-sm").html("<p>ビジネスはヒト、モノ、カネの経営資源だけでは成り立ちません。<br><br>経営資源を活かすための技術、販売・営業、開発などのノウハウがどれだけあるかに大きく左右されます。<br><br><%= @seller.cname %>が持っているノウハウを洗い出しましょう。</p>");
+          break;
+        case waku > pos5 && waku < pos5 + tate5 :
+          $("div.msg-lg").html("<p>ビジネスの根幹である人材について教えてください。</p>");
+          $("div.msg-sm").html("<p><%= @seller.cname %>をこれまで引っ張ってきた優秀な社員たち。<br><br>今後も中心となって活躍してくれる主要メンバーの長所や特徴を思い出しながら、アピールポイントに変えていきましょう。</p>");
+          break;
+        case waku > pos6 && waku < pos6 + tate6 :
+          $("div.msg-lg").html("<p>最後に、これからの<%= @seller.cname %>のことを教えてください。</p>");
+          $("div.msg-sm").html("<p>ここまで普段ならあまり考えないようなことまで<%= @seller.cname %>のことを振り返ってきました。<br><br>現状を踏まえて、これから<%= @seller.cname %>が進んでいくべき方向を書いてみてください。</p>");
+          break;
+        default :
+          $("aside").text("");
+      }
+  });
+});
+</script>
+
+    <script>
+    //スムーズスクロール
+    $(document).ready(function(){
+      $("a.scr").click(function(){
+        var hash = this.hash;
+        var position = $(hash).offset().top;
+    
+      //data-box属性がない場合は通常のスムーズスクロール
+      if(!$(this).data("box")){
+          $('html, body').animate({scrollTop:position},800,'swing',function(){
+            window.location.hash=hash;
+          });
+      
+      //data-box属性がある場合はdata-box内をスムーズスクロール
+      }else{
+    			var $box = $($(this).data("box"));
+    			var $target = $($(this).attr("href"));
+    			var dist = $target.position().top - $box.position().top;
+    			$box.stop().animate({scrollTop: $box.scrollTop() + dist},1200,'swing',function(){
+    			  window.location.hash=hash;
+    			});
+        }
+    		return false;
+      });
+    });
+    </script>
+
+    <script>
+      $(function(){
+        $("dd").css("display","none");
+        $("dl dt").click(function(){
+          if($("+dd",this).css("display")=="none"){
+              $("dd").slideUp("slow");
+              $("+dd",this).slideDown("slow");
+          }else{
+            $("dd").slideUp("slow");
+          }
+        }).mouseover(function(){
+          $(this).addClass("over");
+        }).mouseout(function(){
+          $(this).removeClass("over");
+        });
+      });
+    </script>

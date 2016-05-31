@@ -1,0 +1,546 @@
+@import "cerulean/base";
+
+// Cerulean 3.3.5
+// Bootswatch
+// -----------------------------------------------------
+
+.btn-shadow(@color) {
+  #gradient > .vertical-three-colors(lighten(@color, 8%), @color, 60%, darken(@color, 4%));
+  filter: none;
+  border-bottom: 1px solid darken(@color, 10%);
+}
+
+// Navbar =====================================================================
+
+.navbar {
+  .btn-shadow(@navbar-default-bg);
+  filter: none;
+  .box-shadow(0 1px 10px rgba(0, 0, 0, 0.1));
+
+  &-default {
+
+    .badge {
+      background-color: #fff;
+      color: @navbar-default-bg;
+    }
+  }
+
+  &-inverse {
+    #gradient > .vertical-three-colors(lighten(@navbar-inverse-bg, 8%), lighten(@navbar-inverse-bg, 4%), 60%, darken(@navbar-inverse-bg, 2%));
+    filter: none;
+    border-bottom: 2px solid darken(@navbar-inverse-bg, 10%);
+
+    .badge {
+      background-color: #fff;
+      color: @navbar-inverse-bg;
+    }
+  }
+
+  .navbar-nav > li > a,
+  &-brand {
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  }
+}
+
+@media (max-width: @grid-float-breakpoint-max) {
+
+  .navbar {
+
+    .dropdown-header {
+      color: #fff;
+    }
+
+    .dropdown-menu {
+      a {
+        color: #fff;
+      }
+    }
+  }
+}
+
+// Buttons ====================================================================
+
+.btn {
+
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+
+  .caret {
+    border-top-color: #fff;
+  }
+}
+
+.btn-default {
+  
+  .btn-shadow(@btn-default-bg);
+
+  &:hover {
+    color: @btn-default-color;
+  }
+
+  .caret {
+    border-top-color: @text-color;
+  }
+}
+
+.btn-default {
+  .btn-shadow(@btn-default-bg);
+}
+
+.btn-primary {
+  .btn-shadow(@btn-primary-bg);
+}
+
+.btn-success {
+  .btn-shadow(@btn-success-bg);
+}
+
+.btn-info {
+  .btn-shadow(@btn-info-bg);
+}
+
+.btn-warning {
+  .btn-shadow(@btn-warning-bg);
+}
+
+.btn-danger {
+  .btn-shadow(@btn-danger-bg);
+}
+
+// Typography =================================================================
+
+// Tables =====================================================================
+
+// Forms ======================================================================
+
+// Navs =======================================================================
+
+// Indicators =================================================================
+
+// Progress bars ==============================================================
+
+// Containers =================================================================
+
+.panel-primary,
+.panel-success,
+.panel-warning,
+.panel-danger,
+.panel-info {
+
+  .panel-heading,
+  .panel-title {
+    color: #fff;
+  }
+}
+
+// Jumbotron =================================================================
+
+.jumbotron {
+  padding-top: 50px;
+  padding-bottom: 30px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  }
+  
+.jumbotron h1,
+  .jumbotron .h1 {
+    color: inherit;
+  }
+  
+  .jumbotron p {
+    margin-bottom: 15px;
+    font-size: 28px;
+    font-weight: 200;
+    color: #fff;
+  }
+  
+  .jumbotron > hr {
+    border-top-color: #cfd9db;
+  }
+  
+  .jumbotron .container {
+    max-width: 100%;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .jumbotron {
+      padding-top: 48px;
+      padding-bottom: 48px;
+    }
+
+    .container .jumbotron, .container-fluid .jumbotron {
+      padding-left: 60px;
+      padding-right: 60px;
+      }
+
+    .jumbotron h1,
+    .jumbotron .h1 {
+      font-size: 70px;
+      color: 	#fff;
+    }
+
+  }
+
+.top-jumbotron{
+height: 650px;
+padding-top: 150px;
+background-image: image-url('top.jpg');
+background-size: cover;
+text-align: center;
+}
+
+// ログイン画面 =================================================================
+.login-outline{
+  margin-top: 30px;
+  padding: 20px 40px;
+  border: 1px solid #ccc;
+  height: 400px;
+  box-shadow: 3px 5px 5px #ccc;
+}
+
+// ユーザー登録画面 =================================================================
+.signup-window{
+  margin-top: 20px;
+  padding: 20px 30px;
+  border: 1px solid #ccc;
+  box-shadow: 3px 5px 5px #ccc;
+}
+
+.signup-after{
+  margin-top: 40px;
+  padding: 20px 50px;
+  height: 300px;
+  border: 1px solid #ccc;
+  box-shadow: 3px 5px 5px #ccc;
+}
+
+// 売り手、買い手リスト画面 =================================================================
+.company-list{
+  margin-top: 20px;
+  padding: 20px 30px;
+  border: 1px solid #ccc;
+  height: 550px;
+  overflow-y: auto;
+  box-shadow: 3px 5px 5px #ccc;
+}
+
+// 売り手、買い手詳細画面 =================================================================
+.company-show-window{
+  margin: 20px 0px;
+  padding: 20px 50px;
+  border: 1px solid #ccc;
+  height: 500px;
+  overflow-y: auto;
+}
+
+.follow-data{
+  margin-top: 20px;
+  padding: 20px 50px;
+  border: 1px solid #ccc;
+  height: 500px;
+  overflow-y: auto;
+  box-shadow: 3px 5px 5px #ccc;
+  
+}
+
+// 入力画面 =================================================================
+.input-window{
+  padding: 0px 20px;
+  background-color: #fff;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  overflow-y: scroll;
+  height: 530px;
+  box-shadow: 3px 5px 5px #ccc;
+}
+
+.input-hr-sec{
+  border-width: 5px;
+  border-color: #e5e5e5;
+}
+
+.input-hr{
+  border-width: 2px;
+  border-color: #ccc;
+}
+
+.yen{
+  text-align: right;
+}
+
+.msg-lg{
+  text-align: left;
+  height: 100px;
+  font-size: 28px;
+  color: #2e2e9d;
+  text-shadow: 2px #656565;
+}
+
+.msg-sm{
+  text-align: left;
+  font-size: 18px;
+  height: 250px;
+  color: 	#656565;
+  text-shadow: 2px #656565;
+}
+
+.msg-div{
+  vertical-align: middle;
+  margin: 20px 20px;
+  padding-top: 30px;
+}
+
+.question{
+  height: 530px;
+  padding: 5px;
+}
+
+.btn-position{
+  float: right;
+}
+
+// 出力画面 =================================================================
+
+.output-window{
+  padding: 0px 20px;
+  background-color: #fff;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  overflow-y: auto;
+  height: 530px;
+  box-shadow:2px 5px 10px 1px #ccc;
+  }
+
+// フォロー画面 =================================================================
+/*
+.stats {
+  overflow: auto;
+  margin-top: 0;
+  padding: 0;
+  a {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid $gray-lighter;
+    color: gray;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: blue;
+    }
+  }
+  strong {
+    display: block;
+  }
+}
+*/
+
+/*
+#content { 
+  background: #f5f3ec;
+  }
+#wrapper { 
+  width: 500px; margin: 0 auto; padding: 64px 0;
+  }
+#wrapper:after { 
+  content: ""; clear: both; display: block;
+  }
+.section { 
+  box-sizing: border-box; width: 33.33333333%; float: left; padding: 0 8px;
+  }
+.thumb { 
+  margin: 0;
+  }
+*/
+
+// アコーディオンパネル =================================================================
+dl{
+  margin: 10px auto;
+  height: 260px;
+  overflow: auto;
+}
+
+dl.question-sm{
+  margin: 10px auto;
+  height: 210px;
+  overflow: auto;
+}
+
+dt{
+  line-height: 25px;
+  font-size: 14px;
+  font-family: @font-family-base;
+  color: #7f7f7f;
+}
+
+dd{
+  margin: 0;
+  padding-top: -5px;
+  padding-bottom: -5px;
+  font-size: 13px;
+  background-color: #fff;
+}
+
+dd p{
+  margin: 0;
+  text-indent: 1em;
+  font-size: 14px;
+  padding: 4px;
+  padding-left: 1em;
+  text-indent: 0em;
+  color: @brand-success;
+  font-family: @font-family-base;
+}
+
+dd li{
+  padding-left: 1em;
+  text-indent: -2em;
+  color: #7c7c7c;
+}
+
+dt.over{
+  color: orange;
+  cursor: pointer;
+}
+
+dt.selected{
+  color: @brand-success;
+  cursor: default;
+}
+
+
+// 売り手新規登録-基本 =================================================================
+.buyer_form_bg{
+  background-color: #e5e5e5;
+}
+
+.buyer_form{
+  padding: 50px 100px;
+  border: 1px solid #ccc;
+  overflow-y :scroll;
+  height:500px;
+  box-shadow: 2px 5px 5px #ccc;
+}
+
+// 売り手新規登録-基本 =================================================================
+.seller_form_bg{
+  background-color: #e5e5e5;
+}
+
+.seller_form{
+  padding: 50px 100px;
+  border: 1px solid #ccc;
+  overflow-y :scroll;
+  height:500px;
+  box-shadow: 2px 5px 5px #ccc;
+}
+
+
+// ダッシュボード（売り手） =================================================================
+.prof{
+  margin-top: 40px;
+  margin-right: 0px;
+  padding: 10px;
+  background-color:	#e8e5e2;
+  overflow-y :auto;
+  height: 550px;
+}
+
+//Global add-ons
+
+.sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/*
+* Top navigation
+* Hide default border to remove 1px line.
+*/
+.navbar-fixed-top {
+  border: 0;
+}
+
+/*
+* Sidebar
+*/
+/* Hide for mobile, show later */
+.sidebar {
+  display: none;
+}
+#navbar-list-menu {
+  display: block;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 51px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: #f5f5f5;
+    border-right: 1px solid #eee;
+  }
+  #navbar-list-menu {
+    display: none;
+  }
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  color: #fff;
+  background-color: #4F78A4;
+}
+
+/*
+* Main content
+*/
+.main {
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+}
+
+
+/*
+* Placeholder dashboard ideas
+*/
+.placeholders {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.placeholders h4 {
+  margin-bottom: 0;
+}
+.placeholder {
+  margin-bottom: 20px;
+}
+.placeholder img {
+  display: inline-block;
+  border-radius: 50%;
+}

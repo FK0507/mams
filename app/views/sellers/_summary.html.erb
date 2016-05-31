@@ -1,0 +1,277 @@
+  <section id="content1">
+    <div class="question" id="question1">
+      <h5>質問1</h5>
+      <h5>あなたの会社の事業内容を教えてください。</h5>
+      <div><%= @seller.phil_p %></div>
+    </div>
+    <hr class="input-hr-sec">
+    <div class="question" id="question2">
+      <h5>質問2</h5>
+      <h5>あなたがこれまで会社経営をしてきた中で、大切にしてきたことや、守ってきたことを教えてください。</h5>
+      <div><%= @seller.phil_f %></div>
+    </div>
+    <hr class="input-hr-sec">
+    <div class="question" id="question3">
+      <h5>質問3</h5>
+      <h5>会社または事業の譲渡を検討している理由を教えてください。</h5>
+      <div><%= @seller.reason %></div>
+    </div>
+    <hr class="input-hr-sec">
+    <div class="question" id="question4">
+      <h5>質問4</h5>
+      <h5>引き継いでくれる会社に伝えたいことがあれば教えてください。</h5>
+      <div><%= @seller.req %></div>
+    </div>
+  </section>
+  <hr class="input-hr-sec">
+  <section id="content2">
+    <div class="question" id="question5">
+      <h5>質問5</h5>
+      <h5>今、あなたの会社が力をいれている商品・サービス・技術とその特徴を教えてください。</h5>
+      <div><%= @seller.goods_kinds %></div>
+    </div>
+    <hr class="input-hr-sec">
+    <div class="question" id="question6">
+      <br>
+      <h5>質問6</h5>
+      <h5>あなたの会社の商品・サービス・技術のうち、ライバル会社と比べて負けていないものを教えてください。</h5>
+      <div><%= @seller.goods_stro %></div>
+    </div>
+    <hr class="input-hr-sec">
+    <div class="question" id="question7">
+      <br>
+      <h5>質問7</h5>
+      <h5>あなたの会社の商品・サービス・技術について、課題と感じているものを教えてください。</h5>
+      <div><%= @seller.goods_weak %></div>
+    </div>
+  </section>
+  <hr class="input-hr-sec">  
+  <section id="content3">
+    <div class="question" id="question8">
+      <br>
+      <h5>質問8</h5>
+      <h5>あなたの会社が過去一年間において取引をした顧客数（概数）を教えてください。</h5>
+      <div><%= @seller.cust_num %><%= @seller.cust_unit %></div>
+    </div>
+    <hr class="input-hr-sec">
+    <div class="question" id="question9">
+      <br>
+      <h5>質問9</h5>
+      <h5>あなたの会社の現時点における大切な顧客の上位3社を教えてください。また、それぞれの年間取引金額、大切だと考える理由を教えてください。</h5>
+      <hr class="input-hr">
+    </div>
+    <div class="question" id="question9-1">
+      <h5>顧客1</h5>
+      <h5>顧客名:<%= @seller.cust_imp_name1 %></h5> 
+      <br>
+      <div class="form-inline">
+        <h5>年間取引金額（概算）:<%= @seller.cust_imp_vol1 %>(<%= @seller.cust_imp_unit1 %>)</h5> 
+      </div>
+      <br>
+      <h5>大切な顧客と考える理由を教えてください。</h5> 
+      <div><%= @seller.cust_imp_reas1 %></div>
+    </div>
+    <hr class="input-hr">
+    <div class="question" id="question9-2">
+      <h5>顧客2</h5>
+      <h5>顧客名:<%= @seller.cust_imp_name2 %></h5> 
+      <br>
+      <div class="form-inline">
+        <h5>年間取引金額（概算）:<%= @seller.cust_imp_vol2 %>(<%= @seller.cust_imp_unit2 %>)</h5> 
+      </div>
+      <br>
+      <h5>大切な顧客と考える理由を教えてください。</h5> 
+      <div><%= @seller.cust_imp_reas2 %></div>
+    </div>
+    <hr class="input-hr">
+    <div class="question" id="question9-3">
+      <br>
+      <h5>顧客3</h5>
+      <h5>顧客名:<%= @seller.cust_imp_name3 %></h5> 
+      <br>
+      <div class="form-inline">
+        <h5>年間取引金額（概算）:<%= @seller.cust_imp_vol3 %>(<%= @seller.cust_imp_unit3 %>)</h5> 
+      </div>
+      <br>
+      <h5>大切な顧客と考える理由を教えてください。</h5> 
+      <div><%= @seller.cust_imp_reas3 %></div>
+    </div>
+    <hr class="input-hr-sec">
+    <div class="question" id="question10">
+      <h5>質問10</h5>
+      <h5>大切な顧客からあなたの会社が取引先として選ばれている理由を教えてください。</h5>
+      <div><%= @seller.cust_reas %></div>
+    </div>
+    <hr class="input-hr-sec">
+    <div class="question" id="question11">
+      <h5>質問11</h5>
+      <h5>顧客との信頼関係構築のために日々行っていることを教えてください。</h5>
+      <div><%= @seller.cust_rela %></div>
+    </div>
+  </section>  
+  <hr class="input-hr-sec">  
+  <section id="content4">
+    <div class="question" id="question12">
+      <h5>質問12</h5>
+      <h5>あなたの会社のビジネスの仕組みを教えてください。</h5>
+      <hr class="input-hr">
+    </div>
+    <div class="question" id="question12-1">
+      <h5>セールスポイントが販売力や営業力である場合、営業手法におけるポイントを3つ教えてください。</h5>
+      <h5>営業・販売手法のポイント1</h5>
+      <div><%= @seller.knowhow_sales_1 %></div>
+      <h5>営業・販売手法のポイント2</h5>
+      <div><%= @seller.knowhow_sales_2 %></div>
+      <h5>営業・販売手法のポイント3</h5>
+      <div><%= @seller.knowhow_sales_3 %></div>
+    </div>
+    <hr class="input-hr">
+    <div class="question" id="question12-2">
+      <h5>セールスポイントが技術力である場合、技術におけるポイントを3つ教えてください。</h5>
+      <h5>技術上のポイント1</h5>
+      <div><%= @seller.knowhow_tech_1 %></div>
+      <h5>技術上のポイント2</h5>
+      <div><%= @seller.knowhow_tech_2 %></div>
+      <h5>技術上のポイント3</h5>
+      <div><%= @seller.knowhow_tech_3 %></div>
+    </div>
+    <hr class="input-hr">
+    <div class="question" id="question12-3">
+      <h5>セールスポイントが商品・サービスの開発力である場合、開発におけるポイントを3つ教えてください。</h5>
+      <h5>開発のポイント1</h5>
+      <div><%= @seller.knowhow_dev_1 %></div>
+      <h5>開発のポイント2</h5>
+      <div><%= @seller.knowhow_dev_2 %></div>
+      <h5>開発のポイント3</h5>
+      <div><%= @seller.knowhow_dev_3 %></div>
+    </div>
+    <hr class="input-hr">
+    <div class="question" id="question12-4">
+      <h5>セールスポイントが商品や原材料などの調達力である場合、調達におけるポイントを3つ教えてください。</h5>
+      <h5>調達のポイント1</h5>
+      <div><%= @seller.knowhow_sup_1 %></div>
+      <h5>調達のポイント2</h5>
+      <div><%= @seller.knowhow_sup_1 %></div>
+      <h5>調達のポイント3</h5>
+      <div><%= @seller.knowhow_sup_1 %></div>
+    </div>
+    <hr class="input-hr-sec">  
+    <div class="question" id="question13">
+      <h5>質問13</h5>
+      <h5>上記のポイントを今後10年間にわたって継続・発展させるにあたって、課題となる部分を教えてください。</h5>
+      <div><%= @seller.knowhow_prob %></div>
+    </div>
+    <hr class="input-hr-sec">  
+    <div class="question" id="question14">
+      <h5>質問14</h5>
+      <h5>事業をしていくうえで欠かせない契約（取引基本契約、販売代理店契約、フランチャイズ契約など）や業務委託（外注契約、仕入契約など）があれば教えてください。</h5>
+    </div>
+    <hr class="input-hr">
+    <div class="question" id="question14-1">
+      <h5>契約1</h5>
+　　　　  <br>
+      <h5>契約の名称</h5>
+      <div><%= @seller.knowhow_cont_kinds1 %></div>
+      <br>
+      <h5>契約の種類:<%= @seller.knowhow_cont_kinds1 %></h5>
+      <br>
+      <h5>契約の特徴やビジネス上のメリットを教えてください。</h5>
+      <div><%= @seller.knowhow_cont_con1 %></div>
+    </div>
+    <hr class="input-hr">
+    <div class="question" id="question14-2">
+      <h5>契約2</h5>
+　　　　  <br>
+      <h5>契約の名称</h5>
+      <div><%= @seller.knowhow_cont_kinds2 %></div>
+      <br>
+      <h5>契約の種類:<%= @seller.knowhow_cont_kinds2 %></h5>
+      <br>
+      <h5>契約の特徴やビジネス上のメリットを教えてください。</h5>
+      <div><%= @seller.knowhow_cont_con2 %></div>
+    </div>
+    <hr class="input-hr">
+    <div class="question" id="question14-3">
+      <h5>契約3</h5>
+　　　　  <br>
+      <h5>契約の名称</h5>
+      <div><%= @seller.knowhow_cont_kinds3 %></div>
+      <br>
+      <h5>契約の種類:<%= @seller.knowhow_cont_kinds3 %></h5>
+      <br>
+      <h5>契約の特徴やビジネス上のメリットを教えてください。</h5>
+      <div><%= @seller.knowhow_cont_con3 %></div>
+    </div>
+  </section>
+  <hr class="input-hr-sec">  
+  <section id="content5">
+    <div class="question" id="question15">
+      <h5>質問15</h5>
+      <h5>あなたの会社のキーパーソンについて、役職、得意な分野、その理由を教えてください。</h5>
+    </div>
+    <hr class="input-hr">
+    <div class="question" id="question15-1">
+      <h5>キーパーソン1</h5>
+      <h5>役職:<%= @seller.hr_key_posi1 %></h5>
+      <br>
+      <h5>得意分野</h5>
+      <div><%= @seller.hr_key_field1 %></div>
+      <br>
+      <h5>キーパーソンである理由を教えてください。</h5>
+      <div><%= @seller.hr_key_reas1 %></div>
+    </div>
+    <hr class="input-hr">
+    <div class="question" id="question15-2">
+      <h5>キーパーソン2</h5>
+      <h5>役職:<%= @seller.hr_key_posi2 %></h5>
+      <br>
+      <h5>得意分野</h5>
+      <div><%= @seller.hr_key_field2 %></div>
+      <br>
+      <h5>キーパーソンである理由を教えてください。</h5>
+      <div><%= @seller.hr_key_reas2 %></div>
+    </div>
+    <hr class="input-hr">
+    <div class="question" id="question15-3">
+      <h5>キーパーソン3</h5>
+      <h5>役職:<%= @seller.hr_key_posi3 %></h5>
+      <br>
+      <h5>得意分野</h5>
+      <div><%= @seller.hr_key_field3 %></div>
+      <br>
+      <h5>キーパーソンである理由を教えてください。</h5>
+      <div><%= @seller.hr_key_reas3 %></div>
+    </div>
+    <hr class="input-hr-sec">  
+    <div class="question" id="question16">
+      <h5>質問16</h5>
+      <h5>あなたの会社で今後採用したい人材像を教えてください。</h5>
+      <div><%= @seller.hr_hope %></div>
+    </div>
+    <hr class="input-hr-sec">  
+    <div class="question" id="question17">
+      <h5>質問17</h5>
+      <h5>あなたの会社で実施している役員・従業員のモチベーションを高める取り組みを教えてください。</h5>
+      <div><%= @seller.hr_moti %></div>
+    </div>
+  </section>
+  <hr class="input-hr-sec">  
+  <section id="content6">
+    <div class="question" id="question18">
+      <h5>質問18</h5>
+      <h5>あなたの会社の5年後のあるべき将来像を教えてください。</h5>
+      <div><%= @seller.proj_vision %></div>
+    </div>
+    <hr class="input-hr-sec">  
+    <div class="question" id="question19">
+      <h5>質問19</h5>
+      <h5>あるべき将来像を達成するためにやらなければならないことを3つ教えてください。</h5>
+      <div><%= @seller.proj_todo %></div>
+    </div>
+    <hr class="input-hr-sec">  
+    <div class="question" id="question20">
+      <h5>質問20</h5>
+      <h5>あるべき将来像を達成するために克服すべき課題を3つ教えてください。</h5>
+      <div><%= @seller.proj_prob %></div>
+    </div>
+  </section>

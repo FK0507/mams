@@ -1,0 +1,52 @@
+<%= form_for(@seller) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.label :cname, "会社名"%>
+    <%= f.text_field :cname, class: 'form-control' %>
+    <br>
+    <%= f.label :gname, "会社名カナ" %>
+    <%= f.text_field :cname_kana, class: 'form-control' %>
+    <br>
+    <%= f.label :zip, "郵便番号" %>
+    <%= f.text_field :zip, class: 'form-control' %>
+    <br>
+    <%= f.label :pref, "都道府県" %>
+    <%= f.text_field :pref, class: 'form-control' %>
+    <br>
+    <%= f.label :city, "市町村" %>
+    <%= f.text_field :city, class: 'form-control' %>
+    <br>
+    <%= f.label :adr, "番地・ビル名" %>
+    <%= f.text_field :adr, class: 'form-control' %>
+    <br>
+    <%= f.label :president, "代表者" %>
+    <%= f.text_field :president, class: 'form-control' %>
+    <br>
+    <%= f.label :industry_id, "業種" %>
+    <%= f.collection_select :industry_id, @industries, :id, :ind_b, class: 'form-control' %>
+    <br>
+      <%= f.label :mainbk_name, "メインバンク" %>
+    <div class="form-inline">
+      <%= f.text_field :mainbk_name, class: 'form-control' %>
+      <label><%= f.radio_button :mainbk_kind, '銀行' %>銀行</label>
+      <label><%= f.radio_button :mainbk_kind, '信用金庫' %>信用金庫</label>
+      <label><%= f.radio_button :mainbk_kind, '信用組合' %>信用組合</label>
+      <label><%= f.radio_button :mainbk_kind, 'その他' %>その他</label>
+    </div>
+    <br>
+    <div class="form-inline">
+      <%= f.text_field :mainbk_branch, class: 'form-control' %>
+      <label><%= f.radio_button :mainbk_bkind, '支店' %>支店</label>
+      <label><%= f.radio_button :mainbk_bkind, '営業部' %>営業部</label>
+      <label><%= f.radio_button :mainbk_bkind, '出張所' %>出張所</label>
+      <label><%= f.radio_button :mainbk_bkind, 'その他' %>その他</label>
+    </div>
+    <br>
+      <%= f.label :seller_condition_id, "希望条件" %>
+      <%= f.collection_select :seller_condition_id, @s_condits, :id,:s_condit, class: 'form-control' %>
+    <br>
+    <br>
+  </div>
+  <%= f.submit "登録", class: "btn btn-primary" %>
+  <%= double_submit_token %>
+<% end %>

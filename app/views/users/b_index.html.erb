@@ -1,0 +1,28 @@
+<% provide(:title, '買い手ユーザーリスト') %>
+<div class = "container">
+  <div class="row">
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-10">
+    <h3> 買い手ユーザーリスト</h3>
+      <table class="table">
+        <tr>
+          <th>ユーザNo.</th><th>姓</th><th>名</th><th>メールアドレス</th><th>編集</th><th>削除</th>
+        </tr>
+        <% @b_users.each do |b_user| %>
+        <tr>
+          <td><%= b_user.id %></td>
+          <td><%= b_user.fname %></td>
+          <td><%= b_user.gname %></td>
+          <td><%= b_user.email %></td>
+          <td><%= link_to '編集', edit_user_registration_path(b_user) %></td>
+          <td><%= link_to '削除', b_user, method: :delete, data: {confirm: '本当に削除しますか？'} %></td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+    <div class="col-md-1">
+    </div>
+    </div>
+  </div>
+</div>

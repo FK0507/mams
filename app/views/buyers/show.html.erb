@@ -1,0 +1,57 @@
+<% provide(:title, '買希望企業-概要') %>
+<div class = "container">
+  <div class="row">
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-8">
+      <br>
+      <h4>【買希望企業】No.<%= @buyer.id %>の概要</h4>
+      <div class="row">
+        <div class="col-md-6 company-show-window">
+          <div class="row">
+            <h5>企業の概要</h5>
+            <table class="table">
+              <tr>
+                <th class="col-md-4">項目</th><th class="col-md-8">内容</th>
+              </tr>
+              <tr>
+                <td class="col-md-4">No.</td><td class="col-md-8"><%= @buyer.id %></td>
+              </tr>
+              <tr>
+                <td class="col-md-4">所在地</td><td class="col-md-8"><%= @buyer.pref %><%= @buyer.city %></td>
+              </tr>
+              <tr>
+                <td class="col-md-4">業種</td><td class="col-md-8"><%= Industry.where(id: @buyer.industry_id).pluck(:ind_b)[0] %></td>
+              </tr>
+              <tr>
+                <td class="col-md-4">主な取扱い商品・サービス</td><td class="col-md-8"><%= @buyer.goods %></td>
+              </tr>
+              <tr>
+                <td class="col-md-4">役員数</td><td class="col-md-8"><%= @buyer.dir %></td>
+              </tr>
+              <tr>
+                <td class="col-md-4">従業員数</td><td class="col-md-8"><%= @buyer.reg %></td>
+              </tr>
+              <tr>
+                <td class="col-md-4">希望条件</td><td class="col-md-8"><%= BuyerCondition.where(id: @buyer.buyer_condition_id).pluck(:b_condit)[0] %></td>
+              </tr>
+              <tr>
+                <td class="col-md-4">希望条件の内容</td><td class="col-md-8"><%= @buyer.comment %></td>
+              </tr>
+          　</table>    
+        　</div>
+      　   <%= link_to '詳細情報', buyer_path(@buyer.id), class: "btn btn-primary" %>
+      　</div>
+        <div class="col-md-6 company-show-window">
+          <h5>フォロー状況</h5>
+          <% if current_user.kind == "seller" then  %>
+            <%= render 'follow_form' %>
+          <% end %> 
+            <%= render 'stats' %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2">
+    </div>
+  </div>
+</div>

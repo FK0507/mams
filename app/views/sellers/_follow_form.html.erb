@@ -1,0 +1,7 @@
+<div>
+   <% if @seller.b_relationships.exists?(buyer_id: @buyer.id) %>
+    <%= render 'unfollow' %>
+   <% else %>
+    <%= render 'follow' %>
+   <% end %>
+</div>

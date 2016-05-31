@@ -1,0 +1,25 @@
+<% provide(:title, '売希望条件リスト') %>
+<div class = "container">
+  <div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-6">
+    <br>
+    <h3> 売り希望条件リスト</h3>
+      <table class="table">
+        <tr>
+          <th>売希望条件</th><th>編集</th><th>削除</th></tr>
+        </tr>
+          <% @seller_conditions.each do |seller_condition| %>
+            <tr>
+              <td><%= seller_condition.s_condit %></td>
+              <td><%= link_to '編集', edit_seller_condition_path(seller_condition) %></td>
+              <td><%= link_to '削除', seller_condition, method: :delete, data: {confirm: '本当に削除しますか？'} %></td>
+            </tr>
+          <% end %>
+      </table>
+    </div>
+    <div class="col-md-3">
+    </div>
+  </div>
+</div>

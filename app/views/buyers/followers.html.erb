@@ -1,0 +1,23 @@
+<% provide(:title, @title) %>
+<div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-6">
+    <h3> followersリスト</h3>
+      <table class="table">
+        <tr>
+          <th>企業No</th><th>所在地</th><th>業種</th><th>詳細</th></tr>
+        </tr>
+          <% @followers.each do |follower| %>
+            <tr>
+              <td><%= follower.id %></td>
+              <td><%= follower.pref %></td>
+              <td><%= Industry.where(id: follower.industry_id).pluck(:ind_b)[0] %></td>
+              <td><%= link_to '詳細', seller_path(follower) %></td>
+            </tr>
+          <% end %>
+      </table>
+    </div>
+    <div class="col-md-3">
+    </div>
+</div>

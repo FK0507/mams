@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+
+<h3><%= t "devise.invitations.new.header" %></h3>
+
+<%= form_for resource, :as => resource_name, :url => user_invitation_path, :html => {:method => :post} do |f| %>
+  <%= devise_error_messages! %>
+
+<%= f.hidden_field :kind, :value => current_user.kind %>
+<label><%= f.radio_button :role, 'member' %>社内担当者</label>
+<label><%= f.radio_button :role, 'supporter' %>外部専門家</label>
+
+<% resource.class.invite_key_fields.each do |field| -%>
+  <p><%= f.label field %><br />
+  <%= f.text_field field , autofocus: true, class: 'form-control' %></p>
+<% end -%>
+
+  <p><%= f.submit t("devise.invitations.new.submit_button") , class: "btn btn-primary" %></p>
+<% end %>

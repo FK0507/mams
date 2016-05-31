@@ -1,0 +1,550 @@
+<% provide(:title, '売希望企業-概要') %>
+<div class = "container">
+  <div class="row">
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-10">
+      <br>
+      <div id="navbar">
+        <ul class="nav nav-tabs">
+          <li class="active"><a class="scr" href="#content1" data-box=".output-window">経営者の想い</a></li>
+          <li><a class="scr" href="#content2" data-box=".output-window">自社の商品・サービス・技術</a></li>
+          <li><a class="scr" href="#content3" data-box=".output-window">顧客</a></li>
+          <li><a class="scr" href="#content4" data-box=".output-window">ビジネスの仕組み</a></li>
+          <li><a class="scr" href="#content5" data-box=".output-window">人材</a></li>
+          <li><a class="scr" href="#content6" data-box=".output-window">事業計画</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-1">
+    </div>
+  </div>
+  <div class="row">
+  <%= form_for(@seller) do |f| %>
+  <div class="col-md-1">
+    </div>
+    <div class="col-md-10">
+      <div data-spy="scroll" data-target="#navbar" class="output-window">      
+        <div class="field">
+          <section id="content1">
+              <br>
+              <h5>質問1</h5>
+              <h4>あなたの会社の事業内容を教えてください。</h4>
+              <%= f.text_area :phil_p,
+                 size: "100x5",
+                 readonly: true,
+                 value: @seller_confirm["phil_p"] %>
+              <br>
+              <h5>質問2</h5>
+              <h4>あなたがこれまで会社経営をしてきた中で、大切にしてきたことや、守ってきたことを教えてください。</h4>
+              <%= f.text_area :phil_f,
+                 size: "100x5",
+                 readonly: true,
+                 value: @seller_confirm["phil_f"] %>
+              <br>
+              <h5>質問3</h5>
+              <h4>会社または事業の譲渡を検討している理由を教えてください。</h4>
+              <%= f.text_area :reason,
+                  size: "100x5",
+                  readonly: true,
+                  value: @seller_confirm["reason"] %>
+              <br>
+              <h5>質問4</h5>
+              <h4>引き継いでくれる会社に伝えたいことがあれば教えてください。</h4>
+              <%= f.text_area :req,
+                  size: "100x5",
+                  readonly: true,
+                  value: @seller_confirm["req"] %>
+          </section>
+          <hr class="input-hr-sec">
+          <section id="content2">
+              <br>
+              <h5>質問5</h5>
+              <h4>今、あなたの会社が力をいれている商品・サービス・技術とその特徴を教えてください。</h4>
+              <%= f.text_area :goods_kinds,
+                  size: "100x5",
+                  readonly: true,
+                  disabled: true,
+                  value: @seller_confirm["goods_kinds"]
+                   %>
+              <br>
+              <h5>質問6</h5>
+              <h4>あなたの会社の商品・サービス・技術のうち、ライバル会社と比べて負けていないものを教えてください。</h4>
+              <%= f.text_area :goods_stro,
+                  readonly: true,
+                  disabled: true,
+                  value: @seller_confirm["good_stro"]
+                   %>
+              <br>
+              <h5>質問7</h5>
+              <h4>あなたの会社の商品・サービス・技術について、課題と感じているものを教えてください。</h4>
+              <%= f.text_area :goods_weak,
+                  size: "100x5",
+                  readonly: true,
+                  disabled: true,
+                  value: @seller_confirm["goods_weak"]
+                   %>
+              <br>
+          </section>
+        <hr class="input-hr-sec">  
+          <section id="content3">
+              <br>
+              <h5>質問8</h5>
+              <h4>あなたの会社が過去一年間において取引をした顧客数（概数）を教えてください。</h4>
+                <%= f.text_field :cust_num, 
+                    readonly: true,
+                    disabled: true,
+                    value: @seller_confirm["cust_num"]
+                     %>
+                <%= f.text_field :cust_unit,
+                    readonly: true,
+                    disabled: true,
+                    value: @seller_confirm["cust_unit"]
+                     %>
+              <h5>質問9</h5>
+              <h4>あなたの会社の現時点における大切な顧客の上位3社を教えてください。また、それぞれの年間取引金額、大切だと考える理由を教えてください。</h4>
+              <h5>もし、あなたの会社の大切な顧客が個人顧客である場合には、管理している個人顧客層ごと（エリア、年齢層、グループなど）に教えてください。</h5>
+              <br>
+              <h5>顧客1</h5>
+                <h5>顧客名 <%= f.text_field :cust_imp_name1,
+                               readonly: true,
+                               disabled: true,
+                               value: @seller_confirm["cust_imp_name1"]
+                                %></h5>
+                <h5>年間取引金額（概算額） <%= f.text_field :cust_imp_vol1,
+                               readonly: true,
+                               disabled: true,
+                               value: @seller_confirm["cust_imp_vol1"]
+                                %>
+                             <%= f.text_field :cust_imp_unit1,
+                               readonly: true,
+                               disabled: true,
+                               value: @seller_confirm["cust_imp_unit1"]
+                                %></h5>
+　              <h5>大切な顧客と考える理由を教えてください。</h5> 
+                <%= f.text_area :cust_imp_reas1,
+                               size: "100x3",
+                               readonly: true,
+                               disabled: true,
+                               value: @seller_confirm["cust_imp_reas1"]
+                                %>
+              <br>
+              <h5>顧客2</h5>
+                <h5>顧客名 <%= f.text_field :cust_imp_name2,
+                               readonly: true,
+                               disabled: true,
+                               value: @seller_confirm["cust_imp_name2"]
+                                %></h5>
+                <h5>年間取引金額（概算額） <%= f.text_field :cust_imp_vol2,
+                               readonly: true,
+                               disabled: true,
+                               value: @seller_confirm["cust_imp_vol2"]
+                                %>
+                             <%= f.text_field :cust_imp_unit2,
+                               readonly: true,
+                               disabled: true,
+                               value: @seller_confirm[":cust_imp_unit2"]
+                                %></h5>
+　              <h5>大切な顧客と考える理由を教えてください。</h5> 
+                <%= f.text_area :cust_imp_reas3,
+                               size: "100x3",
+                               readonly: true,
+                               disabled: true,
+                               value: @seller_confirm["cust_imp_reas3"]
+                                %>
+              <h5>顧客3</h5>
+                <h5>顧客名 <%= f.text_field :cust_imp_name3,
+                               readonly: true,
+                               disabled: true,
+                               value: @seller_confirm["cust_imp_name3"]
+                                %></h5>
+                <h5>年間取引金額（概算額） <%= f.text_field :cust_imp_vol3,
+                               readonly: true,
+                               disabled: true,
+                               value: @seller_confirm["cust_imp_vol3"]
+                                %>
+                             <%= f.text_field :cust_imp_unit3,
+                               readonly: true,
+                               disabled: true,
+                               value: @seller_confirm["cust_imp_unit3"]
+                                %></h5>
+　              <h5>大切な顧客と考える理由を教えてください。</h5> 
+                <%= f.text_area :cust_imp_reas3,
+                               size: "100x3",
+                               readonly: true,
+                               disabled: true,
+                               value: @seller_confirm["cust_imp_reas3"]
+                                %>
+              <h5>質問10</h5>
+              <h4>大切な顧客からあなたの会社が取引先として選ばれている理由を教えてください。</h4>
+              <%= f.text_area :cust_reas,
+                  size: "100x5",
+                  readonly: true,
+                  disabled: true,
+                  value: @seller_confirm["cust_reas"]
+                   %>
+              <br>
+              <h5>質問11</h5>
+              <h4>顧客との信頼関係構築のために日々行っていることを教えてください。</h4>
+              <%= f.text_area :cust_rela,
+                  size: "100x5",
+                  readonly: true,
+                  disabled: true,
+                  value: @seller_confirm["cust_reas"]
+                   %>
+          </section>
+          <hr class="input-hr-sec">  
+          <section id="content4">
+              <h5>質問12</h5>
+              <h4>あなたの会社のビジネスの仕組みを教えてください。</h4>
+              <br>
+              <h5>販売・営業手法におけるポイント</h5>
+              <p>ポイント1 <%= f.text_area :knowhow_sales_1,
+                               size: "100x2",
+                               readonly: true,
+                               disabled: true,
+                               value: @seller_confirm["knowhow_sales_1"]
+                                %></p>
+              <p>ポイント2 <%= f.text_area :knowhow_sales_2,
+                               size: "100x2",
+                               readonly: true,
+                               disabled: true,
+                               value: @seller_confirm["knowhow_sales_2"]
+                                %></p>
+              <p>ポイント3 <%= f.text_area :knowhow_sales_3,
+                               size: "100x2",
+                               readonly: true,
+                               disabled: true,
+                               value: @seller_confirm["knowhow_sales_3"]
+                                %></p>
+              <br>
+              <h5>技術力におけるポイント</h5>
+              <p>ポイント1 <%= f.text_area :knowhow_tech_1,
+                                size: "100x2",
+                                readonly: true,
+                                disabled: true,
+                                value: @seller_confirm["knowhow_tech_1"]
+                                 %></p>
+              <p>ポイント2 <%= f.text_area :knowhow_tech_2,
+                                size: "100x2",
+                                readonly: true,
+                                disabled: true,
+                                value: @seller_confirm["knowhow_tech_2"]
+                                 %></p>
+              <p>ポイント3 <%= f.text_area :knowhow_tech_3,
+                                size: "100x2",
+                                readonly: true,
+                                disabled: true,
+                                value: @seller_confirm["knowhow_tech_3"]
+                                 %></p>
+              <br>
+              <h5>商品やサービスの開発におけるポイント</h5>
+              <p>ポイント1 <%= f.text_area :knowhow_dev_1,
+                                size: "100x2",
+                                readonly: true,
+                                disabled: true,
+                                value: @seller_confirm["knowhow_dev_1"]
+                                 %></p>
+              <p>ポイント2 <%= f.text_area :knowhow_dev_2,
+                                size: "100x2",
+                                readonly: true,
+                                disabled: true,
+                                value: @seller_confirm["knowhow_dev_2"]
+                                 %></p>
+              <p>ポイント3 <%= f.text_area :knowhow_dev_3,
+                                size: "100x2",
+                                readonly: true,
+                                disabled: true,
+                                value: @seller_confirm["knowhow_dev_3"]
+                                 %></p>
+              <h5>商品や原材料の調達におけるポイントを3つ教えてください。</h5>
+              <p>ポイント1 <%= f.text_area :knowhow_sup_1,
+                                size: "100x2",
+                                readonly: true,
+                                disabled: true,
+                                value: @seller_confirm["knowhow_sup_1"]
+                                 %></p>
+              <p>ポイント2 <%= f.text_area :knowhow_sup_2,
+                                size: "100x2",
+                                readonly: true,
+                                disabled: true,
+                                value: @seller_confirm["knowhow_sup_2"]
+                                 %></p>
+              <p>ポイント3 <%= f.text_area :knowhow_sup_3,
+                                size: "100x2",
+                                readonly: true,
+                                disabled: true,
+                                value: @seller_confirm["knowhow_sup_3"]
+                                 %></p>
+              <br>
+              <h5>質問13</h5>
+              <h4>上記のポイントを今後10年間にわたって継続・発展させるにあたって、対応しないといけないことを教えてください。</h4>
+              <%= f.text_area :knowhow_prob,
+                  size: "100x5",
+                  readonly: true,
+                  disabled: true,
+                  value: @seller_confirm["knowhow_prob"]
+                   %>
+              <h5>質問14</h5>
+              <h4>事業をしていくうえで欠かせない契約（取引基本契約、販売代理店契約、フランチャイズ契約など）や業務委託（外注契約、仕入契約など）があれば教えてください。</h4>
+              <h5>契約1</h5>
+                  <h5>契約の名称 <%= f.text_field :knowhow_cont_kinds1,
+                                     readonly: true,
+                                     disabled: true,
+                                     value: @seller_confirm["knowhow_cont_kinds1"]
+                                      %></h5>
+                  <h5>契約の特徴やビジネス上のメリットを教えてください。</h5>
+                  <%= f.text_area :knowhow_cont_con1,
+                      size: "100x3",
+                      readonly: true,
+                      disabled: true,
+                      value: @seller_confirm["knowhow_cont_con1"]
+                       %>
+              <br>
+              <h5>契約2</h5>
+                  <h5>契約の名称 <%= f.text_field :knowhow_cont_kinds2,
+                                     readonly: true,
+                                     disabled: true,
+                                     value: @seller_confirm["knowhow_cont_kinds2"]
+                                      %></h5>
+                  <h5>契約の特徴やビジネス上のメリットを教えてください。</h5>
+                  <%= f.text_area :knowhow_cont_con2,
+                      size: "100x3",
+                      readonly: true,
+                      disabled: true,
+                      value: @seller_confirm["knowhow_cont_con2"]
+                       %>
+              <br>
+              <h5>契約3</h5>
+                  <h5>契約の名称 <%= f.text_field :knowhow_cont_kinds3,
+                                     readonly: true,
+                                     disabled: true,
+                                     value: @seller_confirm["knowhow_cont_kinds3"]
+                                      %></h5>
+                  <h5>契約の特徴やビジネス上のメリットを教えてください。</h5>
+                  <%= f.text_area :knowhow_cont_con3,
+                      size: "100x3",
+                      readonly: true,
+                      disabled: true,
+                      value: @seller_confirm["knowhow_cont_con3"]
+                       %>
+          </section>
+          <hr class="input-hr-sec">  
+          <section id="content5">
+              <h5>質問15</h5>
+              <h4>あなたの会社のキーパーソンについて、役職、得意な分野、その理由を教えてください。</h4>
+              <br>
+              <h5>キーパーソン1</h5>
+              <h5>役職（氏名は不要）<%= f.text_field :hr_key_posi1,
+                                        readonly: true,
+                                        disabled: true,
+                                        value: @seller_confirm["hr_key_posi1"]
+                                         %></h5>
+              <h5>得意分野&nbsp; <%= f.text_field :hr_key_field1,
+                                        readonly: true,
+                                        disabled: true,
+                                        value: @seller_confirm["hr_key_field1"]
+                                         %></h5>
+              <h5>キーパーソンである理由を教えてください。</h5>
+              <%= f.text_area :hr_key_reas1,
+                  size: "100x3",
+                  readonly: true,
+                  disabled: true,
+                  value: @seller_confirm["hr_key_reas1"]
+                   %></h5>
+              <br>
+              <h5>キーパーソン2</h5>
+              <h5>役職（氏名は不要）<%= f.text_field :hr_key_posi2,
+                                        readonly: true,
+                                        disabled: true,
+                                        value: @seller_confirm["hr_key_posi2"]
+                                         %></h5>
+              <h5>得意分野&nbsp; <%= f.text_field :hr_key_field2,
+                                        readonly: true,
+                                        disabled: true,
+                                        value: @seller_confirm["hr_key_field2"]
+                                         %></h5>
+              <h5>キーパーソンである理由を教えてください。</h5>
+              <%= f.text_area :hr_key_reas2,
+                  size: "100x3",
+                  readonly: true,
+                  disabled: true,
+                  value: @seller_confirm["hr_key_reas2"]
+                   %></h5>
+              <br>
+              <h5>キーパーソン3</h5>
+              <h5>役職（氏名は不要）<%= f.text_field :hr_key_posi3,
+                                        readonly: true,
+                                        disabled: true,
+                                        value: @seller_confirm["hr_key_posi3"]
+                                         %></h5>
+              <h5>得意分野&nbsp; <%= f.text_field :hr_key_field3,
+                                        readonly: true,
+                                        disabled: true,
+                                        value: @seller_confirm["hr_key_field3"]
+                                         %></h5>
+              <h5>キーパーソンである理由を教えてください。</h5>
+              <%= f.text_area :hr_key_reas3,
+                  size: "100x3",
+                  readonly: true,
+                  disabled: true,
+                  value: @seller_confirm["hr_key_reas3"]
+                   %></h5>
+              <br>
+              <h5>質問16</h5>
+              <h4>あなたの会社で今はいないけど、今後必要としている人材像を教えてください。</h4>
+              <%= f.text_area :hr_hope,
+                  size: "100x5",
+                  readonly: true,
+                  disabled: true,
+                  value: @seller_confirm["hr_hope"]
+                   %>
+              <br>
+              <h5>質問17</h5>
+              <h4>あなたの会社で実施している役員・従業員のモチベーションを高める取り組みを教えてください。</h4>
+              <%= f.text_area :hr_moti,
+                  size: "100x5",
+                  readonly: true,
+                  disabled: true,
+                  value: @seller_confirm["hr_moti"]
+                   %>
+              <br>
+          </section>
+          <hr class="input-hr-sec">  
+          <section id="content6">
+            <div class="question" id="question18">
+              <h5>質問18</h5>
+              <h4>あなたの会社の5年後のあるべき将来像を教えてください。</h4>
+              <%= f.text_area :proj_vision,
+              　　size: "100x10",
+                  readonly: true,
+                  disabled: true,
+                  value: @seller_confirm["proj_vision"] %>
+              <br>
+              <h5>質問19</h5>
+              <h4>あるべき将来像を達成するためにやらなければならないことを3つ教えてください。</h4>
+              <%= f.text_area :proj_todo,
+                  size: "100x10",
+                  readonly: true,
+                  disabled: true,
+                  value: @seller_confirm["proj_todo"]
+                   %>
+              <br>
+              <h5>質問20</h5>
+              <h4>あるべき将来像を達成するために克服すべき課題を3つ教えてください。</h4>
+              <%= f.text_area :proj_prob,
+                  size: "100x10",
+                  readonly: true,
+                  disabled: true,
+                  value: @seller_confirm["proj_prob"]
+                   %>
+          </section>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-1">
+    </div>
+  <%= f.submit "登録", class: "btn btn-success btn-lg" %>
+  </div>
+  <% end %>
+</div>
+
+<script>
+$(function() {
+  var $win = $('.input-window'),waku,
+      pos1,pos2,pos3,pos4,pos5,pos6,
+      tate1,tate2,tate3,tate4,tate5,tate6;
+      
+  $win.on("scroll",function() {
+
+      waku = $(".window").offset().top;
+      pos1 = $("#content1").offset().top-10;
+      pos2 = $("#content2").offset().top-10;
+      pos3 = $("#content3").offset().top-10;
+      pos4 = $("#content4").offset().top-10;
+      pos5 = $("#content5").offset().top-10;
+      pos6 = $("#content6").offset().top-10;
+      tate1 = $("#content1").height()-10;
+      tate2 = $("#content2").height()-10;
+      tate3 = $("#content3").height()-10;
+      tate4 = $("#content4").height()-10;
+      tate5 = $("#content5").height()-10;
+      tate6 = $("#content6").height()-10;
+
+var con = true;
+      switch(con){
+        case waku > pos1 && waku < pos1 + tate1 :
+          $("div.msg-lg").html("<p>まず、はじめにあなたが<%= @seller.cname %>を経営してきた想いを教えてください。</p>");
+          $("div.msg-sm").html("<p>会社を立ち上げた時、会社を先代から引き継いだ時、大きな仕事を成し遂げた時、苦しかった時・・・。<br><br>いろいろな出来事を乗り越えてきたなかで抱いてきたさまざまな想いを教えてください。</p>");
+          break;
+        case waku > pos2 && waku < pos2 + tate2 :
+          $("div.msg-lg").html("<p>あなたが自信をもって提供している商品やサービスを教えてください。</p>");
+          $("div.msg-sm").html("<p>これまで、素晴らしい商品やサービスで顧客を満足させてきた<%= @seller.cname %>。<br><br>あなたが提供してきた商品やサービス、技術の魅力を詳しく教えてください。</p>");
+          break;
+        case waku > pos3 && waku < pos3 + tate3 :
+          $("div.msg-lg").html("<p><%= @seller.cname %>の大切な顧客のことを教えてください。</p>");
+          $("div.msg-sm").html("<p>あなたにとってとても大切な顧客がどのような相手なのか、なぜその顧客が<%= @seller.cname %>を選び続けたのか。<br><br>そこに<%= @seller.cname %>の強みの源が眠っています。</p>");
+          break;
+        case waku > pos4 && waku < pos4 + tate4 :
+          $("div.msg-lg").html("<p><%= @seller.cname %>のビジネスの仕組みを教えてください。</p>");
+          $("div.msg-sm").html("<p>ビジネスはヒト、モノ、カネの経営資源だけでは成り立ちません。<br><br>経営資源を活かすための技術、販売・営業、開発などのノウハウがどれだけあるかに大きく左右されます。<br><br><%= @seller.cname %>が持っているノウハウを洗い出しましょう。</p>");
+          break;
+        case waku > pos5 && waku < pos5 + tate5 :
+          $("div.msg-lg").html("<p>ビジネスの根幹である人材について教えてください。</p>");
+          $("div.msg-sm").html("<p><%= @seller.cname %>をこれまで引っ張ってきた優秀な社員たち。<br><br>今後も中心となって活躍してくれる主要メンバーの長所や特徴を思い出しながら、アピールポイントに変えていきましょう。</p>");
+          break;
+        case waku > pos6 && waku < pos6 + tate6 :
+          $("div.msg-lg").html("<p>最後に、これからの<%= @seller.cname %>のことを教えてください。</p>");
+          $("div.msg-sm").html("<p>ここまで普段ならあまり考えないようなことまで<%= @seller.cname %>のことを振り返ってきました。<br><br>現状を踏まえて、これから<%= @seller.cname %>が進んでいくべき方向を書いてみてください。</p>");
+          break;
+        default :
+          $("aside").text("");
+      }
+  });
+});
+</script>
+
+    <script>
+    //スムーズスクロール
+    $(document).ready(function(){
+      $("a.scr").click(function(){
+        var hash = this.hash;
+        var position = $(hash).offset().top;
+    
+      //data-box属性がない場合は通常のスムーズスクロール
+      if(!$(this).data("box")){
+          $('html, body').animate({scrollTop:position},800,'swing',function(){
+            window.location.hash=hash;
+          });
+      
+      //data-box属性がある場合はdata-box内をスムーズスクロール
+      }else{
+    			var $box = $($(this).data("box"));
+    			var $target = $($(this).attr("href"));
+    			var dist = $target.position().top - $box.position().top;
+    			$box.stop().animate({scrollTop: $box.scrollTop() + dist},1200,'swing',function(){
+    			  window.location.hash=hash;
+    			});
+        }
+    		return false;
+      });
+    });
+    </script>
+
+    <script>
+      $(function(){
+        $("dd").css("display","none");
+        $("dl dt").click(function(){
+          if($("+dd",this).css("display")=="none"){
+              $("dd").slideUp("slow");
+              $("+dd",this).slideDown("slow");
+          }else{
+            $("dd").slideUp("slow");
+          }
+        }).mouseover(function(){
+          $(this).addClass("over");
+        }).mouseout(function(){
+          $(this).removeClass("over");
+        });
+      });
+    </script>

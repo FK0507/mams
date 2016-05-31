@@ -1,0 +1,39 @@
+<%= render 'shared/flash_message' %>
+<div class="row">
+  <div class="col-md-4">
+ </div>
+    <div class="col-md-4 signup-window">
+    <% if  params[:kind] == "buyer" then %>
+      <h3>買い手ユーザー登録</h3>
+    <% elsif params[:kind] == "seller" then %>
+      <h3>売り手ユーザー登録</h3>
+    <% end %>
+    <br>
+    <%= form_for(resource, as: resource_name, url: user_registration_path) do |f| %>
+      <%= devise_error_messages! %>
+    
+        <%= f.label :fname, "姓"%>
+        <%= f.text_field :fname, class: 'form-control' %>
+        <br>
+        <%= f.label :gname, "名" %>
+        <%= f.text_field :gname, class: 'form-control' %>
+        <br>
+        <%= f.label :email %>
+        <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+        <br>
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+        <em>(半角<%= @minimum_password_length %>文字以上)</em>
+        <% end %><br />
+        <%= f.password_field :password, class: 'form-control' %>
+        <br>
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, class: 'form-control' %>
+        <br>
+        <%= f.hidden_field :kind, :value => params[:kind] %>
+        <%= f.hidden_field :role, :value => "admin" %>
+        <%= f.submit "ユーザーを登録する", class: "btn btn-primary" %>
+    <% end %>
+    </div>
+</div>    
+    <%= render "users/shared/links" %>

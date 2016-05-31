@@ -1,0 +1,6 @@
+<%= form_for(@buyer.disclosures.find_by(buyer_id: @buyer.id),
+             html: { method: :delete }) do |f| %>
+
+  <%= f.submit "情報開示を解消する",
+      data: { disable_with: "更新中..."}, class: "btn btn-primary btn-block" %>
+<% end %>

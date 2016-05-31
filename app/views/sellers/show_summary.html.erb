@@ -1,0 +1,37 @@
+<% provide(:title, '売希望企業-概要') %>
+<div class = "container">
+  <div class="row">
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-10">
+      <% @user = @seller.users[0] %>
+      <%= render 'user_info' %>
+      <div id="navbar">
+        <ul class="nav nav-tabs">
+          <li class="active"><a class="scr" href="#content1" data-box=".output-window">経営者の想い</a></li>
+          <li><a class="scr" href="#content2" data-box=".output-window">自社の商品・サービス・技術</a></li>
+          <li><a class="scr" href="#content3" data-box=".output-window">顧客</a></li>
+          <li><a class="scr" href="#content4" data-box=".output-window">ビジネスの仕組み</a></li>
+          <li><a class="scr" href="#content5" data-box=".output-window">人材</a></li>
+          <li><a class="scr" href="#content6" data-box=".output-window">事業計画</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-1">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-10">
+      <div data-spy="scroll" data-target="#navbar" class="output-window">      
+        <div class="field">
+          <%= render 'summary' %>
+        </div>
+        <%= 
+      </div>
+    </div>
+    <div class="col-md-1">
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<div> 
+   <% if @seller.disclosures.exists?(buyer_id: @buyer.id) %>
+     <%= render 'undisclosure' %>
+   <% else %>
+     <%= render 'disclosure' %>
+   <% end %>
+</div>

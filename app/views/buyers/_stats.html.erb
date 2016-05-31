@@ -1,0 +1,10 @@
+<div>
+    <a href="<%= followers_buyer_path(@buyer) %>">
+    　フォローされている数：
+      <strong>
+　      <%  @followers = @buyer.sellers %>
+        <%= @followers.count %>
+      </strong>
+    　社
+    </a>
+</div>

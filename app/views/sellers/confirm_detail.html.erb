@@ -1,0 +1,1048 @@
+<div class="row">
+  <div class="col-md-1">
+  </div>
+  <div class="col-md-6">
+    <br>
+    <div id="SSpy">
+      <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><a class="scr" href="#content1" data-box=".input-window">事業内容</a></li>
+        <li role="presentation"><a class="scr" href="#content2" data-box=".input-window">関係会社</a></li>
+        <li role="presentation"><a class="scr" href="#content3" data-box=".input-window">保有資産</a></li>
+        <li role="presentation"><a class="scr" href="#content4" data-box=".input-window">財務</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-5">
+  </div>
+</div>
+<div class="row">
+<%= form_for(@seller) do |f| %>
+  <div class="col-md-1">
+  </div>
+  <div class="col-md-6 window">
+    <div class="input-window" data-spy="scroll" data-target="#SSpy">      
+        <%= render 'shared/error_messages', object: f.object %>
+      <div class="field">
+        <section id="content1">
+          <br>
+          <h3>事業の状況</h3>
+          <br>
+          <h5>事業の概要</h5>
+          <%= f.text_field :busi_about,
+              readonly: true,
+              value: @seller_confirm["busi_about"] %>
+          <br>
+          <h4>事業1</h4>
+          <h5>事業名</h5>
+          <%= f.text_field :busi_name1,
+              readonly: true,
+              value: @seller_confirm["busi_name1"] %>
+          <br>
+          <div class="row">
+  　        <div class="col-md-1">
+  　        </div>
+  　        <div class="col-md-10">
+              <h5>概要</h5>
+              <%= f.text_area :busi_about1,
+                              readonly: true,
+                              value: @seller_confirm["busi_about1"] %>
+  　          <br>
+              <div class="row">
+       　        <div class="col-md-8">
+                  <h5>主な商品・サービス</h5>
+                  <%= f.text_area :busi_goods1,
+                      readonly: true,
+                      value: @seller_confirm["busi_goods1"] %>
+       　        </div>
+       　        <div class="col-md-4">
+       　        　  <%= f.text_field :busi_sales1,
+                       readonly: true,
+                       value: @seller_confirm["busi_sales1"] %>
+      　         </div>
+    　         </div>
+    　         <br>
+        　         <h5>事業の強み</h5>
+                  <%= f.text_area :busi_stro1,
+                       readonly: true,
+                       value: @seller_confirm["busi_stro1"] %>
+  　           <br>
+  　              <h5>事業の弱み</h5>
+                 <%= f.text_area :busi_weak1,
+                       readonly: true,
+                       value: @seller_confirm["busi_weak1"] %>
+              <br>    
+            </div>
+            <div class="col-md-1">
+  　        </div>
+  　      </div>
+         <hr class="input-hr">
+          <h4>事業2</h4>
+          <h5>事業名</h5>
+          <%= f.text_field :busi_name2,
+              readonly: true,
+              value: @seller_confirm["busi_name2"] %>
+          <br>
+          <div class="row">
+  　        <div class="col-md-1">
+  　        </div>
+  　        <div class="col-md-10">
+              <h5>概要</h5>
+              <%= f.text_area :busi_about2,
+                              readonly: true,
+                              value: @seller_confirm["busi_about2"] %>
+  　          <br>
+              <div class="row">
+       　        <div class="col-md-8">
+                  <h5>主な商品・サービス</h5>
+                  <%= f.text_area :busi_goods2,
+                      readonly: true,
+                      value: @seller_confirm["busi_goods2"] %>
+       　        </div>
+       　        <div class="col-md-4">
+       　        　  <%= f.text_field :busi_sales2,
+                       readonly: true,
+                       value: @seller_confirm["busi_sales2"] %>
+      　         </div>
+    　         </div>
+    　         <br>
+        　         <h5>事業の強み</h5>
+                  <%= f.text_area :busi_stro2,
+                       readonly: true,
+                       value: @seller_confirm["busi_stro2"] %>
+  　           <br>
+  　              <h5>事業の弱み</h5>
+                 <%= f.text_area :busi_weak2,
+                       readonly: true,
+                       value: @seller_confirm["busi_weak2"] %>
+              <br>    
+            </div>
+            <div class="col-md-1">
+  　        </div>
+  　      </div>
+          <hr class="input-hr">
+          <h4>事業3</h4>
+          <h5>事業名</h5>
+          <%= f.text_field :busi_name3,
+              readonly: true,
+              value: @seller_confirm["busi_name3"] %>
+          <br>
+          <div class="row">
+  　        <div class="col-md-1">
+  　        </div>
+  　        <div class="col-md-10">
+              <h5>概要</h5>
+              <%= f.text_area :busi_about3,
+                              readonly: true,
+                              value: @seller_confirm["busi_about3"] %>
+  　          <br>
+              <div class="row">
+       　        <div class="col-md-8">
+                  <h5>主な商品・サービス</h5>
+                  <%= f.text_area :busi_goods3,
+                      readonly: true,
+                      value: @seller_confirm["busi_goods3"] %>
+       　        </div>
+       　        <div class="col-md-4">
+       　        　  <%= f.text_field :busi_sales3,
+                       readonly: true,
+                       value: @seller_confirm["busi_sales3"] %>
+      　         </div>
+    　         </div>
+    　         <br>
+        　         <h5>事業の強み</h5>
+                  <%= f.text_area :busi_stro3,
+                       readonly: true,
+                       value: @seller_confirm["busi_stro3"] %>
+  　           <br>
+  　              <h5>事業の弱み</h5>
+                 <%= f.text_area :busi_weak3,
+                       readonly: true,
+                       value: @seller_confirm["busi_weak3"] %>
+              <br>    
+            </div>
+            <div class="col-md-1">
+  　        </div>
+  　      </div>
+        </section>
+      <hr class="input-hr-sec">
+        <section id="content2">
+          <br>
+          <h4>関係会社の状況</h4>
+          <br>
+          <h5>関係会社の概要</h5>
+          <%= f.text_area :aff_about,
+                       readonly: true,
+                       value: @seller_confirm["aff_about"] %>
+          <br>
+          <hr class="input-hr">
+            <h5>関係会社1</h5>
+            <%= f.text_field :aff_name1,
+                readonly: true,
+                value: @seller_confirm["aff_name1"] %>
+          <br>
+          <p>主要株主</p>
+          <div class="row">
+　          <div class="col-md-1">
+  　         </div>
+  　         <div class="col-md-10">
+              <div class="form-inline">
+                <h5>株主名</h5>
+                <%= f.text_field :aff_sh1_name1,
+                    readonly: true,
+                    value: @seller_confirm["aff_sh1_name1"] %>
+                <h5>持株比率</h5>
+                <%= f.text_field :aff_sh1_per1,
+                    readonly: true,
+                    value: @seller_confirm["aff_sh1_per1"] %>
+  　           </div>
+              <div class="form-inline">
+                <h5>株主名</h5>
+                <%= f.text_field :aff_sh2_name1,
+                    readonly: true,
+                    value: @seller_confirm["aff_sh2_name1"] %>
+                <h5>持株比率</h5>
+                <%= f.text_field :aff_sh2_per1,
+                    readonly: true,
+                    value: @seller_confirm["aff_sh2_per1"] %>
+  　           </div>
+              <div class="form-inline">
+                <h5>株主名</h5>
+                <%= f.text_field :aff_sh3_name1,
+                    readonly: true,
+                    value: @seller_confirm["aff_sh3_name1"] %>
+                <h5>持株比率</h5>
+                <%= f.text_field :aff_sh3_per1,
+                    readonly: true,
+                    value: @seller_confirm["aff_sh3_per1"] %>
+  　           </div>
+            </div>
+  　         <div class="col-md-1">
+  　         </div>
+          </div>
+          <h5>事業内容</h5>
+          <%= f.text_area :aff_busi1,
+              readonly: true,
+              value: @seller_confirm["aff_busi1"] %>
+  　       <br>
+          <hr class="input-hr">
+          <h5>関係会社2</h5>
+          <%= f.text_field :aff_name2,
+              readonly: true,
+              value: @seller_confirm["aff_name2"] %>
+          <br>
+          <p>主要株主</p>
+          <div class="row">
+　          <div class="col-md-1">
+  　         </div>
+  　         <div class="col-md-10">
+              <div class="form-inline">
+                <h5>株主名</h5>
+                <%= f.text_field :aff_sh1_name2,
+                    readonly: true,
+                    value: @seller_confirm["aff_sh1_name2"] %>
+                <h5>持株比率</h5>
+                <%= f.text_field :aff_sh1_per2,
+                    readonly: true,
+                    value: @seller_confirm["aff_sh1_per2"] %>
+  　           </div>
+              <div class="form-inline">
+                <h5>株主名</h5>
+                <%= f.text_field :aff_sh2_name2,
+                    readonly: true,
+                    value: @seller_confirm["aff_sh2_name2"] %>
+                <h5>持株比率</h5>
+                <%= f.text_field :aff_sh2_per2,
+                    readonly: true,
+                    value: @seller_confirm["aff_sh2_per2"] %>
+  　           </div>
+              <div class="form-inline">
+                <h5>株主名</h5>
+                <%= f.text_field :aff_sh3_name2,
+                    readonly: true,
+                    value: @seller_confirm["aff_sh3_name2"] %>
+                <h5>持株比率</h5>
+                <%= f.text_field :aff_sh3_per2,
+                    readonly: true,
+                    value: @seller_confirm["aff_sh3_per2"] %>
+  　           </div>
+            </div>
+  　         <div class="col-md-1">
+  　         </div>
+          </div>
+          <h5>事業内容</h5>
+          <%= f.text_area :aff_busi2,
+              readonly: true,
+              value: @seller_confirm["aff_busi2"] %>
+          <br>
+  　       <hr class="input-hr">
+            <h5>関係会社1</h5>
+            <%= f.text_field :aff_name3,
+                readonly: true,
+                value: @seller_confirm["aff_name3"] %>
+          <br>
+          <p>主要株主</p>
+          <div class="row">
+　          <div class="col-md-1">
+  　         </div>
+  　         <div class="col-md-10">
+              <div class="form-inline">
+                <h5>株主名</h5>
+                <%= f.text_field :aff_sh1_name3,
+                    readonly: true,
+                    value: @seller_confirm["aff_sh1_name3"] %>
+                <h5>持株比率</h5>
+                <%= f.text_field :aff_sh1_per3,
+                    readonly: true,
+                    value: @seller_confirm["aff_sh1_per3"] %>
+  　           </div>
+              <div class="form-inline">
+                <h5>株主名</h5>
+                <%= f.text_field :aff_sh2_name3,
+                    readonly: true,
+                    value: @seller_confirm["aff_sh2_name3"] %>
+                <h5>持株比率</h5>
+                <%= f.text_field :aff_sh2_per3,
+                    readonly: true,
+                    value: @seller_confirm["aff_sh2_per3"] %>
+  　           </div>
+              <div class="form-inline">
+                <h5>株主名</h5>
+                <%= f.text_field :aff_sh3_name3,
+                    readonly: true,
+                    value: @seller_confirm["aff_sh3_name3"] %>
+                <h5>持株比率</h5>
+                <%= f.text_field :aff_sh3_per3,
+                    readonly: true,
+                    value: @seller_confirm["aff_sh3_per3"] %>
+  　           </div>
+            </div>
+  　         <div class="col-md-1">
+  　         </div>
+          </div>
+          <h5>事業内容</h5>
+          <%= f.text_area :aff_busi3,
+              readonly: true,
+              value: @seller_confirm["aff_busi3"] %>
+          <br>
+  　     </section>        
+      <hr class="input-hr-sec">
+        <section id="content3">
+          <br>
+          <h3>保有資産の状況</h3>
+          <br>
+          <h3>主要設備</h3>
+            <h5>設備1</h5>
+            <%= f.text_field :eq_name1,
+                readonly: true,
+                value: @seller_confirm["eq_name1"] %>
+            <div class="form-inline">
+            <h5>設備の種類 
+                <%= f.text_field :eq_kind1,
+                readonly: true,
+                value: @seller_confirm["eq_kind1"] %></h5>
+            <br>
+            <h5>取得年</h5>
+            <%= f.text_field :eq_year1,
+                readonly: true,
+                value: @seller_confirm["eq_year1"] %></h5>
+            <br>
+            <h5>特徴</h5>
+            <%= f.text_area :eq_point1,
+                readonly: true,
+                value: @seller_confirm["eq_point1"] %></h5>
+            <hr class="input-hr">
+            <h5>設備2</h5>
+            <%= f.text_field :eq_name2,
+                readonly: true,
+                value: @seller_confirm["eq_name2"] %>
+            <div class="form-inline">
+            <h5>設備の種類 
+                <%= f.text_field :eq_kind2,
+                readonly: true,
+                value: @seller_confirm["eq_kind2"] %></h5>
+            <br>
+            <h5>取得年</h5>
+            <%= f.text_field :eq_year2,
+                readonly: true,
+                value: @seller_confirm["eq_year2"] %></h5>
+            <br>
+            <h5>特徴</h5>
+            <%= f.text_area :eq_point2,
+                readonly: true,
+                value: @seller_confirm["eq_point2"] %></h5>
+            <hr class="input-hr">
+            <h5>設備3</h5>
+            <%= f.text_field :eq_name3,
+                readonly: true,
+                value: @seller_confirm["eq_name3"] %>
+            <div class="form-inline">
+            <h5>設備の種類 
+                <%= f.text_field :eq_kind3,
+                readonly: true,
+                value: @seller_confirm["eq_kind3"] %></h5>
+            <br>
+            <h5>取得年</h5>
+            <%= f.text_field :eq_year3,
+                readonly: true,
+                value: @seller_confirm["eq_year3"] %></h5>
+            <br>
+            <h5>特徴</h5>
+            <%= f.text_area :eq_point3,
+                readonly: true,
+                value: @seller_confirm["eq_point3"] %></h5>
+            <hr class="input-hr">
+          <h3>主要不動産</h3>
+            <h5>不動産1</h5>
+            <h5><%= f.text_field :re_name1,
+                    readonly: true,
+                    value: @seller_confirm["re_name1"] %></h5>
+            <h5>設備の種類:<%= f.text_field :re_kind1,
+                               readonly: true,
+                               value: @seller_confirm["re_kind1"] %></h5>
+            <h5>面積:<%= f.text_field :re_area1,
+                               readonly: true,
+                               value: @seller_confirm["re_area1"] %><%= f.text_field :re_a_unit1,
+                               readonly: true,
+                               value: @seller_confirm["re_a_unit1"] %>
+            <h5>用途</h5>
+            <%= f.text_field :re_use1,
+                readonly: true,
+                value: @seller_confirm["re_use1"] %>
+            
+            <hr class="input-hr">
+            <h5>不動産2</h5>
+            <h5><%= f.text_field :re_name2,
+                    readonly: true,
+                    value: @seller_confirm["re_name2"] %></h5>
+            <h5>設備の種類:<%= f.text_field :re_kind2,
+                               readonly: true,
+                               value: @seller_confirm["re_kind2"] %></h5>
+            <h5>面積:<%= f.text_field :re_area2,
+                               readonly: true,
+                               value: @seller_confirm["re_area2"] %><%= f.text_field :re_a_unit2,
+                               readonly: true,
+                               value: @seller_confirm["re_a_unit2"] %>
+            <h5>用途</h5>
+            <%= f.text_field :re_use2,
+                readonly: true,
+                value: @seller_confirm["re_use2"] %>
+            <hr class="input-hr">
+            <h5>不動産3</h5>
+            <h5><%= f.text_field :re_name3,
+                    readonly: true,
+                    value: @seller_confirm["re_name3"] %></h5>
+            <h5>設備の種類:<%= f.text_field :re_kind3,
+                               readonly: true,
+                               value: @seller_confirm["re_kind3"] %></h5>
+            <h5>面積:<%= f.text_field :re_area3,
+                               readonly: true,
+                               value: @seller_confirm["re_area3"] %><%= f.text_field :re_a_unit3,
+                               readonly: true,
+                               value: @seller_confirm["re_a_unit3"] %>
+            <h5>用途</h5>
+            <%= f.text_field :re_use3,
+                readonly: true,
+                value: @seller_confirm["re_use3"] %>
+          <hr class="input-hr">
+          <h3>所有する主な金融商品</h3>
+            <h5>所有する金融商品の概要</h5>
+            <%= f.text_area :fi_about,
+                readonly: true,
+                value: @seller_confirm["fi_about"] %>
+            <hr class="input-hr">      
+            <h5>金融商品1</h5>
+            <%= f.text_field :fi_name1,
+                readonly: true,
+                value: @seller_confirm["fi_name1"] %>
+            <div class="form-inline">
+              <h5>金融商品の種類:<%= f.text_field :fi_kind1,
+                                     readonly: true,
+                                     value: @seller_confirm["fi_kind1"] %>
+            </div>
+　          <br>
+            <div class="form-inline">
+              <h5>時価</h5>
+              <%= f.text_field :fi_val1,
+                  readonly: true,
+                  value: @seller_confirm["fi_val1"] %>(<%= f.text_field :fi_unit1,
+                  readonly: true,
+                  value: @seller_confirm["fi_unit1"] %>)
+            <hr class="input-hr">
+            <h5>金融商品2</h5>
+            <%= f.text_field :fi_name2,
+                readonly: true,
+                value: @seller_confirm["fi_name2"] %>
+            <div class="form-inline">
+              <h5>金融商品の種類:<%= f.text_field :fi_kind2,
+                                     readonly: true,
+                                     value: @seller_confirm["fi_kind2"] %>
+            </div>
+　          <br>
+            <div class="form-inline">
+              <h5>時価</h5>
+              <%= f.text_field :fi_val2,
+                  readonly: true,
+                  value: @seller_confirm["fi_val2"] %>(<%= f.text_field :fi_unit2,
+                  readonly: true,
+                  value: @seller_confirm["fi_unit2"] %>)
+            </div>
+            <hr class="input-hr">
+            <h5>金融商品3</h5>
+            <%= f.text_field :fi_name3,
+                readonly: true,
+                value: @seller_confirm["fi_name3"] %>
+            <div class="form-inline">
+              <h5>金融商品の種類:<%= f.text_field :fi_kind3,
+                                     readonly: true,
+                                     value: @seller_confirm["fi_kind3"] %>
+            </div>
+　          <br>
+            <div class="form-inline">
+              <h5>時価</h5>
+              <%= f.text_field :fi_val3,
+                  readonly: true,
+                  value: @seller_confirm["fi_val3"] %>(<%= f.text_field :fi_unit3,
+                  readonly: true,
+                  value: @seller_confirm["fi_unit3"] %>)
+            </div>
+        </section>        
+      <hr class="input-hr-sec">
+        <section id="content4">
+          <br>
+          <h3>財務の状況</h3>
+          <br>
+          <h4>業績の推移</h4>
+          
+          <h5>単位：<%= f.text_field :unit,
+                        readonly: true,
+                        value: @seller_confirm["unit"] %> 
+          <table class="table table-hover">
+            <tr>
+              <th class="col-md-3">勘定科目</th>
+              <th class="col-md-3" style="text-align:center">前々々期</th>
+              <th class="col-md-3" style="text-align:center">前々期</th>
+              <th class="col-md-3" style="text-align:center">前期</th>
+            </tr>
+            <tr>
+              <th class="col-md-3" style="text-align:center">
+                <%= f.text_field :ppp_fy_y,
+                    readonly: true,
+                    value: @seller_confirm["ppp_fy_y"] %>年
+                <%= f.text_field :ppp_fy_m,
+                    readonly: true,
+                    value: @seller_confirm["ppp_fy_m"] %>月期
+              </th>
+              <th class="col-md-3" style="text-align:center">
+                <%= f.text_field :pp_fy_y,
+                    readonly: true,
+                    value: @seller_confirm["pp_fy_y"] %>年
+                <%= f.text_field :pp_fy_m,
+                    readonly: true,
+                    value: @seller_confirm["pp_fy_m"] %>月期
+              </th>
+            　<th class="col-md-3" style="text-align:center">
+                <%= f.text_field :p_fy_y,
+                    readonly: true,
+                    value: @seller_confirm["p_fy_y"] %>年
+                <%= f.text_field :p_fy_m,
+                    readonly: true,
+                    value: @seller_confirm["p_fy_m"] %>月期
+              </th>
+            </tr>
+            <tr>
+              <td class="col-md-3">
+                  売上高
+              </td>
+              <td class="col-md-3">
+                 <%= f.text_field :ppp_sales,
+                      readonly: true,
+                      value: @seller_confirm["ppp_sales"],
+                      data: {autonumeric: { mDec: 0, aPad: false }},
+                      class: 'yen numeric' %>
+
+              </td>
+              <td class="col-md-3">
+                 <%= f.text_field :pp_sales,
+                      readonly: true,
+                      value: @seller_confirm["pp_sales"],
+                      data: {autonumeric: { mDec: 0, aPad: false }},
+                      class: 'yen numeric' %>
+              </td>
+              <td class="col-md-3">
+                 <%= f.text_field :p_sales,
+                      readonly: true,
+                      value: @seller_confirm["p_sales"],
+                      data: {autonumeric: { mDec: 0, aPad: false }},
+                      class: 'yen numeric' %>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-md-3">
+                  売上原価
+              </td>
+              <td class="col-md-3">
+                  <%= f.text_field :ppp_cogs,
+                      readonly: true,
+                      value: @seller_confirm["ppp_cogs"],
+                      data: {autonumeric: { mDec: 0, aPad: false }},
+                      class: 'yen numeric' %>
+              </td>
+              <td class="col-md-3">
+                  <%= f.text_field :pp_cogs,
+                      readonly: true,
+                      value: @seller_confirm["pp_cogs"],
+                      data: {autonumeric: { mDec: 0, aPad: false }},
+                      class: 'yen numeric' %>
+              </td>
+              <td class="col-md-3">
+                  <%= f.text_field :p_cogs,
+                      readonly: true,
+                      value: @seller_confirm["p_cogs"],
+                      data: {autonumeric: { mDec: 0, aPad: false }},
+                      class: 'yen numeric' %>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-md-3">
+                  売上総利益
+              </td>
+              <td class="col-md-3">
+                  <%= f.text_field :ppp_gp,
+                      readonly: true,
+                      value: @seller_confirm["ppp_gp"],
+                      data: {autonumeric: { mDec: 0, aPad: false }},
+                      class: 'yen numeric' %>
+              </td>
+              <td class="col-md-3">
+                  <%= f.text_field :pp_gp,
+                      readonly: true,
+                      value: @seller_confirm["pp_gp"],
+                      data: {autonumeric: { mDec: 0, aPad: false }},
+                      class: 'yen numeric' %>
+              </td>
+              <td class="col-md-3">
+                  <%= f.text_field :p_gp,
+                      readonly: true,
+                      value: @seller_confirm["p_gp"],
+                      data: {autonumeric: { mDec: 0, aPad: false }},
+                      class: 'yen numeric' %>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-md-3">
+                  販管費
+              </td>
+              <td class="col-md-3">
+                  <%= f.text_field :ppp_sga,
+                      readonly: true,
+                      value: @seller_confirm["ppp_sga"],
+                      data: {autonumeric: { mDec: 0, aPad: false }},
+                      class: 'yen numeric' %>
+              </td>
+              <td class="col-md-3">
+                  <%= f.text_field :pp_sga,
+                      readonly: true,
+                      value: @seller_confirm["pp_sga"],
+                      data: {autonumeric: { mDec: 0, aPad: false }},
+                      class: 'yen numeric' %>
+              </td>
+              <td class="col-md-3">
+                  <%= f.text_field :p_sga,
+                      readonly: true,
+                      value: @seller_confirm["p_sga"],
+                      data: {autonumeric: { mDec: 0, aPad: false }},
+                      class: 'yen numeric' %>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-md-3">
+                  営業利益
+              </td>
+              <td class="col-md-3">
+                  <%= f.text_field :ppp_opin,
+                      readonly: true,
+                      value: @seller_confirm["ppp_opin"],
+                      data: {autonumeric: { mDec: 0, aPad: false }},
+                      class: 'yen numeric' %>
+              </td>
+              <td class="col-md-3">
+                  <%= f.text_field :pp_opin,
+                      readonly: true,
+                      value: @seller_confirm["pp_opin"],
+                      data: {autonumeric: { mDec: 0, aPad: false }},
+                      class: 'yen numeric' %>
+              </td>
+              <td class="col-md-3">
+                  <%= f.text_field :p_opin,
+                      readonly: true,
+                      value: @seller_confirm["p_opin"],
+                      data: {autonumeric: { mDec: 0, aPad: false }},
+                      class: 'yen numeric' %>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-md-3">
+                  経常利益
+              </td>
+              <td class="col-md-3">
+                  <%= f.text_field :ppp_orin,
+                      readonly: true,
+                      value: @seller_confirm["ppp_orin"],
+                      data: {autonumeric: { mDec: 0, aPad: false }},
+                      class: 'yen numeric' %>
+              </td>
+              <td class="col-md-3">
+                  <%= f.text_field :pp_orin,
+                      readonly: true,
+                      value: @seller_confirm["pp_orin"],
+                      data: {autonumeric: { mDec: 0, aPad: false }},
+                      class: 'yen numeric' %>
+              </td>
+              <td class="col-md-3">
+                  <%= f.text_field :p_orin,
+                      readonly: true,
+                      value: @seller_confirm["p_orin"],
+                      data: {autonumeric: { mDec: 0, aPad: false }},
+                      class: 'yen numeric' %>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-md-3">
+                  当期純利益
+              </td>
+              <td class="col-md-3">
+                  <%= f.text_field :ppp_nein,
+                      readonly: true,
+                      value: @seller_confirm["ppp_nein"],
+                      data: {autonumeric: { mDec: 0, aPad: false }},
+                      class: 'yen numeric' %>
+              </td>
+              <td class="col-md-3">
+                  <%= f.text_field :pp_nein,
+                      readonly: true,
+                      value: @seller_confirm["pp_nein"],
+                      data: {autonumeric: { mDec: 0, aPad: false }},
+                      class: 'yen numeric' %>
+              </td>
+              <td class="col-md-3">
+                  <%= f.text_field :p_nein,
+                      readonly: true,
+                      value: @seller_confirm["p_nein"],
+                      data: {autonumeric: { mDec: 0, aPad: false }},
+                      class: 'yen numeric' %>
+              </td>
+            </tr>
+          </table>
+          <br>
+          <h3>得意先別取引額（前期）</h3>
+          <table class="table table-hover">
+            <tr>
+              <th class="col-md-4">得意先名</th>
+              <th class="col-md-3">取引金額</th>
+            </tr>
+            <tr>
+              <td class="col-md-4">
+                <%= f.text_field :sal_name1,
+                    readonly: true,
+                    value: @seller_confirm["sal_name1"] %>
+              </td>
+              <td class="col-md-3">
+                <%= f.text_field :sal_val1,
+                    readonly: true,
+                    value: @seller_confirm["sal_val1"],
+                    data: {autonumeric: { mDec: 0, aPad: false }},
+                    class: 'yen numeric' %>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-md-4">
+                <%= f.text_field :sal_name2,
+                    readonly: true,
+                    value: @seller_confirm["sal_name2"] %>
+              </td>
+              <td class="col-md-3">
+                <%= f.text_field :sal_val2,
+                    readonly: true,
+                    value: @seller_confirm["sal_val2"],
+                    data: {autonumeric: { mDec: 0, aPad: false }},
+                    class: 'yen numeric' %>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-md-4">
+              <td class="col-md-4">
+                <%= f.text_field :sal_name3,
+                    readonly: true,
+                    value: @seller_confirm["sal_name3"] %>
+              </td>
+              <td class="col-md-3">
+                <%= f.text_field :sal_val3,
+                    readonly: true,
+                    value: @seller_confirm["sal_val3"],
+                    data: {autonumeric: { mDec: 0, aPad: false }},
+                    class: 'yen numeric' %>
+              </td>
+              </td>
+            </tr>
+          </table>
+          <br> 
+          <h3>仕入先別取引額（前期）</h3>
+          <table class="table table-hover">
+            <tr>
+              <th class="col-md-4">仕入先名</th>
+              <th class="col-md-3">取引金額</th>
+            </tr>
+            <tr>
+              <td class="col-md-4">
+                <%= f.text_field :pur_name1,
+                    readonly: true,
+                    value: @seller_confirm["pur_name1"] %>
+              </td>
+              <td class="col-md-3">
+                <%= f.text_field :pur_val1,
+                    readonly: true,
+                    value: @seller_confirm["pur_val1"],
+                    data: {autonumeric: { mDec: 0, aPad: false }},
+                    class: 'yen numeric' %>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-md-4">
+                <%= f.text_field :pur_name2,
+                    readonly: true,
+                    value: @seller_confirm["pur_name2"] %>
+              </td>
+              <td class="col-md-3">
+                <%= f.text_field :pur_val2,
+                    readonly: true,
+                    value: @seller_confirm["pur_val2"],
+                    data: {autonumeric: { mDec: 0, aPad: false }},
+                    class: 'yen numeric' %>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-md-4">
+                <%= f.text_field :pur_name3,
+                    readonly: true,
+                    value: @seller_confirm["pur_name3"] %>
+              </td>
+              <td class="col-md-3">
+                <%= f.text_field :pur_val3,
+                    readonly: true,
+                    value: @seller_confirm["pur_val3"],
+                    data: {autonumeric: { mDec: 0, aPad: false }},
+                    class: 'yen numeric' %>
+              </td>
+            </tr>
+          </table>
+          <br> 
+          <h3>外注先別取引額（前期）</h3>
+          <table class="table table-hover">
+            <tr>
+              <th class="col-md-4">外注先名</th>
+              <th class="col-md-3">取引金額</th>
+            </tr>
+            <tr>
+              <td class="col-md-4">
+                <%= f.text_field :os_name1,
+                    readonly: true,
+                    value: @seller_confirm["os_name1"] %>
+              </td>
+              <td class="col-md-3">
+                <%= f.text_field :os_val1,
+                    readonly: true,
+                    value: @seller_confirm["os_val1"],
+                    data: {autonumeric: { mDec: 0, aPad: false }},
+                    class: 'yen numeric' %>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-md-4">
+                <%= f.text_field :os_name2,
+                    readonly: true,
+                    value: @seller_confirm["os_name2"] %>
+              </td>
+              <td class="col-md-3">
+                <%= f.text_field :os_val2,
+                    readonly: true,
+                    value: @seller_confirm["os_val2"],
+                    data: {autonumeric: { mDec: 0, aPad: false }},
+                    class: 'yen numeric' %>
+              </td>
+            </tr>
+            <tr>
+              <td class="col-md-4">
+                <%= f.text_field :os_name3,
+                    readonly: true,
+                    value: @seller_confirm["os_name3"] %>
+              </td>
+              <td class="col-md-3">
+                <%= f.text_field :os_val3,
+                    readonly: true,
+                    value: @seller_confirm["os_val3"],
+                    data: {autonumeric: { mDec: 0, aPad: false }},
+                    class: 'yen numeric' %>
+              </td>
+            </tr>
+          </table>
+          <br> 
+          <h3>貸借対照表の概要(前期）</h3>
+            <div class="form-inline">
+              <h5>流動資産</h5>
+              <%= f.text_field :p_ca,
+                    readonly: true,
+                    value: @seller_confirm["p_ca"],
+                    data: {autonumeric: { mDec: 0, aPad: false }},
+                    class: 'yen numeric' %>
+            </div>
+            <div class="form-inline">
+              <h5>固定資産</h5>
+              <%= f.text_field :p_nca,
+                    readonly: true,
+                    value: @seller_confirm["p_nca"],
+                    data: {autonumeric: { mDec: 0, aPad: false }},
+                    class: 'yen numeric' %>
+            </div>
+            <div class="form-inline">
+              <h5>流動負債</h5>
+              <%= f.text_field :p_cl,
+                    readonly: true,
+                    value: @seller_confirm["p_cl"],
+                    data: {autonumeric: { mDec: 0, aPad: false }},
+                    class: 'yen numeric' %>
+            </div>
+            <div class="form-inline">
+              <h5>固定負債</h5>
+              <%= f.text_field :p_ncl,
+                    readonly: true,
+                    value: @seller_confirm["p_ncl"],
+                    data: {autonumeric: { mDec: 0, aPad: false }},
+                    class: 'yen numeric' %>
+            </div>
+            <div class="form-inline">
+              <h5>純資産</h5>
+              <%= f.text_field :p_na,
+                    readonly: true,
+                    value: @seller_confirm["p_na"],
+                    data: {autonumeric: { mDec: 0, aPad: false }},
+                    class: 'yen numeric' %>
+            </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-5">
+  </div>  
+  <%= f.submit "登録", class: "btn btn-success btn-lg" %>
+  <% end %>  
+</div>
+
+<script>
+$(function() {
+  var $win = $('.input-window'),waku,
+      pos1,pos2,pos3,pos4,pos5,pos6,
+      tate1,tate2,tate3,tate4,tate5,tate6;
+      
+  $win.on("scroll",function() {
+
+      waku = $(".window").offset().top;
+      pos1 = $("#content1").offset().top-10;
+      pos2 = $("#content2").offset().top-10;
+      pos3 = $("#content3").offset().top-10;
+      pos4 = $("#content4").offset().top-10;
+      pos5 = $("#content5").offset().top-10;
+      pos6 = $("#content6").offset().top-10;
+      tate1 = $("#content1").height()-10;
+      tate2 = $("#content2").height()-10;
+      tate3 = $("#content3").height()-10;
+      tate4 = $("#content4").height()-10;
+      tate5 = $("#content5").height()-10;
+      tate6 = $("#content6").height()-10;
+
+var con = true;
+      switch(con){
+        case waku > pos1 && waku < pos1 + tate1 :
+          $("div.msg-lg").html("<p>まず、はじめにあなたが<%= @seller.cname %>を経営してきた想いを教えてください。</p>");
+          $("div.msg-sm").html("<p>会社を立ち上げた時、会社を先代から引き継いだ時、大きな仕事を成し遂げた時、苦しかった時・・・。<br><br>いろいろな出来事を乗り越えてきたなかで抱いてきたさまざまな想いを教えてください。</p>");
+          break;
+        case waku > pos2 && waku < pos2 + tate2 :
+          $("div.msg-lg").html("<p>あなたが自信をもって提供している商品やサービスを教えてください。</p>");
+          $("div.msg-sm").html("<p>これまで、素晴らしい商品やサービスで顧客を満足させてきた<%= @seller.cname %>。<br><br>あなたが提供してきた商品やサービス、技術の魅力を詳しく教えてください。</p>");
+          break;
+        case waku > pos3 && waku < pos3 + tate3 :
+          $("div.msg-lg").html("<p><%= @seller.cname %>の大切な顧客のことを教えてください。</p>");
+          $("div.msg-sm").html("<p>あなたにとってとても大切な顧客がどのような相手なのか、なぜその顧客が<%= @seller.cname %>を選び続けたのか。<br><br>そこに<%= @seller.cname %>の強みの源が眠っています。</p>");
+          break;
+        case waku > pos4 && waku < pos4 + tate4 :
+          $("div.msg-lg").html("<p><%= @seller.cname %>のビジネスの仕組みを教えてください。</p>");
+          $("div.msg-sm").html("<p>ビジネスはヒト、モノ、カネの経営資源だけでは成り立ちません。<br><br>経営資源を活かすための技術、販売・営業、開発などのノウハウがどれだけあるかに大きく左右されます。<br><br><%= @seller.cname %>が持っているノウハウを洗い出しましょう。</p>");
+          break;
+        case waku > pos5 && waku < pos5 + tate5 :
+          $("div.msg-lg").html("<p>ビジネスの根幹である人材について教えてください。</p>");
+          $("div.msg-sm").html("<p><%= @seller.cname %>をこれまで引っ張ってきた優秀な社員たち。<br><br>今後も中心となって活躍してくれる主要メンバーの長所や特徴を思い出しながら、アピールポイントに変えていきましょう。</p>");
+          break;
+        case waku > pos6 && waku < pos6 + tate6 :
+          $("div.msg-lg").html("<p>最後に、これからの<%= @seller.cname %>のことを教えてください。</p>");
+          $("div.msg-sm").html("<p>ここまで普段ならあまり考えないようなことまで<%= @seller.cname %>のことを振り返ってきました。<br><br>現状を踏まえて、これから<%= @seller.cname %>が進んでいくべき方向を書いてみてください。</p>");
+          break;
+        default :
+          $("aside").text("");
+      }
+  });
+});
+</script>
+
+    <script>
+    //スムーズスクロール
+    $(document).ready(function(){
+      $("a.scr").click(function(){
+        var hash = this.hash;
+        var position = $(hash).offset().top;
+    
+      //data-box属性がない場合は通常のスムーズスクロール
+      if(!$(this).data("box")){
+          $('html, body').animate({scrollTop:position},800,'swing',function(){
+            window.location.hash=hash;
+          });
+      
+      //data-box属性がある場合はdata-box内をスムーズスクロール
+      }else{
+    			var $box = $($(this).data("box"));
+    			var $target = $($(this).attr("href"));
+    			var dist = $target.position().top - $box.position().top;
+    			$box.stop().animate({scrollTop: $box.scrollTop() + dist},1200,'swing',function(){
+    			  window.location.hash=hash;
+    			});
+        }
+    		return false;
+      });
+    });
+    </script>
+
+    <script>
+      $(function(){
+        $("dd").css("display","none");
+        $("dl dt").click(function(){
+          if($("+dd",this).css("display")=="none"){
+              $("dd").slideUp("slow");
+              $("+dd",this).slideDown("slow");
+          }else{
+            $("dd").slideUp("slow");
+          }
+        }).mouseover(function(){
+          $(this).addClass("over");
+        }).mouseout(function(){
+          $(this).removeClass("over");
+        });
+      });
+    </script>
+
+    <script>
+    //数値入力
+    $(document).ready(function(){
+       $(".yen").autoNumeric("init",{
+         mDec: 0, 
+         aPad: false,
+        });
+    });
+    </script>

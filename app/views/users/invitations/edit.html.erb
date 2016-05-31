@@ -1,0 +1,25 @@
+<div class="row" >
+  <div class="col-md-6 col-md-offset-3">
+
+<h3>ユーザー登録</h3>
+
+<%= form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => { :method => :put } do |f| %>
+  <%= devise_error_messages! %>
+  <%= f.hidden_field :invitation_token %>
+  
+  <p><%= f.label :fname ,"姓"%><br />
+  <%= f.text_field :fname , autofocus: true, class: 'form-control' %></p>
+
+  <p><%= f.label :gname ,"名"%><br />
+  <%= f.text_field :gname, class: 'form-control' %></p>
+
+  <% if f.object.class.require_password_on_accepting %>
+  <p><%= f.label :password %><br />
+  <%= f.password_field :password, class: 'form-control' %></p>
+
+  <p><%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation, class: 'form-control' %></p>
+  <% end %>
+
+  <p><%= f.submit "ユーザー登録を行う", class: "btn btn-primary" %></p>
+<% end %>

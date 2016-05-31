@@ -1,0 +1,10 @@
+<div> 
+   <!-- buyer１社とログインユーザー企業（この場合はseller）に紐づくdisclosureが存在した場合の処理 -->
+   <% if @buyer.disclosures.exists?(seller_id: @seller.id) %>
+     <%= render 'undisclosure' %>
+
+   <!-- 存在しなかった場合の処理 -->
+   <% else %>
+     <%= render 'disclosure' %>
+   <% end %>
+</div>

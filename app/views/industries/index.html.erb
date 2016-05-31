@@ -1,0 +1,26 @@
+<% provide(:title, '業種マスタ-リスト') %>
+<div class = "container">
+  <div class="row">
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-8">
+    <br>
+    <h3> 業種マスタリスト</h3>
+      <table class="table">
+        <tr>
+          <th>大区分</th><th>中区分</th><th>編集</th><th>削除</th></tr>
+        </tr>
+          <% @industries.each do |industry| %>
+            <tr>
+              <td><%= industry.ind_a %></td>
+              <td><%= industry.ind_b %></td>
+              <td><%= link_to '編集', edit_industry_path(industry) %></td>
+              <td><%= link_to '削除', industry, method: :delete, data: {confirm: '本当に削除しますか？'} %></td>
+            </tr>
+          <% end %>
+      </table>
+    </div>
+    <div class="col-md-2">
+    </div>
+  </div>
+</div>

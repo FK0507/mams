@@ -1,0 +1,18 @@
+<%= render 'shared/flash_message' %>
+<div class="jumbotron top-jumbotron">
+  <h1>Ｍ＆Ａの新しいプラットフォーム</h1>
+  <br>
+  <br>
+  <br>
+  <p>月額利用料だけでＭ＆Ａニーズをマッチング</p>
+  <p>着手金・成功報酬ともにゼロという新しいスタイルのＭ＆Ａを提供します</p>
+  <br>
+  <br>
+  <p>
+      <%= link_to " 会社を引き継ぎたい ", new_user_registration_path(:kind => "buyer"), class: "btn btn-success btn-lg" %>&nbsp;&nbsp;&nbsp;      
+      <%= link_to "   会社を譲りたい   ", new_user_registration_path(:kind => "seller"), class: "btn btn-success btn-lg" %>
+  </p>
+</div>
+
+
+

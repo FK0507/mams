@@ -1,0 +1,213 @@
+<% if user_signed_in? %>
+<%= form_for(@buyer) do |f| %>
+<div class="row">
+  <div class="col-md-1">
+  </div>
+  <div class="col-md-10">
+    <br>
+    <%= render 'shared/user_info' %>
+    <div id="navbar">
+      <ul class="nav nav-tabs">
+        <li class="active"><a class="scr" href="#content1" data-box=".input-window">基本情報</a></li>
+        <li><a class="scr" href="#content2" data-box=".input-window">当社の考え</a></li>
+        <li><a class="scr" href="#content3" data-box=".input-window">事業内容</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-1">
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-1">
+  </div>
+  <div class="col-md-10">
+    <div data-spy="scroll" data-target="#navbar" class="input-window">      
+        <%= render 'shared/error_messages', object: f.object %>
+      <div class="field">
+        <section id="content1">
+          <br>
+          <h3>基本情報</h3>
+          <br>
+            <%= f.label :cname, "会社名"%>
+            <%= f.text_field :cname, class: 'form-control' %>
+            <br>
+            <%= f.label :gname, "会社名カナ" %>
+            <%= f.text_field :cname_kana, class: 'form-control' %>
+            <br>
+            <%= f.label :zip, "郵便番号" %>
+            <%= f.text_field :zip, class: 'form-control' %>
+            <br>
+            <%= f.label :pref, "都道府県" %>
+            <%= f.text_field :pref, class: 'form-control' %>
+            <br>
+            <%= f.label :city, "市町村" %>
+            <%= f.text_field :city, class: 'form-control' %>
+            <br>
+            <%= f.label :adr, "番地・ビル名" %>
+            <%= f.text_field :adr, class: 'form-control' %>
+            <br>
+            <%= f.label :president, "代表者" %>
+            <%= f.text_field :president, class: 'form-control' %>
+            <br>
+              <%= f.label :listed, "上場/非上場" %>
+            <div class="form-inline">
+              <%= f.text_field :listed, class: 'form-control' %>
+              <label><%= f.radio_button :listed, '上場' %>上場</label>
+              <label><%= f.radio_button :listed, '非上場' %>非上場</label>
+            </div>
+            <br>
+        </section>
+      <hr class="input-hr-sec">
+        <section id="content2">
+            <br>
+            <h3>当社の考え</h3>
+            <br>
+            <%= f.label :phil, "これまでの当社の経営スタイル"%>
+            <%= f.text_area :phil, class: 'form-control' %>
+            <br>
+            <%= f.label :appeal, "当社の魅力" %>
+            <%= f.text_area :appeal, class: 'form-control' %>
+            <br>
+            <%= f.label :future, "当社の目指している未来" %>
+            <%= f.text_area :future, class: 'form-control' %>
+            <br>
+            <br>
+   　　　      <%= f.label :buyer_condition_id, "希望条件" %>
+          　<%= f.collection_select :buyer_condition_id, @b_condits, :id,:b_condit, class: 'form-control' %>
+             <br>
+            <%= f.label :comment, "事業を譲渡したい会社へのメッセージ" %>
+            <%= f.text_area :comment, class: 'form-control' %>
+            <br>    
+        </section>
+      <hr class="input-hr-sec">  
+        <section id="content3">
+          <br>
+          <h3>事業の状況</h3>
+          <br>
+          <%= f.label :about, "事業の概要"%>
+          <%= f.text_area :about, class: 'form-control' %>
+          <br>
+          <div class="form-inline">
+          <%= f.label :unit, "金額単位" %>
+            <label><%= f.radio_button :unit, '千円' %>千円</label>
+            <label><%= f.radio_button :unit, '百万円' %>百万円</label>
+          </div>
+          <br>
+          <hr class="input-hr">
+            <%= f.label :busi_name1, "事業名"%>
+            <%= f.text_field :busi_about1, class: 'form-control' %>
+          <br>
+          <div class="row">
+  　        <div class="col-md-1">
+  　        </div>
+  　        <div class="col-md-10">
+              <%= f.label :busi_about1, "概要"%>
+              <%= f.text_area :busi_about1, class: 'form-control' %>
+  　          <br>
+              <div class="row">
+       　        <div class="col-md-8">
+       　          <%= f.label :busi_goods1, "主な商品・サービス" %>
+                  <%= f.text_area :busi_goods1, class: 'form-control' %>
+       　        </div>
+       　        <div class="col-md-4">
+       　          <%= f.label :busi_sales1, "年間売上高" %>
+                  <%= f.text_field :busi_sales1, class: 'form-control' %>
+      　         </div>
+    　         </div>
+    　         <br>
+  　          <%= f.label :busi_stro1, "事業の強み" %>
+              <%= f.text_area :busi_stro1, class: 'form-control' %>
+  　          <br>
+  　          <%= f.label :busi_weak1, "事業の弱み" %>
+              <%= f.text_area :busi_weak1, class: 'form-control' %>
+              <br>    
+            </div>
+            <div class="col-md-1">
+  　        </div>
+  　      </div>
+  　    
+  　      <h class="input-hr">
+            <%= f.label :busi_name2, "事業名"%>
+            <%= f.text_field :busi_about2, class: 'form-control' %>
+          <br>
+          <div class="row">
+  　        <div class="col-md-1">
+  　        </div>
+  　        <div class="col-md-10">
+              <%= f.label :busi_about2, "概要"%>
+              <%= f.text_area :busi_about2, class: 'form-control' %>
+  　          <br>
+              <div class="row">
+       　        <div class="col-md-8">
+       　          <%= f.label :busi_goods2, "主な商品・サービス" %>
+                  <%= f.text_area :busi_goods2, class: 'form-control' %>
+       　        </div>
+       　        <div class="col-md-4">
+       　          <%= f.label :busi_sales2, "年間売上高" %>
+                  <%= f.text_field :busi_sales2, class: 'form-control' %>
+      　         </div>
+    　         </div>
+      　         <br>
+    　          <%= f.label :busi_stro2, "事業の強み" %>
+                <%= f.text_area :busi_stro2, class: 'form-control' %>
+    　          <br>
+    　          <%= f.label :busi_weak2, "事業の弱み" %>
+                <%= f.text_area :busi_weak2, class: 'form-control' %>
+                <br>    
+    　       </div>
+            <div class="col-md-1">
+            </div>
+          </div>
+        
+          <hr class="input-hr">
+            <%= f.label :busi_name3, "事業名"%>
+            <%= f.text_field :busi_about3, class: 'form-control' %>
+          <br>
+          <div class="row">
+  　        <div class="col-md-1">
+  　        </div>
+  　        <div class="col-md-10">
+              <%= f.label :busi_about3, "概要"%>
+              <%= f.text_area :busi_about3, class: 'form-control' %>
+  　          <br>
+              <div class="row">
+       　        <div class="col-md-8">
+       　          <%= f.label :busi_goods3, "主な商品・サービス" %>
+                  <%= f.text_area :busi_goods3, class: 'form-control' %>
+       　        </div>
+       　        <div class="col-md-4">
+       　          <%= f.label :busi_sales3, "年間売上高" %>
+                  <%= f.text_field :busi_sales3, class: 'form-control' %>
+      　         </div>
+    　         </div>
+    　         <br>
+  　          <%= f.label :busi_stro3, "事業の強み" %>
+              <%= f.text_area :busi_stro3, class: 'form-control' %>
+  　          <br>
+  　          <%= f.label :busi_weak3, "事業の弱み" %>
+              <%= f.text_area :busi_weak3, class: 'form-control' %>
+              <br>    
+            </div>
+            <div class="col-md-1">
+  　        </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <br>
+    <%= double_submit_token %>
+    <%= f.submit "登録", class: "btn btn-primary btn-lg" %>
+    <% end %>  
+  </div>
+  <div class="col-md-1">
+  </div>  
+</div>
+<% else %>
+  <div class="center jumbotron">
+    <h2>Ｍ＆Ａマッチングシステムへようこそ！</h2>
+
+    <%= link_to "新規会員登録はこちら", root_path, class: "btn btn-lg btn-primary" %>
+  </div>
+<% end %>
+
+

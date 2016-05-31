@@ -1,0 +1,43 @@
+<%= form_for(@buyer) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <br>
+    <h3>基本情報</h3>
+    <br>
+      <%= f.label :cname, "会社名"%>
+      <%= f.text_field :cname, class: 'form-control' %>
+      <br>
+      <%= f.label :gname, "会社名カナ" %>
+      <%= f.text_field :cname_kana, class: 'form-control' %>
+      <br>
+      <%= f.label :industry_id, "業種" %>
+      <%= f.collection_select :industry_id, @industries, :id, :ind_b, class: 'form-control' %>
+      <br>
+      <br>
+      <%= f.label :pref, "都道府県" %>
+      <%= f.text_field :pref, class: 'form-control' %>
+      <br>
+      <%= f.label :city, "市町村" %>
+      <%= f.text_field :city, class: 'form-control' %>
+      <br>
+      <%= f.label :adr, "番地・ビル名" %>
+      <%= f.text_field :adr, class: 'form-control' %>
+      <br>
+      <%= f.label :president, "代表者" %>
+      <%= f.text_field :president, class: 'form-control' %>
+      <br>
+        <%= f.label :listed, "上場/非上場" %>
+      <div class="form-inline">
+        <label><%= f.radio_button :listed, '上場' %>上場</label>
+        <label><%= f.radio_button :listed, '非上場' %>非上場</label>
+      </div>
+      <br>
+      <br>
+      <%= f.label :buyer_condition_id, "希望条件" %>
+      <%= f.collection_select :buyer_condition_id, @b_condits, :id,:b_condit, class: 'form-control' %>
+      <br>
+      <br>
+
+  </div>
+  <%= f.submit "登録", class: "btn btn-primary" %>
+<% end %>

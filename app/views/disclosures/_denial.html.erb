@@ -1,0 +1,6 @@
+<%= form_for(@disclosure) do |f| %>
+
+<%= f.hidden_field :status, :value =>"denied" %>
+
+<%= f.submit "拒否する", class: "btn btn-success btn-block" %>
+<% end %>

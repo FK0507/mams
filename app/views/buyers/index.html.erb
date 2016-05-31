@@ -1,0 +1,38 @@
+<%= render 'shared/flash_message' %>
+<% provide(:title, '買希望企業リスト') %>
+<div class = "container">
+  <div class="row">
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-8 company-list">
+    <h3> 買い手リスト</h3>
+      <table class="table">
+        <tr>
+          <th>企業No</th><th>所在地</th><th>業種</th><th>従業員数</th><th>希望条件</th><th>詳細</th>
+          <% if current_user.kind == "seller" then  %>
+            <th>フォロー</th>
+            <th><%= link_to '情報開示の状況' , disclosures_path %></th>
+          <% end %>
+        </tr>
+          <% @buyers.each do |buyer| %>
+            <tr>
+              <td><%= buyer.id %></td>
+              <td><%= buyer.pref %></td>
+              <td><%= Industry.where(id: buyer.industry_id).pluck(:ind_b)[0] %></td>
+              <td><%= buyer.reg %></td>
+              <td><%= BuyerCondition.where(id: buyer.buyer_condition_id).pluck(:b_condit)[0] %></td>
+              <td><%= link_to '詳細', buyer_path(buyer) %></td>
+                  <% if current_user.kind == "seller" then  %>
+                    <% @buyer = buyer %>
+                    <% @seller = current_user.sellers[0] %>
+                <td><%= render 'follow_form' %></td>
+                <td><%= render 'disclosure_form' %></td>
+                  <% end %>
+            </tr>
+          <% end %>
+      </table>
+    </div>
+    <div class="col-md-2">
+    </div>
+  </div>
+</div>

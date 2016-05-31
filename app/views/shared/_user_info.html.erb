@@ -1,0 +1,4 @@
+    <hr>
+    <h3><% concat("譲渡希望") if current_user.kind == "seller"  %></h3>
+    <h3><% concat("買収希望")  if current_user.kind == "buyer"  %></h3>
+    <h3><%= @user.fname %><%= @user.gname %>さんの企業情報</h3>    

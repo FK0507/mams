@@ -1,0 +1,37 @@
+<% provide(:title, "ユーザー情報の編集") %>
+<%= render 'shared/flash_message' %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+
+  <h3>あなたのユーザー情報を編集してください。</h3>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+
+    <%= f.label :fname, "姓"%>
+    <%= f.text_field :fname, autofocus: true, class: 'form-control' %>
+    <%= f.label :gname, "名" %>
+    <%= f.text_field :gname, class: 'form-control' %>
+    <br>
+    <%= f.label :email, "Eメール" %>
+    <%= f.email_field :email, class: 'form-control' %>
+    <br>
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>仮登録中です。: <%= resource.unconfirmed_email %> に送信されたリンクをクリックして本登録を完了して下さい。</div>
+    <% end %>
+    <%= f.label :password %> <i>(パスワードを変更する場合のみ、入力して下さい。)</i><br />
+    <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
+    <br>
+    <br>
+    <%= f.label :current_password %> <i>(変更内容を保存するために、現在のパスワードを入力して下さい。)</i><br />
+    <%= f.password_field :current_password, autocomplete: "off", class: 'form-control' %>
+    
+    <br>
+    <%= f.submit "変更する", class: "btn btn-large btn-primary" %>
+<% end %>
+  <br>
+<%= link_to "戻る", :back %>
+  </div>
+</div>

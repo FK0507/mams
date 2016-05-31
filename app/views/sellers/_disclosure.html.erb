@@ -1,0 +1,7 @@
+<%= form_for(@seller.disclosures.build) do |f| %>
+  <div>
+    <%= hidden_field_tag :seller_id, @seller.id %>
+  </div>
+  <%= f.submit "情報開示リクエストを送信する", class: "btn btn-success btn-block",
+      data: { disable_with: "送信中...", confirm: "選択した企業に情報開示リクエストが送信されます。続けますか？"} %>
+<% end %>
